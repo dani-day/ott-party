@@ -1,1 +1,20 @@
 // media-query.scss
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1440px;
+
+@mixin mobileW {
+  @media (min-width: $mobile) and (max-width: ($tablet - 1)) {
+    @content;
+  }
+}
+@mixin tabletW {
+  @media (min-width: $tablet) and (max-width: ($desktop - 1)) {
+    @content;
+  }
+}
+@mixin desktopW {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
