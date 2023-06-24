@@ -1,26 +1,24 @@
 # TAING
 ## 🚀 Project Info
 
-**멋쟁이 사자처럼 프론트엔드 스쿨 6기 HTML/CSS 프로젝트**
+### 멋쟁이 사자처럼 프론트엔드 스쿨 6기 HTML/CSS 프로젝트
 
 TVING 홈페이지를 기반으로 Sass를 이용해 제작한 페이지입니다.
 
-🗓️   : 2023.06.23 ~ 2023.06.28
+### 🗓️ 
+2023.06.23 ~ 2023.06.28
 
-👩‍💻🧑‍💻 : 김다연, 신명화, 유동균, 조수연 
+### 👩‍💻🧑‍💻 
 
-### 담당 역할
-김다연: 메인페이지 <br>
-신명화: 메인페이지 <br>
-유동균: 메인페이지 <br>
-조수연: 메인페이지 <br>
+김다연: 메인페이지(맡은 부분 작성하기) <br>
+신명화: 메인페이지(맡은 부분 작성하기) <br>
+유동균: 메인페이지(맡은 부분 작성하기) <br>
+조수연: 메인페이지(맡은 부분 작성하기) <br>
 
- <br>
+<br>
 
 ## 💻 Stack
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
 
 <br>
 
