@@ -1,9 +1,12 @@
 //mixin.scss
-@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap) {
+@use "./unit" as *;
+
+@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap,$gap:0) {
   display: flex;
   flex-flow: $direction $wrap;
   justify-content: $justify;
   align-items: $items;
+  gap: rem($gap);
 }
 
 // position
@@ -13,14 +16,14 @@
 
 @mixin posLeftTop($l: 0, $t: 0) {
   @include pos;
-  top: $t;
-  left: $l;
+  top: rem($t);
+  left: rem($l);
 }
 
 @mixin posRightTop($r: 0, $t: 0) {
   @include pos;
-  top: $t;
-  right: $r;
+  top: rem($t);
+  right: rem($r);
 }
 
 @mixin posCenterX {

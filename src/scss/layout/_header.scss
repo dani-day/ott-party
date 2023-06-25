@@ -1,1 +1,324 @@
 // header.scss
+@use "./../utils" as *; 
+
+html {
+  font-size: calc(8px + .5vw);
+}
+
+// body {
+//   background: $base-bg;
+// }
+.header.is--active {
+  background: $base-bg;
+}
+.header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+  // background: $base-bg;
+  font-family: pretendard;
+  @include flexbox;
+  padding: rem(29px) rem(70px);
+  color: $gray200;
+  font: $par-lg;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+
+  // 로고
+  &__logo {
+    padding-right: rem(52px);
+  }
+  &__logo__link {
+    display: block;
+    width: rem(132px);
+    height: rem(42px);
+    background: url(./../../images/sprite__icon.png) no-repeat 0 rem(-79px);
+  }
+
+  // 네비게이션
+  &__nav {
+    @include flexbox;
+    flex-grow: 1;
+
+    // 프로그램 리스트
+    &__program {
+      @include flexbox($items:center, $gap: 52px);
+      flex-grow: 1;
+      a:hover {
+        color: $base-text;
+      }
+      .program__live {
+        @include flexbox($items:flex-end,$gap:10px);
+        &:hover .live__img{
+          background: url(./../../images/sprite__icon.png) -374px -229px;
+        }
+      }
+      .live__img {
+         width: rem(34px);
+         height: rem(34px);
+         background: url(./../../images/sprite__icon.png) -320px -229px;
+      }
+      .program__paramount {
+        display: block;
+        width: rem(112px);
+        height: rem(34px);
+        background: url(./../../images/sprite__icon.png) -428px -229px;
+        &:hover {
+          background: url(./../../images/sprite__icon.png) -560px -229px;
+        }
+      }
+    }
+    // 검색 및 유저 아이콘
+    &__search {
+      @include flexbox($items:center, $gap: 40px);
+      %iconButton {
+        display: block; 
+        width: rem(40px);
+        height: rem(40px);
+        border: 0;
+        cursor: pointer;
+      }
+      .search__button {
+        @extend %iconButton;
+        background: url(./../../images/sprite__icon.png) 0 -223px;
+        &:hover {
+          background: url(./../../images/sprite__icon.png) -60px -223px;
+        }
+      }
+      .user__button {
+        @extend %iconButton;
+        background: url(./../../images/sprite__icon.png) -260px -223px ;
+      }
+     }
+  }
+} 
+
+// 유저 호버 상태창
+.header__user__icon { 
+  position: relative;
+}
+.header__user__icon:hover .user  {
+  display: block;
+}
+.user {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  width: rem(300px);
+  right: 0;
+  top: rem(40px);
+  padding-top: rem(30px);
+  border-radius: 5px;
+
+  &__info {
+    border: 1px solid $gray200;
+    background: $gray800;
+    border-radius: 5px;
+  }
+  &__title {
+    @include flexbox($items:center, $gap:20px);
+    border-bottom: 1px solid $gray200;
+    padding: rem(20px);
+  }
+  &__img {
+    width: 40px;
+    height: 40px;
+    background: url(./../../images/sprite__icon.png) -260px -223px ;
+  }
+  &__name {
+    font: $par-lg;
+  }
+  &__change {
+    font: $par-md;
+  }
+  &__only {
+    padding: rem(20px);
+    &__list {
+      @include flexbox($direction:column, $gap:10px);
+    }
+  }
+  a:hover {
+    color: $base-text;
+  }
+}
+
+// 검색창
+.search.is--active {
+  @include flexbox($direction:column,$gap:100px);
+}
+.search {
+  display: none;
+  background: $base-bg;
+  color: $base-text;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  margin-top: rem(95px);
+  padding: rem(50px) rem(200px) rem(90px);
+
+  &__form {
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    font: $label-xxl;
+    background: 0;
+    border: 0;
+    border-bottom: 3px solid $base-text;
+    &:focus {
+      outline: 0;
+      color: $base-text;
+    }
+    &::-ms-clear,
+    &::-ms-reveal{
+        display:none;
+    }
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration{
+        display:none;
+    }
+  }
+  &__submit {
+    position: absolute;
+    right: 0;
+    width: rem(40px);
+    height: rem(40px);
+    border: 0;
+    background: url(./../../images/sprite__icon.png) -60px -223px;
+    cursor: pointer;
+  }
+
+
+  &__wrapper {
+    @include flexbox;
+  }
+  &__recent {
+    width: 50%;
+  }
+  &__title {
+    color: $gray200;
+    font:$label-xl;
+  }
+  %searchTxt {
+    color: $gray300;
+    font:$par-lg;
+  }
+  &__list {
+    padding-top: rem(36px);
+    @extend %searchTxt;
+    @include flexbox($direction:column, $gap:16px );
+    counter-reset: ranking;
+    li:before {
+      counter-increment: ranking;
+      content: counter(ranking);
+      display: inline-block;
+      width: rem(40px);
+      color: $primary-color;
+      font: $heading-lg;
+    }
+    li {
+      white-space: nowrap;  
+      overflow: hidden;		
+      text-overflow: ellipsis;  
+    }
+  }
+  &__result {
+    padding-top: rem(36px);
+    @extend %searchTxt;
+  }
+  &__hot {
+    width: 50%;
+    border-left: 1px solid $gray700;
+    padding-left: 60px;
+  }
+  a:hover {
+    color: $base-text;
+  }
+  &__today {
+    margin-top: rem(16px);
+    color: $gray500;
+    font:$par-lg;
+  }
+}
+
+// 캐러셀
+.banner {
+  position: relative;
+  &__image {
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 1s;
+  }
+  %bannerBtn {
+    width: 70px;
+    height: 70px;
+    border: 0;
+    cursor: pointer;
+  }
+  &__prev {
+    @include posCenterY;
+    @extend %bannerBtn;
+    z-index: 3;
+    left: 0;
+    background: url(./../../images/sprite__icon.png) -138px -436px ;
+  }
+  &__next {
+  @include posCenterY;
+    @extend %bannerBtn;
+    z-index: 3;
+    right: 0;
+    background: url(./../../images/sprite__icon.png) -228px -436px ;
+  }
+  &__info {
+    z-index: 3;
+    @include pos;
+    top: 65%;
+    left: rem(70px);
+    color: $base-text;
+    font: $par-xl;
+  }
+  &__shorcut {
+    border: 0;
+    background: $gray400;;
+    width: rem(16px);
+    height: rem(16px);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__shorcut.is--active{
+    background: $base-text;
+  }
+  &__play {
+    @include flexbox($items:center,$gap:16px)    
+  }
+  &__play__btn {
+    display: block;
+    width: rem(18px);
+    height: rem(18px);
+    border: 0;
+    background: url(./../../images/sprite__icon.png) -38px -283px;
+    cursor: pointer;
+  }
+  &__play__btn.is--active {
+    display: none;
+  }
+
+  &__stop__btn {
+    width: rem(18px);
+    height: rem(18px);
+    border: 0;
+    display: none;
+    cursor: pointer;
+  }
+  &__stop__btn.is--active {
+    display: block;
+    background: url(./../../images/sprite__icon.png) 0 -283px;
+  }
+  &__subtext {
+    margin-bottom: rem(16px);
+  }
+}
+
