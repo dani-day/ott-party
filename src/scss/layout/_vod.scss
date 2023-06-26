@@ -1,0 +1,256 @@
+@use "./../utils" as *;
+@use "./../components" as *;
+
+//viewport 전체 기본 배경 및 폰트 색상 (black)
+body {
+  background: $base-bg;
+  color: $base-text;
+}
+
+//Quick VOD, 실시간 인기 프로그램 Section 공통 사항
+.qVod,
+.popShow {
+  overflow: hidden;
+  margin-bottom: rem(36px);
+  transform: translateX(70px);
+
+  @include mobileW {
+    transform: translateX(8px);
+  }
+  @include tabletW {
+    transform: translateX(40px);
+  }
+
+  &__list {
+    @include flexbox(row, flex-start, center, nowrap, rem(16px));
+
+    @include mobileW {
+      @include flexbox(row, flex-start, center, nowrap, rem(8px));
+    }
+    @include tabletW {
+      @include flexbox(row, flex-start, center, nowrap, rem(8px));
+    }
+  }
+
+  //hover 시 애니메이션 (위로 20px)
+  &__items {
+    transition-property: z-index, transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+  }
+
+  &__items:hover {
+    transform: translateY(rem(-12px));
+  }
+
+  //section 제목, 시리즈 이름, 이미지 공통 기본 스타일링
+  &__title {
+    font: $heading-xl;
+    margin-bottom: rem(12px);
+
+    @include mobileW {
+      font: $label-sm;
+    }
+    @include tabletW {
+      font: $heading-md;
+    }
+  }
+
+  &__name {
+    font: $label-lg;
+    color: $gray200;
+
+    @include mobileW {
+      font: $label-sm;
+    }
+    @include tabletW {
+      font: $label-sm;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+//Quick VOD
+.qVod {
+  &__items {
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    width: rem(345px);
+
+    @include mobileW {
+      width: rem(145px);
+    }
+
+    @include tabletW {
+      width: rem(224px);
+    }
+  }
+
+  &__quick {
+    @include posLeftTop(5px, 5px);
+    @include paddingX(9px);
+    @include paddingY(2px);
+    background: #c73e4e;
+    border-radius: rem(4px);
+    font: $par-md;
+    line-height: rem(26px);
+
+    @include mobileW {
+      @include paddingX(6px);
+      @include paddingY(1px);
+      line-height: rem(16px);
+      font: $par-sm;
+    }
+    @include tabletW {
+      @include paddingX(6px);
+      @include paddingY(1px);
+      line-height: rem(16px);
+      font: $par-sm;
+    }
+  }
+
+  &__name {
+    margin-bottom: rem(4px);
+    @include textOver;
+  }
+
+  &__epiNo {
+    font: $par-md;
+    color: $gray300;
+
+    @include mobileW {
+      font: $par-sm;
+    }
+    @include tabletW {
+      font: $par-sm;
+    }
+  }
+}
+
+//실시간 인기 프로그램
+.popShow {
+  &__items {
+    counter-increment: number;
+  }
+
+  &__link {
+    //::before 의 absolute 값 기준을 위해 설정한 relative
+    position: relative;
+    display: block;
+    width: rem(240px);
+
+    @include mobileW {
+      width: rem(92px);
+    }
+
+    @include tabletW {
+      width: rem(130px);
+    }
+  }
+
+  @at-root .name__adult {
+    @include flexbox(row, center, center, nowrap, 0);
+    @include posRightTop;
+    right: 5px;
+    top: 5px;
+    background: $red1 no-repeat;
+    border-radius: 50%;
+    width: rem(28px);
+    height: rem(28px);
+    color: $base-text;
+    font-family: Noto Sans KR;
+    font-size: rem(15px);
+    line-height: rem(28px);
+  }
+
+  .popShow__wrapper {
+    @include flexbox;
+
+    @at-root .popShow__name {
+      //ellipsis 를 위한 css
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      // position: relative;
+      display: inline-block;
+      color: $gray200;
+      margin-top: rem(11px);
+      margin-left: rem(60px);
+
+      @include mobileW {
+        margin-top: rem(4px);
+        margin-left: rem(30px);
+      }
+      @include tabletW {
+        margin-top: rem(7px);
+        margin-left: rem(40px);
+      }
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        content: counter(number);
+
+        //가상요소 폰트 설정
+        font-family: Noto Sans KR;
+        color: $base-text;
+        font-size: rem(70px);
+        font-weight: 700;
+        line-height: rem(70px);
+        transform: skewX(-7.5deg);
+
+        //.popShow__name 의 margin-left 를 되돌림.
+        margin-left: rem(-60px);
+
+        @include mobileW {
+          font-size: rem(34px);
+          line-height: rem(34px);
+          margin-left: rem(-30px);
+        }
+        @include tabletW {
+          font-size: rem(46px);
+          line-height: rem(46px);
+          margin-left: rem(-40px);
+        }
+      }
+    }
+
+    .popShow__redDot {
+      display: inline-block;
+
+      //red dot 앞의 p 태그 (제목) 가 길어져도 숨겨지지 않도록 함.
+      margin-top: rem(10px);
+      margin-left: rem(5px);
+      // flex-grow: 1;
+      flex-shrink: 0;
+      background: $red1 no-repeat;
+      border-radius: 50%;
+      content: "";
+
+      //red dot 위치 조정
+      width: rem(10px);
+      height: rem(10px);
+
+      @include mobileW {
+        margin-top: rem(4px);
+        margin-left: rem(1px);
+        width: rem(5px);
+        height: rem(5px);
+      }
+      @include tabletW {
+        margin-top: rem(7px);
+        margin-left: rem(4px);
+        width: rem(6px);
+        height: rem(6px);
+      }
+    }
+  }
+}
