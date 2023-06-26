@@ -97,3 +97,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin spriteImg__header($x,$y) {
+  background-image: url(./../../images/sprite__icon.png);
+  background-repeat: no-repeat;
+  background-position: rem($x) rem($y);
+}
+@mixin spriteBox__header($w,$h,$x,$y){
+  width: rem($w);
+  height: rem($h);
+  @include spriteImg__header($x,$y);
+}
+@mixin button__header {
+  display: block; 
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}

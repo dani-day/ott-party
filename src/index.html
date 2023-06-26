@@ -25,7 +25,6 @@
   </head>
 
   <body>
-    <!-- 헤더 -->
     <header class="header">
       <h1 class="header__logo">
         <a class="header__logo__link" href="/">
@@ -72,7 +71,6 @@
       </nav>
     </header>
 
-    <!-- 검색 창 -->
     <div class="search">
        <div class="search__form">
         <form action="/" method="GET">
@@ -109,102 +107,106 @@
        </div>
     </div>
 
-    <!-- 메인컨테이너 -->
-    <main>
-      <!-- banner section -->
+    <main class="mainPage">
       <section class="banner">
-        <h2 class="banner__title a11yHidden">배너 이미지</h2>
+        <h2 class="banner__title a11yHidden" aria-hidden="true">배너 이미지</h2>
         <div class="banner__container">
           <img class="banner__image opa1" src="./images/banner01__header.png" aria-hidden="false" alt="배너 이미지" />  
-          <button class="banner__prev"></button>
-          <button class="banner__next"></button>
+          <button class="banner__prev" aria-label="이전배너"></button>
+          <button class="banner__next" aria-label="다음배너"></button>
           <div class="banner__info">
-            <p class="banner__subtext">세 명의 재판부가 펼치는 生 리얼 초밀착 법정 드라마</p>
+            <p class="banner__subtext">리얼 초밀착 법정 드라마</p>
             <div class="banner__play">
-              <button class="banner__play__btn"></button>
-              <button class="banner__stop__btn"></button>
-              <button class="banner__shorcut is--active"></button>
-              <button class="banner__shorcut"></button>
-              <button class="banner__shorcut"></button>
-              <button class="banner__shorcut"></button>
+              <button class="banner__play__btn" aria-label="재생버튼"></button>
+              <button class="banner__stop__btn" aria-label="멈춤버튼"></button>
+              <button class="banner__shorcut is--active"  aria-label="1번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="2번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="3번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="4번째 배너이미지"></button>
             </div> 
           </div>
-          <a href="/">자세히보기</a>
+          <a class="banner__more" href="/">자세히보기</a>
         </div>
       </section> 
 
-      <!-- must section -->
       <section class="must">
          <h2 class="must__title">
           티빙에서 꼭 봐야하는 컨텐츠
          </h2>
-         <ul class="must__list">
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/treasure_must.png" alt="보물찾기" />
-                <p class="must__imgTitle">보물찾기</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/lovecatcher_must.png" alt="러브캐처 인 발리" />
-                <p class="must__imgTitle">러브캐처 인 발리</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
-                <p class="must__imgTitle">술꾼도시여자들2</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/king_must.png" alt="털사 킹" />
-                <p class="must__imgTitle">털사 킹</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
-                <p class="must__imgTitle">아무것도 하고 싶지 않아</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/blackdog_must.png" alt="블랙독" />
-                <p class="must__imgTitle">블랙독</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/our_must.png" alt="우리들의 블루스" />
-                <p class="must__imgTitle">우리들의 블루스</p>
-              </div>
-            </a>
-          </li>
-          <li class="must__item">
-            <a class="must__link" href="/">
-              <div class="must__wrapper">
-                <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
-                <p class="must__imgTitle">킬리만자로</p>
-              </div>
-            </a>
-          </li>
-         </ul>
+         <div class="must__list__wrapper">
+          <ul class="must__list">
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/treasure_must.png" alt="보물찾기" />
+                  <p class="must__imgTitle">보물찾기</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/lovecatcher_must.png" alt="러브캐처 인 발리" />
+                  <p class="must__imgTitle">러브캐처 인 발리</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
+                  <p class="must__imgTitle">술꾼도시여자들2</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/king_must.png" alt="털사 킹" />
+                  <p class="must__imgTitle">털사 킹</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
+                  <p class="must__imgTitle">아무것도 하고 싶지 않아</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/blackdog_must.png" alt="블랙독" />
+                  <p class="must__imgTitle">블랙독</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/our_must.png" alt="우리들의 블루스" />
+                  <p class="must__imgTitle">우리들의 블루스</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
+                  <p class="must__imgTitle"><span>킬리만자로</span></p>
+                </div>
+              </a>
+            </li>
+           </ul>
+         </div>
       </section>
+
+
+
+
+
     </main>
   </body>
-</html>
+</html> 

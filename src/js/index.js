@@ -1,3 +1,12 @@
+// 모바일 크기일때 유저 정보 클릭
+let userBtn = document.querySelector(".user__button");
+let user = document.querySelector(".user");
+if(window.innerWidth < 768) {
+  userBtn.addEventListener("click",()=>{
+    user.classList.toggle("is--active");
+  })
+}
+
 // 검색 모달창
 let searchBtn = document.querySelector(".search__button");
 let searchPop = document.querySelector(".search");
@@ -11,6 +20,7 @@ const openModal = (e) => {
     document.body.style.overflow = "unset";
  };
 searchBtn.addEventListener("click", () => {
+  searchBtn.classList.toggle("is--active");
   searchPop.classList.toggle("is--active");
   header.classList.toggle("is--active")
   if (searchPop.classList.length == 2) {
@@ -30,7 +40,7 @@ timeEl.innerHTML = today.toLocaleTimeString();
 let imgArr = ["./images/banner01__header.png","./images/banner02__header.png","./images/banner03__header.png","./images/banner04__header.png"];
 let shortcut = document.querySelectorAll(".banner__shorcut");
 let subtext = document.querySelector(".banner__subtext");
-let subtextArr = ["세 명의 재판부가 펼치는 生 리얼 초밀착 법정 드라마", "너무나 다른 두 사람의 절대악을 향한 복수극이자 짜릿한 공조 사기극", "폐아파트 광림맨숀에서 벌어진 괴이한 소문의 실체가 공개된다.", "UFC 패더급매치 에멧 vs 토푸리아"];
+let subtextArr = ["리얼 초밀착 법정 드라마", "짜릿한 공조 사기극", "괴이한 소문의 실체가 공개된다.", "UFC 패더급매치 에멧 vs 토푸리아"];
 let prev = document.querySelector(".banner__prev");
 let next = document.querySelector(".banner__next");
 let banner = document.querySelector(".banner__image");
@@ -83,7 +93,7 @@ stop.addEventListener("click", ()=>{
     shortcut.forEach(e => e.classList.remove("is--active"));
     shortcut[imgNum].classList.add("is--active");
     subtext.innerHTML = subtextArr[imgNum]
-  },1000)
+  },5000)
 })
 // 캐러샐 자동 함수 
 let autoBanner = setInterval(()=>{
@@ -95,4 +105,4 @@ let autoBanner = setInterval(()=>{
   shortcut.forEach(e => e.classList.remove("is--active"));
   shortcut[imgNum].classList.add("is--active");
   subtext.innerHTML = subtextArr[imgNum]
-},1000)
+},5000)
