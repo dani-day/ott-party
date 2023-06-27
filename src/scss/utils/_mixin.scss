@@ -103,21 +103,13 @@
 
 //신명화 믹스인
 @mixin number__live($fontSize: 70px, $fontWeight: 700) {
-  //320 - 34 , 46 ,70
-
   padding: 0;
-  // position: absolute;
   content: counter(number);
   color: $base-text;
   font-family: Noto Sans KR;
-  //translate(-50%, -50%) 
   transform: skew(-7.5deg);
   font-size: rem($fontSize);
   font-weight: $fontWeight;
-  // line-height: $lineHeight;
-  //$lineHeight 60,
-  // left: 8%;
-  // top: 35%;
   display: block;
 }
 //패딩 사방팔방 다 줘야 되는데 모바일마다 다 달라야 하는 패딩을 위해 만들었다
@@ -138,9 +130,12 @@
   height: rem($h);
   @include spriteImg__header($x, $y);
 }
+
 @mixin button__header {
   display: block;
   border: 0;
   background: 0;
   cursor: pointer;
 }
+
+// made by 갓동균
