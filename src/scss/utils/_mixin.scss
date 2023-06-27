@@ -102,23 +102,32 @@
 }
 
 //신명화 믹스인
-@mixin number__live($fontSize: 70px, $fontWeight: 700, $lineHeight: 60) {
+@mixin number__live($fontSize: 70px, $fontWeight: 700) {
   //320 - 34 , 46 ,70
 
   padding: 0;
-  position: absolute;
+  // position: absolute;
   content: counter(number);
   color: $base-text;
   font-family: Noto Sans KR;
-  transform: translate(-50%, -50%) skew(-7.5deg);
+  //translate(-50%, -50%) 
+  transform: skew(-7.5deg);
   font-size: rem($fontSize);
   font-weight: $fontWeight;
-  line-height: $lineHeight;
-  //
-  left: 8%;
-  top: 35%;
+  // line-height: $lineHeight;
+  //$lineHeight 60,
+  // left: 8%;
+  // top: 35%;
+  display: block;
 }
+//패딩 사방팔방 다 줘야 되는데 모바일마다 다 달라야 하는 패딩을 위해 만들었다
+@mixin paddingSquare ($n: 0,$e: 0, $s: 0, $w: 0) {
+  padding-top: rem($n);
+  padding-right: rem($e);
+  padding-bottom: rem($s);
+  padding-left: rem($w);
 
+}
 @mixin spriteImg__header($x, $y) {
   background-image: url(./../../images/sprite__icon.png);
   background-repeat: no-repeat;

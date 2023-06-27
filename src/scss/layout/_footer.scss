@@ -1,15 +1,18 @@
 @use "./../utils" as *;
 
 // 티빙 스포츠 생중계
+
+
 // *{
 //   background: rgb(0, 0, 0);
 //   font: Pretendard;
 // }
 
+
 // html {
 //   font-size: calc(8px + .5vw);
 // }
-
+// 이벤트라인
 .sportsLive__title {
   padding: 36px 70px 36px 70px;
 }
@@ -27,10 +30,70 @@
   padding-bottom: 36px;
   gap: 16px;
 }
+// 푸터 컨텐츠 ------------------------------
 
-.footer__announcements {
-  padding: 140px 70px 170px 70px;
-  font-size: 21.328px;
+.footer {
+  &__wrapper {
+    background: yelloW;
+
+  }
+  &__area {
+    
+    background: black;
+    border: 10px solid red;
+  }
+
+  &__wrapper {
+    @include flexbox ($justify: space-between);  
+    border-bottom: 1px solid #212121;
+    padding-bottom: rem(12px);
+    background: red;
+  }
+  
+
+  @include mobileW {
+    &__area {
+      @include paddingSquare (52, 16, 82, 16);
+    font: $par-sm;
+    }
+    &__direct {
+      display: none;
+    }
+
+  }
+
+  @include tabletW {
+    
+
+    &__area {
+      @include paddingSquare (70, 40, 100, 40);
+    font: $par-sm;
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
+
+  }
+  @include desktopW {
+    
+      &__area {
+        @include paddingSquare (140, 68, 170, 68);
+      font: $par-md;
+      }
+      &__direct {
+        display: flex;
+        color: #c4c4c4;
+        gap: 60px;
+        justify-content: flex-end;
+      }
+
+  }
+
+
+
 }
 
 .footer__notice {
@@ -42,24 +105,13 @@
   color: #c4c4c4;
 }
 
-.footer__barogagi {
-  display: flex;
-  color: #c4c4c4;
-  gap: 60px;
-  justify-content: flex-end;
-}
 
-.footer__barogagi__list {
+
+.footer__groupDirect {
   display: flex;
   gap: 60px;
 }
 
-.footer__wrapper {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #212121;
-  padding-bottom: 27px;
-}
 
 .footer__menu {
   display: flex;
