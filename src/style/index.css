@@ -741,14 +741,10 @@ body {
     display: block;
   }
 }
-.user.is--active {
-  display: block;
-}
-
 .user {
   display: none;
   position: absolute;
-  z-index: 20;
+  z-index: 9;
   border-radius: 0.3125rem;
 }
 @media (min-width: 1920px) {
@@ -841,6 +837,22 @@ body {
   color: #fff;
 }
 
+.overlay.is--active {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 7;
+  display: none;
+}
+
 .search.is--active {
   display: flex;
   flex-flow: column nowrap;
@@ -854,7 +866,7 @@ body {
   background: #000;
   color: #fff;
   position: fixed;
-  z-index: 4;
+  z-index: 8;
   width: 100%;
 }
 @media (min-width: 1920px) {
@@ -2311,6 +2323,106 @@ h2 {
     background-repeat: no-repeat;
     background-position: -21rem -55.3125rem;
   }
+}
+
+@media (min-width: 1920px) {
+  .footer__shortcut {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 3.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__shortcut {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__shortcut {
+    display: none;
+  }
+}
+.footer__shortcut .shortcut {
+  position: relative;
+  color: #c4c4c4;
+}
+.footer__shortcut .shortcut__brand, .footer__shortcut .shortcut__group {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0rem;
+}
+@media (min-width: 1920px) {
+  .footer__shortcut .shortcut {
+    min-width: 165px;
+    font: normal 400 1.3125rem/1.6 pretendard;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__shortcut .shortcut {
+    min-width: 100px;
+    font: normal 400 0.75rem/1.6 pretendard;
+  }
+}
+.footer__shortcut .shortcut__btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #c4c4c4;
+  cursor: pointer;
+}
+.footer__shortcut .shortcut__plus {
+  margin-left: 16px;
+}
+.footer__shortcut .shortcut__group.is--active {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.3125rem;
+}
+.footer__shortcut .shortcut__group {
+  display: none;
+  position: absolute;
+  background: #404040;
+  border-radius: 5px;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__shortcut .shortcut__group {
+    top: -105px;
+    height: 100px;
+    padding: 5px;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__shortcut .shortcut__group {
+    top: -210px;
+    height: 200px;
+    padding: 10px;
+  }
+}
+.footer__shortcut .shortcut__group::-webkit-scrollbar {
+  width: 5px;
+}
+.footer__shortcut .shortcut__group::-webkit-scrollbar-thumb {
+  background: #e93945;
+  border-radius: 10px;
+}
+.footer__shortcut .shortcut__group::-webkit-scrollbar-track {
+  background: rgba(233, 57, 69, 0.2784313725);
+}
+.footer__shortcut .shortcut__group a:hover {
+  color: #fff;
 }
 
 /*# sourceMappingURL=index.css.map */
