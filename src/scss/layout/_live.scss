@@ -44,19 +44,7 @@ section {
 
 
 
-li {
-  
-  transition: transform 150ms ease-in-out 50ms;
-  // flex-shrink: 0;
-  // flex-basis: content;
-  display: inline;
-}
-
-li:hover {
-  // margin-top: -12px;
-  transform: translateY(0);
-
-}
+//li에 공통으로 주었던 이기적인 트랜스폼 제거 했습니다.
 
 h2 {
   padding-top: rem(12px);
@@ -93,12 +81,27 @@ h2 {
       
     
   } 
- 
   &__list {
-    transform: translateY(12px);
     counter-increment: number;
+    display: inline;
+    
+    @at-root .only__list {
+    transition: transform 150ms ease-in-out 50ms;
+    // flex-shrink: 0;
+    // flex-basis: content;
+    transform: translateY(12px);
     flex-grow: 0;
+    }
+
   }
+  &__list:hover {
+    @at-root .only__list {
+    transform: translateY(0);
+    }
+  }
+  
+ 
+
   &__rank {
   padding-right: 5px;
   

@@ -31,37 +31,85 @@
   gap: 16px;
 }
 // 푸터 컨텐츠 ------------------------------
+.hr__divLine {
+  color: $gray800;
+// 구분선 컬러
+}
 
 .footer {
-  &__wrapper {
-    background: yelloW;
 
-  }
-  &__area {
+  &__hrList {
+    display: block;
     
-    background: black;
-    border: 10px solid red;
-  }
+    
+    
+   }
+   &__information {
+    color: $gray200;
+   }
+  &__notice {
+    color: $gray500;
 
+  } 
+
+  
   &__wrapper {
     @include flexbox ($justify: space-between);  
     border-bottom: 1px solid #212121;
-    padding-bottom: rem(12px);
-    background: red;
+   
   }
   
+  &__hrContainer {
+    color: $gray200;
+  }
+  &__sprite {
+    @include flexbox ;
+    
+    
+  }
+  &__ownerinfoContainer {
+    color: $gray500;
+  }
+  &__copyright {
+    color: #6b6b6b;
+  }
+  &__directLink {
+    @include flexbox ($justify: flex-end);
 
+  }
+  
   @include mobileW {
     &__area {
       @include paddingSquare (52, 16, 82, 16);
-    font: $par-sm;
+      font: $par-sm;
     }
     &__direct {
       display: none;
     }
+    &__ownerinfoContainer {
+      display: none;
+      
+    }
+    &__hrContainer {
+      @include flexbox ($direction: column);
+      
+    }
+    &__hrList {
+     margin-top: rem(12px);
+    }
+    
+    &__sprite {
+      @include marginY (12px);
+      
+    }
+    &__wrapper {
+      padding-bottom: rem(12px);
+    }
+    } 
+  
 
-  }
-
+  
+  
   @include tabletW {
     
 
@@ -75,7 +123,23 @@
       gap: 60px;
       justify-content: flex-end;
     }
-
+    &__wrapper {
+      padding-bottom: rem(16px);
+    }
+    &__hrContainer {
+      @include flexbox;
+      
+    }
+    &__hrList {
+      margin-right: rem(20px);
+      margin-top: rem(16px);
+     }
+     &__ownerinfoContainer {
+      @include marginY (12px);
+    }
+    &__copyright {
+      margin-top: rem(12px);
+    }
   }
   @include desktopW {
     
@@ -89,80 +153,97 @@
         gap: 60px;
         justify-content: flex-end;
       }
+      &__hrContainer {
+        @include flexbox;
+        
+      }
+      &__hrList {
+        margin-right: rem(36px);
+        margin-top: rem(27px);
+       }
+       &__ownerinfoContainer {
+        @include marginY (24px);
+      }
+      &__copyright {
+        margin-top: rem(24px);
+      }
+  }
 
+}
+
+
+.sprite {
+  border-radius: 50%;
+  
+
+  
+  
+@include mobileW {
+   & {
+    width: rem(24px);
+    height: rem(24px);
+    margin-right: rem(8px);
+    
+  }
+
+  &__youtube {
+    @include spriteBox__header(24px, 24px, 0, -791px);
+  }
+  &__instagram {
+    @include spriteBox__header(24px, 24px, -112px, -791px);
+  }
+  &__twitter {
+    @include spriteBox__header(24px, 24px, -224px, -791px);
+  }
+  &__facebook {
+    @include spriteBox__header(24px, 24px, -336px, -791px);
+  }
+}
+@include tabletW {
+  & {
+    width: rem(30px);
+    height: rem(30px);
+    margin-right: rem(8px);
+    
+  }
+
+  &__youtube {
+    @include spriteBox__header(30px, 30px, 0, -835px);
+  }
+  &__instagram {
+    @include spriteBox__header(30px, 30px, -112px, -835px);
+  }
+  &__twitter {
+    @include spriteBox__header(30x, 30px, -224px, -835px);
+  }
+  &__facebook {
+    @include spriteBox__header(30px, 30px, -336px, -835px);
   }
 
 
+}
+@include desktopW {
+  & {
+    width: rem(52px);
+    height: rem(52px);
+    margin-right: rem(20px);
+    
+  }
+
+
+  &__youtube {
+    @include spriteBox__header(52px, 52px, 0, -885px);
+  }
+  &__instagram {
+    @include spriteBox__header(52px, 52px, -112px, -885px);
+  }
+  &__twitter {
+    @include spriteBox__header(52px, 52px, -224px, -885px);
+  }
+  &__facebook {
+    @include spriteBox__header(52px, 52px, -336px, -885px);
+  }
 
 }
 
-.footer__notice {
-  color: #6b6b6b;
-  gap: 20px;
-}
-
-.footer__information {
-  color: #c4c4c4;
-}
-
-
-
-.footer__groupDirect {
-  display: flex;
-  gap: 60px;
-}
-
-
-.footer__menu {
-  display: flex;
-  padding-top: 27px;
-  gap: 24px;
-  padding-bottom: 24px;
-  color: #c4c4c4;
-}
-
-.footer__copyright__box {
-  color: #6b6b6b;
-  padding-bottom: 24px;
-}
-
-.footer__sprite {
-  width: 268px;
-  height: 52px;
-  display: flex;
-  gap: 20px;
-}
-
-.footer__sprite li {
-  list-style: none;
-  border-radius: 30px;
-}
-
-.youtube {
-  width: 52px;
-  height: 52px;
-  background: url(./../../images/sprite__icon_footer.png) no-repeat 0 -885px;
-}
-
-.instagram {
-  width: 52px;
-  height: 52px;
-  background: url(./../../images/sprite__icon_footer.png) no-repeat -112px -885px;
-}
-
-.twitter {
-  width: 52px;
-  height: 52px;
-  background: url(./../../images/sprite__icon_footer.png) no-repeat -224px -885px;
-}
-
-.facebook {
-  width: 52px;
-  height: 52px;
-  background: url(./../../images/sprite__icon_footer.png) no-repeat -336px -885px;
-}
-
-.footer__copyright {
-  color: #6b6b6b;
-  padding-top: 24px;
 }
