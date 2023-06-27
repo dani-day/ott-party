@@ -9,6 +9,7 @@ body {
 
 /* 유연한 미디어 */
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
