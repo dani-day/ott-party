@@ -637,10 +637,10 @@ body {
   display: inline-block;
   margin-top: 0.625rem;
   margin-left: 0.3125rem;
-  flex-shrink: 0;
   background: #ff153c no-repeat;
   border-radius: 50%;
   content: "";
+  flex-shrink: 0;
   width: 0.625rem;
   height: 0.625rem;
 }
