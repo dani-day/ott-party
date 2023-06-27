@@ -2,13 +2,14 @@
 @use "./../utils/color" as *;
 
 //mixin.scss
-@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap) {
+@use "./unit" as *;
+
+@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap,$gap:0) {
   display: flex;
   flex-flow: $direction $wrap;
   justify-content: $justify;
   align-items: $items;
-  
-
+  gap: rem($gap);
 }
 
 // position
@@ -18,14 +19,14 @@
 
 @mixin posLeftTop($l: 0, $t: 0) {
   @include pos;
-  top: $t;
-  left: $l;
+  top: rem($t);
+  left: rem($l);
 }
 
 @mixin posRightTop($r: 0, $t: 0) {
   @include pos;
-  top: $t;
-  right: $r;
+  top: rem($t);
+  right: rem($r);
 }
 
 @mixin posCenterX {
@@ -121,3 +122,20 @@
 
 }
 
+
+@mixin spriteImg__header($x,$y) {
+  background-image: url(./../../images/sprite__icon.png);
+  background-repeat: no-repeat;
+  background-position: rem($x) rem($y);
+}
+@mixin spriteBox__header($w,$h,$x,$y){
+  width: rem($w);
+  height: rem($h);
+  @include spriteImg__header($x,$y);
+}
+@mixin button__header {
+  display: block; 
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}

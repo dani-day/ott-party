@@ -12,28 +12,214 @@
     <meta name="keywords" content="티빙, ott, 방송, 영화, 드라마, 해외시리즈" />
     <meta name="author" content="팔이피플" />
     <meta name="description" content="TVING 홈페이지입니다." />
-    <link rel="icon" href="/" />
+<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-touch-icon.png" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <meta name="theme-color" content="#000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TVING</title>
-    <link
-      rel="preload"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
       rel="stylesheet"
-    />
-
+    /><link rel="preload" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
     <link rel="stylesheet" href="/style/index.css" />
-   
-    </head>
-    <body>
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__logo">
+        <a class="header__logo__link" href="/">
+          <span class="a11yHidden">티빙 로고</span>
+        </a>
+      </h1>
+      <nav class="header__nav">
+        <ul class="header__nav__program">
+          <li><a class="program__live" href="/"><div class="live__img"></div>실시간</a></li>
+          <li><a class="program__tv" href="/">TV프로그램</a></li> 
+          <li><a class="program__movie" href="/">영화</a></li>
+          <li><a class="program__paramount" href="/"><span class="a11yHidden">파라마운트플러스</span></a></li>
+        </ul>
+        <ul class="header__nav__search">
+          <li class="header__search__icon">
+            <button class="search__button"><span class="a11yHidden">검색</span></button>
+          </li>
+          <li class="header__user__icon">
+            <div class="user__info__wrapper">
+              <button class="user__button"><span class="a11yHidden">사용자정보</span></button>
+              <div class="user">
+                <div class="user__info">
+                  <div class="user__title">
+                    <div class="user__img"></div>
+                    <div>
+                      <div class="user__name">홍길동</div>
+                      <div class="user__change"><a href="/">프로필 전환 &gt;</a></div>
+                    </div>
+                  </div>
+                  <div class="user__only">
+                    <ul class="user__only__list">
+                      <li><a href="/">MY</a></li>
+                      <li><a href="/">이용권</a></li> 
+                      <li><a href="/">쿠폰등록</a></li>
+                      <li><a href="/">고객센터</a></li>
+                      <li><a href="/">로그아웃</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="search">
+       <div class="search__form">
+        <form action="/" method="GET">
+          <label for="searchResult"></label>
+          <input class="search__input" type="search" name="search" id="searchResult" placeholder="TV프로그램, 영화 제목 및 출연진을로 검색해보세요" autocomplete="off"/>
+          <button class="search__submit" type="submit"></button>
+         </form>
+       </div>
+       <div class="search__wrapper">
+        <div class="search__recent">
+          <p class="search__title">최근 검색어</p>
+          <ul class="search__result">
+            <li>검색 내역이 없습니다.</li>
+          </ul>
+        </div>
+        <div class="search__hot">
+          <p class="search__title">실시간 인기 검색어</p>
+          <ol class="search__list">
+            <li><a href="/">재벌집 막내아들</a></li>
+            <li><a href="/">미스터트롯2: 새로운 전설의 시작</a></li>
+            <li><a href="/">유 퀴즈 온 더 블록</a></li>
+            <li><a href="/">대행새</a></li>
+            <li><a href="/">SHOW ME THE MONEY 11</a></li>
+            <li><a href="/">미씽: 그들이 있었다2</a></li>
+            <li><a href="/">술꾼도시여자들2</a></li>
+            <li><a href="/">캐나다 체크인</a></li>
+            <li><a href="/">미씽: 그들이 있었다 - 그들은 다만나다</a></li>
+            <li><a href="/">술꾼도시여자들2</a></li>
+          </ol>
+          <div class="search__today">
+            <span class="search__date"></span> <span class="search__time"></span> <span>기준</span>
+          </div>
+        </div>
+       </div>
+    </div>
+    <main class="mainPage">
+      <section class="banner">
+        <h2 class="banner__title a11yHidden" aria-hidden="true">배너 이미지</h2>
+        <div class="banner__container">
+          <img class="banner__image opa1" src="./images/banner01__header.png" aria-hidden="false" alt="배너 이미지" />  
+          <button class="banner__prev" aria-label="이전배너"></button>
+          <button class="banner__next" aria-label="다음배너"></button>
+          <div class="banner__info">
+            <p class="banner__subtext">리얼 초밀착 법정 드라마</p>
+            <div class="banner__play">
+              <button class="banner__play__btn" aria-label="재생버튼"></button>
+              <button class="banner__stop__btn" aria-label="멈춤버튼"></button>
+              <button class="banner__shorcut is--active"  aria-label="1번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="2번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="3번째 배너이미지"></button>
+              <button class="banner__shorcut" aria-label="4번째 배너이미지"></button>
+            </div> 
+          </div>
+          <a class="banner__more" href="/">자세히보기</a>
+        </div>
+      </section> 
+      <section class="must">
+         <h2 class="must__title">
+          티빙에서 꼭 봐야하는 컨텐츠
+         </h2>
+         <div class="must__list__wrapper">
+          <ul class="must__list">
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/treasure_must.png" alt="보물찾기" />
+                  <p class="must__imgTitle">보물찾기</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/lovecatcher_must.png" alt="러브캐처 인 발리" />
+                  <p class="must__imgTitle">러브캐처 인 발리</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
+                  <p class="must__imgTitle">술꾼도시여자들2</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/king_must.png" alt="털사 킹" />
+                  <p class="must__imgTitle">털사 킹</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
+                  <p class="must__imgTitle">아무것도 하고 싶지 않아</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/blackdog_must.png" alt="블랙독" />
+                  <p class="must__imgTitle">블랙독</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/our_must.png" alt="우리들의 블루스" />
+                  <p class="must__imgTitle">우리들의 블루스</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
+                  <p class="must__imgTitle"><span>킬리만자로</span></p>
+                </div>
+              </a>
+            </li>
+           </ul>
+         </div>
+      </section>
+      <section class="sportsLive__title">
+        <h2 class="a11yHidden">티빙 스포츠 생중계</h2>
+        <div>
+          <img src="./images/sportsLive_footer.png" alt="티빙 스포츠 생중계 바로가기" />
+        </div>
+      </section>
+      <section class="footer__event">
+        <h2 class="footer__event__menu">이벤트</h2>
+        <ul class="footer__event__list">
+          <li><a href="/"><img src="./images/sinbi_footer.png" alt="신비 아파트 바로가기" /></a></li>
+          <li><a href="/"><img src="./images/richSon_footer.png" alt="재벌집 막내아들 바로가기" /></a></li>
+          <li><a href="/"><img src="./images/love3_footer.png" alt="환승연애, 각자의 본능대로,러브개처 바로가기" /></a></li>
+          <li><a href="/"><img src="./images/shrup_footer.png" alt="슈룹 바로가기" /></a></li>
+          <li><a href="/"><img src="./images/koreanDessertMaker_footer.png" alt="대한민국 대표 디저트 메이커 바로가기" /></a></li>
+          <li><a href="/"><img src="./images/letmiin_footer.png" alt="렛미인 바로가기" /></a></li>
+        </ul>
+      </section>
       <!---------------------- 3 live start--------------------->
       <section class="live live__wrapper">
         <h2 class="live__title">인기 LIVE 채널</h2>
@@ -256,87 +442,63 @@
         </div>
       </section>
        <!---------------------- 3 live end--------------------->
-      
-      <!-- 티빙 스포츠 생중계 -->
-      <section class="sportsLive__title">
-        <h2 class="a11yHidden">티빙 스포츠 생중계</h2>
-        <div>
-          <img src="./images/sportsLive_footer.png" alt="티빙 스포츠 생중계 바로가기" />
-        </div>
-      </section>
-      
-      <!-- 이벤트 -->
-      <section class="footer__event">
-        <h2 class="footer__event__menu">이벤트</h2>
-        <ul class="footer__event__list">
-          <li><a href="/"><img src="./images/sinbi_footer.png" alt="신비 아파트 바로가기" /></a></li>
-          <li><a href="/"><img src="./images/richSon_footer.png" alt="재벌집 막내아들 바로가기" /></a></li>
-          <li><a href="/"><img src="./images/love3_footer.png" alt="환승연애, 각자의 본능대로,러브개처 바로가기" /></a></li>
-          <li><a href="/"><img src="./images/shrup_footer.png" alt="슈룹 바로가기" /></a></li>
-          <li><a href="/"><img src="./images/koreanDessertMaker_footer.png" alt="대한민국 대표 디저트 메이커 바로가기" /></a></li>
-          <li><a href="/"><img src="./images/letmiin_footer.png" alt="렛미인 바로가기" /></a></li>
-        </ul>
-      </section>
-      
-      <!-- 공지사항 -->
-      <footer class="footer__announcements">
-      
-        <h2 class="a11yHidden">공지사항</h2>
-        <div class="footer__wrapper">
-          <div class="footer__notice__link">
-            <a href="/" class="footer__notice">공지사항</a>
-            <a href="/" class="footer__information">[안내] 합병보고 주주총회에 갈음하는 공고</a>
-          </div>
-          <div class="footer__barogagi">
-            <ul class="footer__barogagi__list">
-              <li><a href="/">브랜드 바로가기 +</a></li>
-              <li><a href="/">그룹 계열사 바로가기 +</a></li>
-            </ul>
-          </div>
-        </div>
-      
-        <ul class="footer__menu">
-          <li><a href="/">고객센터</a></li>
-          <li><a href="/">이용약관</a></li>
-          <li><a href="/">개인정보처리방침</a></li>
-          <li><a href="/">청소년 보호정책</a></li>
-          <li><a href="/">법적 고지</a></li>
-          <li><a href="/">이벤트</a></li>
-          <li><a href="/">인재채용</a></li>
-        </ul>
-        <div class="footer__copyright__box">
-          <p>
-            <span>대표이사: YANG JIEUL</span>
-            <a href="/">사업자정보확인</a>
-            <span>사업자등록번호: 188-88-01893</span>
-            <span>통신판매신고번호:2020-서울마포-3641호</span>
-          </p>
-          <p>
-            <span>사업장: 서울특별시 마포구 상암산로 34, DMC 디지털큐브 15층(상암동)</span>
-            <span>호스팅사업자: 씨제이올리브네트윅스(주)</span>
-          </p>
-            <a href="/">고객문의 바로가기</a>
-            <a href="/">대표메일: tving@cj.net</a>
-            <a href="/">고객센터: 1670-1525(평일/주말 09~18시, 공휴일 휴무)</a>
-          </p>
-          <p>
-            <span>ENM 시청자 상담실 (편성 문의 및 시청자 의견): 080-080-0780 </span>
-            <span>Mnet 고객센터 (방송편성문의): 1855-1631</span>
-          </p>
-        </div>
-      
-        <!-- 바로가기 -->
-        <ul class="footer__sprite">
-          <li class="sprite youtube"><a href="/"></a></li>
-          <li class="sprite instagram"><a href="/"></a></li>
-          <li class="sprite twitter"><a href="/"></a></li>
-          <li class="sprite facebook"><a href="/"></a></li>
-        </ul>
-        <div class="footer__copyright">
-          <small class="footer__copyrigt__text">Copyright © 주식회사 티빙 All right reserved.</small>
-        </div>
-      </footer>
 
-      
-    </body>
-    </html>
+
+
+    </main>
+    <footer class="footer__announcements">
+      <h2 class="a11yHidden">공지사항</h2>
+      <div class="footer__wrapper">
+        <div class="footer__notice__link">
+          <a href="/" class="footer__notice">공지사항</a>
+          <a href="/" class="footer__information">[안내] 합병보고 주주총회에 갈음하는 공고</a>
+        </div>
+        <div class="footer__barogagi">
+          <ul class="footer__barogagi__list">
+            <li><a href="/">브랜드 바로가기 +</a></li>
+            <li><a href="/">그룹 계열사 바로가기 +</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="footer__menu">
+        <li><a href="/">고객센터</a></li>
+        <li><a href="/">이용약관</a></li>
+        <li><a href="/">개인정보처리방침</a></li>
+        <li><a href="/">청소년 보호정책</a></li>
+        <li><a href="/">법적 고지</a></li>
+        <li><a href="/">이벤트</a></li>
+        <li><a href="/">인재채용</a></li>
+      </ul>
+      <div class="footer__copyright__box">
+        <p>
+          <span>대표이사: YANG JIEUL</span>
+          <a href="/">사업자정보확인</a>
+          <span>사업자등록번호: 188-88-01893</span>
+          <span>통신판매신고번호:2020-서울마포-3641호</span>
+        </p>
+        <p>
+          <span>사업장: 서울특별시 마포구 상암산로 34, DMC 디지털큐브 15층(상암동)</span>
+          <span>호스팅사업자: 씨제이올리브네트윅스(주)</span>
+        </p>
+          <a href="/">고객문의 바로가기</a>
+          <a href="/">대표메일: tving@cj.net</a>
+          <a href="/">고객센터: 1670-1525(평일/주말 09~18시, 공휴일 휴무)</a>
+        </p>
+        <p>
+          <span>ENM 시청자 상담실 (편성 문의 및 시청자 의견): 080-080-0780 </span>
+          <span>Mnet 고객센터 (방송편성문의): 1855-1631</span>
+        </p>
+      </div>
+      <ul class="footer__sprite">
+        <li class="sprite youtube"><a href="/"></a></li>
+        <li class="sprite instagram"><a href="/"></a></li>
+        <li class="sprite twitter"><a href="/"></a></li>
+        <li class="sprite facebook"><a href="/"></a></li>
+      </ul>
+      <div class="footer__copyright">
+        <small class="footer__copyrigt__text">Copyright © 주식회사 티빙 All right reserved.</small>
+      </div>
+    </footer>
+  </body>
+</html> 
+
