@@ -1,24 +1,32 @@
 //font.scss
+@use "./unit" as *;
+
+$font-sm: rem(12px);
+$font-md: rem(16px);
+$font-lg: rem(21px);
+$font-xl: rem(28px);
+$font-xxl: rem(37px);
+$font-xxxl: rem(50px);
 
 //heading
-$heading-md: normal 700 16px / 1.4 pretendard;
-$heading-lg: normal 700 21px / 1.4 pretendard;
-$heading-xl: normal 700 28px / 1.4 pretendard;
-$heading-xxl: normal 700 37px / 1.4 pretendard;
-$heading-xxxl: normal 700 50px / 1.4 pretendard;
+$heading-md: normal 700 #{$font-md} / 1.4 pretendard;
+$heading-lg: normal 700 #{$font-lg} / 1.4 pretendard;
+$heading-xl: normal 700 #{$font-xl} / 1.4 pretendard;
+$heading-xxl: normal 700 #{$font-xxl} / 1.4 pretendard;
+$heading-xxxl: normal 700 #{$font-xxxl} / 1.4 pretendard;
 
 //label
-$label-sm: normal 600 12px / 1.5 pretendard;
-$label-md: normal 600 16px / 1.5 pretendard;
-$label-lg: normal 600 21px / 1.5 pretendard;
-$label-xl: normal 600 28px / 1.5 pretendard;
-$label-xxl: normal 600 37px / 1.5 pretendard;
+$label-sm: normal 600 #{$font-sm} / 1.5 pretendard;
+$label-md: normal 600 #{$font-md} / 1.5 pretendard;
+$label-lg: normal 600 #{$font-lg} / 1.5 pretendard;
+$label-xl: normal 600 #{$font-xl} / 1.5 pretendard;
+$label-xxl: normal 600 #{$font-xxl} / 1.5 pretendard;
 
 //paragraph
-$par-sm: normal 400 12px / 1.6 pretendard;
-$par-md: normal 400 16px / 1.6 pretendard;
-$par-lg: normal 400 21px / 1.6 pretendard;
-$par-xl: normal 400 28px / 1.6 pretendard;
+$par-sm: normal 400 #{$font-sm} / 1.6 pretendard;
+$par-md: normal 400 #{$font-md} / 1.6 pretendard;
+$par-lg: normal 400 #{$font-lg} / 1.6 pretendard;
+$par-xl: normal 400 #{$font-xl} / 1.6 pretendard;
 
 $header-font: $par-lg;
 $title-font: $heading-xl;
