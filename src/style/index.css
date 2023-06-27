@@ -1463,19 +1463,22 @@ body {
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod,
   .popShow {
-    padding-left: 8px;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .qVod,
   .popShow {
-    padding-left: 40px;
+    padding-left: 2.5rem;
+    padding-bottom: 1.75rem;
   }
 }
 @media (min-width: 1920px) {
   .qVod,
   .popShow {
-    padding-left: 70px;
+    padding-left: 4.375rem;
+    padding-bottom: 2.25rem;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -1521,24 +1524,27 @@ body {
 }
 .qVod__title,
 .popShow__title {
-  margin-bottom: 0.75rem;
+  color: #fff;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod__title,
   .popShow__title {
     font: normal 600 0.75rem/1.5 pretendard;
+    margin-bottom: 0.25rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .qVod__title,
   .popShow__title {
     font: normal 700 1rem/1.4 pretendard;
+    margin-bottom: 0.5rem;
   }
 }
 @media (min-width: 1920px) {
   .qVod__title,
   .popShow__title {
     font: normal 700 1.75rem/1.4 pretendard;
+    margin-bottom: 0.75rem;
   }
 }
 .qVod__name,
@@ -1595,6 +1601,7 @@ body {
   left: 0.3125rem;
   background: #c73e4e;
   border-radius: 0.25rem;
+  color: #fff;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod__quick {
@@ -2082,25 +2089,37 @@ h2 {
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .footer__event {
-    font: normal 600 0.75rem/1.5 pretendard;
     padding-left: 8px;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .footer__event {
-    font: normal 700 1rem/1.4 pretendard;
     padding-left: 40px;
   }
 }
 @media (min-width: 1920px) {
   .footer__event {
-    font: normal 700 1.75rem/1.4 pretendard;
     padding-left: 70px;
   }
 }
 .footer__eventTitle {
   color: #fff;
   padding-bottom: 12px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__eventTitle {
+    font: normal 600 0.75rem/1.5 pretendard;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__eventTitle {
+    font: normal 700 1rem/1.4 pretendard;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__eventTitle {
+    font: normal 700 1.75rem/1.4 pretendard;
+  }
 }
 
 .footer__eventList {

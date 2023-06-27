@@ -4,7 +4,6 @@
 //viewport 전체 기본 배경 및 폰트 색상 (black)
 body {
   background: $base-bg;
-  // color: $base-text;
 }
 
 //Quick VOD, 실시간 인기 프로그램 Section 공통 사항
@@ -14,13 +13,16 @@ body {
   overflow: hidden;
 
   @include mobileW {
-    padding-left: 8px;
+    padding-left: rem(8px);
+    padding-bottom: rem(16px);
   }
   @include tabletW {
-    padding-left: 40px;
+    padding-left: rem(40px);
+    padding-bottom: rem(28px);
   }
   @include desktopW {
-    padding-left: 70px;
+    padding-left: rem(70px);
+    padding-bottom: rem(36px);
   }
 
   &__list {
@@ -49,16 +51,19 @@ body {
 
   //section 제목, 시리즈 이름, 이미지 공통 기본 스타일링
   &__title {
-    margin-bottom: rem(12px);
+    color: $base-text;
 
     @include mobileW {
       font: $label-sm;
+      margin-bottom: rem(4px);
     }
     @include tabletW {
       font: $heading-md;
+      margin-bottom: rem(8px);
     }
     @include desktopW {
       font: $heading-xl;
+      margin-bottom: rem(12px);
     }
   }
 
@@ -109,6 +114,7 @@ body {
     @include posLeftTop(5px, 5px);
     background: #c73e4e;
     border-radius: rem(4px);
+    color: $base-text;
 
     @include mobileW {
       @include paddingX(6px);

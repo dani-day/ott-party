@@ -19,21 +19,27 @@
 .footer__event {
   overflow: hidden;
   @include mobileW {
-    font: $label-sm;
     padding-left: 8px;
   }
   @include tabletW {
-    font: $heading-md;
     padding-left: 40px;
   }
   @include desktopW {
-    font: $heading-xl;
     padding-left: 70px;
   }
 
   @at-root .footer__eventTitle {
     color: $white;
     padding-bottom: 12px;
+    @include mobileW {
+      font: $label-sm;
+    }
+    @include tabletW {
+      font: $heading-md;
+    }
+    @include desktopW {
+      font: $heading-xl;
+    }
   }
 
   @at-root .footer__eventList {
