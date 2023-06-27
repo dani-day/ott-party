@@ -1,11 +1,5 @@
 // 모바일 크기일때 유저 정보 클릭
-let userBtn = document.querySelector(".user__button");
-let user = document.querySelector(".user");
-if(window.innerWidth < 768) {
-  userBtn.addEventListener("click",()=>{
-    user.classList.toggle("is--active");
-  })
-}
+// 모달창 오버레이 뒤쪽 클릭 제어
 
 // 검색 모달창
 let searchBtn = document.querySelector(".search__button");
@@ -95,7 +89,7 @@ stop.addEventListener("click", ()=>{
     subtext.innerHTML = subtextArr[imgNum]
   },5000)
 })
-// 캐러샐 자동 함수 
+// 캐러샐 자동
 let autoBanner = setInterval(()=>{
   imgNum++;
   if(imgNum == 4) {

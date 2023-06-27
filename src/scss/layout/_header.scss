@@ -593,42 +593,43 @@ body {
 
 // section must
 .must {
+  overflow: hidden;
   &__title {
     color: $base-text;
      @include desktopW{
       font: $heading-xl;
       margin-bottom: rem(12px);
-      padding-left: 70px;
+      padding-left: rem(70px);
      }
      @include tabletW{ 
       font: $heading-lg;
       margin-bottom: rem(8px);
-      padding-left: 40px;
+      padding-left: rem(40px);
      }
      @include mobileW{
       font: $heading-md;
       margin-bottom: rem(4px);
-      padding-left: 8px;
+      padding-left: rem(8px);
      }
   }
   &__list {
-    overflow: hidden;
     @include desktopW {
       @include flexbox($gap: 16px);
-      padding-left: 70px;
+      padding-left: rem(70px);
     }
     @include tabletW {
       @include flexbox($gap: 8px);
-      padding-left: 40px;
+      padding-left: rem(40px);
     }
     @include mobileW {
       @include flexbox($gap: 7px);
-      padding-left: 8px;
+      padding-left: rem(8px);
     }
   }
   &__item {
     @include flexbox;
-    margin-bottom: 16px;
+    margin-bottom: rem(16px);
+    transition: transform 300ms;
 
     @include desktopW {
       min-width: rem(240px);
@@ -639,15 +640,18 @@ body {
     @include mobileW {
       min-width: rem(92px);
     }
+    &:hover{ 
+      transform: translateY(-10px);
+    }
   }
   &__imgTitle {
     color: $base-text;
     @include desktopW{
-      margin-top: 8px;
+      margin-top: rem(8px);
       font:$label-lg;
     }
     @include tabletW{
-      margin-top: 4 px;
+      margin-top: rem(4px);
       font:$par-sm;
     }
     @include mobileW{

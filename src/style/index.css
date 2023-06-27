@@ -1333,6 +1333,9 @@ body {
   border-color: #fff;
 }
 
+.must {
+  overflow: hidden;
+}
 .must__title {
   color: #fff;
 }
@@ -1340,25 +1343,22 @@ body {
   .must__title {
     font: normal 700 1.75rem/1.4 pretendard;
     margin-bottom: 0.75rem;
-    padding-left: 70px;
+    padding-left: 4.375rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .must__title {
     font: normal 700 1.3125rem/1.4 pretendard;
     margin-bottom: 0.5rem;
-    padding-left: 40px;
+    padding-left: 2.5rem;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .must__title {
     font: normal 700 1rem/1.4 pretendard;
     margin-bottom: 0.25rem;
-    padding-left: 8px;
+    padding-left: 0.5rem;
   }
-}
-.must__list {
-  overflow: hidden;
 }
 @media (min-width: 1920px) {
   .must__list {
@@ -1367,7 +1367,7 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     gap: 1rem;
-    padding-left: 70px;
+    padding-left: 4.375rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
@@ -1377,7 +1377,7 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     gap: 0.5rem;
-    padding-left: 40px;
+    padding-left: 2.5rem;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -1387,7 +1387,7 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     gap: 0.4375rem;
-    padding-left: 8px;
+    padding-left: 0.5rem;
   }
 }
 .must__item {
@@ -1396,7 +1396,8 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   gap: 0rem;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  transition: transform 300ms;
 }
 @media (min-width: 1920px) {
   .must__item {
@@ -1413,18 +1414,21 @@ body {
     min-width: 5.75rem;
   }
 }
+.must__item:hover {
+  transform: translateY(-10px);
+}
 .must__imgTitle {
   color: #fff;
 }
 @media (min-width: 1920px) {
   .must__imgTitle {
-    margin-top: 8px;
+    margin-top: 0.5rem;
     font: normal 600 1.3125rem/1.5 pretendard;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .must__imgTitle {
-    margin-top: 4 px;
+    margin-top: 0.25rem;
     font: normal 400 0.75rem/1.6 pretendard;
   }
 }
