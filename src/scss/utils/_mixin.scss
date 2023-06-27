@@ -1,9 +1,14 @@
+@use "./../utils/unit" as *;
+@use "./../utils/color" as *;
+
 //mixin.scss
 @mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap) {
   display: flex;
   flex-flow: $direction $wrap;
   justify-content: $justify;
   align-items: $items;
+  
+
 }
 
 // position
@@ -94,3 +99,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+//신명화 믹스인
+@mixin number__live ($fontSize: 70px, $fontWeight: 700, $lineHeight: 60){
+  //320 - 34 , 46 ,70 
+ 
+    padding: 0;
+    position: absolute;
+    content: counter(number);
+    color: $base-text;
+    font-family: Noto Sans KR;
+    transform: translate(-50%, -50%) skew(-7.5deg);
+    font-size: rem($fontSize);
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    // 
+    left: 8%;
+    top: 35%; 
+   
+  
+
+}
+
