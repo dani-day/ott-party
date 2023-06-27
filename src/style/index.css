@@ -1777,27 +1777,19 @@ body {
   }
 }
 
-section {
-  overflow: hidden;
-  width: 100vw;
-}
-
 @media (min-width: 320px) and (max-width: 767px) {
   .paddingBox {
     padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .paddingBox {
     padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 }
 @media (min-width: 1920px) {
   .paddingBox {
     padding-left: 4.375rem;
-    padding-right: 4.375rem;
   }
 }
 
@@ -1825,16 +1817,6 @@ h2 {
   counter-increment: number;
   display: inline;
 }
-.only__list {
-  transition: transform 150ms ease-in-out 50ms;
-  transform: translateY(12px);
-  flex-grow: 0;
-}
-
-.only__list {
-  transform: translateY(0);
-}
-
 .live__rank {
   padding-right: 5px;
 }

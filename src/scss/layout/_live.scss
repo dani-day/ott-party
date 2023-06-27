@@ -11,11 +11,25 @@
 
 
 section {
-  overflow: hidden;
-  width: 100vw;
+  // overflow: hidden;
+  // width: 100vw;
 }
 
+// todo / li에 넣은 트랜지션 믹스인으로 통일 하자고 제안하기
 
+// li {
+//   transition: transform 150ms ease-in-out 50ms;
+//   // flex-shrink: 0;
+//   // flex-basis: content;
+//   transform: translateY(12px);
+//   // flex-grow: 0;
+//   }
+
+
+// li:hover 
+//   {
+//   transform: translateY(0);
+//   }
 
 .paddingBox {
   // @include flexbox;
@@ -26,17 +40,17 @@ section {
   
 
   @include mobileW {
-    @include paddingX (8px);
-    
+    // @include paddingX (8px);
+    padding-left: rem(8px);
     
   }
   @include tabletW {
-    @include paddingX (40px);
-    
+    // @include paddingX (40px);
+    padding-left: rem(40px);
   }
   @include desktopW {
-    @include paddingX (70px);
-    
+    // @include paddingX (70px);
+    padding-left: rem(70px);
   }
 
 
@@ -85,19 +99,7 @@ h2 {
     counter-increment: number;
     display: inline;
     
-    @at-root .only__list {
-    transition: transform 150ms ease-in-out 50ms;
-    // flex-shrink: 0;
-    // flex-basis: content;
-    transform: translateY(12px);
-    flex-grow: 0;
-    }
-
-  }
-  &__list:hover {
-    @at-root .only__list {
-    transform: translateY(0);
-    }
+    
   }
   
  
