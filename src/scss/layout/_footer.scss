@@ -2,72 +2,107 @@
 
 // 티빙 스포츠 생중계
 
-
 // *{
 //   background: rgb(0, 0, 0);
 //   font: Pretendard;
 // }
 
-
 // html {
 //   font-size: calc(8px + .5vw);
 // }
 // 이벤트라인
-.sportsLive__title {
-  padding: 36px 70px 36px 70px;
+.sports__live {
+  @include paddingY(36px);
+  @include mobileW {
+    @include paddingX(8px);
+  }
+  @include tabletW {
+    @include paddingX(40px);
+  }
+  @include desktopW {
+    @include paddingX(70px);
+  }
 }
 
-.footer__event__menu {
-  color: $white;
-  font: $heading-xl;
-  padding-bottom: 12px;
-  padding-left: 70px;
+.footer__event {
+  overflow: hidden;
+  @include mobileW {
+    font: $label-sm;
+    padding-left: 8px;
+  }
+  @include tabletW {
+    font: $heading-md;
+    padding-left: 40px;
+  }
+  @include desktopW {
+    font: $heading-xl;
+    padding-left: 70px;
+  }
+
+  @at-root .footer__eventTitle {
+    color: $white;
+    padding-bottom: 12px;
+  }
+
+  @at-root .footer__eventList {
+    display: block;
+    padding-bottom: 36px;
+    @include mobileW {
+      @include flexbox($gap: 7px);
+    }
+    @include tabletW {
+      @include flexbox($gap: 8px);
+    }
+    @include desktopW {
+      @include flexbox($gap: 16px);
+    }
+  }
+
+  @at-root .eventList__item {
+    @include mobileW {
+      min-width: rem(145px);
+    }
+    @include tabletW {
+      min-width: rem(214px);
+    }
+    @include desktopW {
+      min-width: rem(346px);
+    }
+  }
 }
 
-.footer__event__list {
-  display: flex;
-  padding-left: 70px;
-  padding-bottom: 36px;
-  gap: 16px;
-}
 // 푸터 컨텐츠 ------------------------------
 
 .footer {
   &__wrapper {
     background: yelloW;
-
   }
   &__area {
-    
     background: black;
     border: 10px solid red;
   }
 
   &__wrapper {
-    @include flexbox ($justify: space-between);  
+    @include flexbox($justify: space-between);
     border-bottom: 1px solid #212121;
     padding-bottom: rem(12px);
     background: red;
   }
-  
 
   @include mobileW {
     &__area {
-      @include paddingSquare (52, 16, 82, 16);
-    font: $par-sm;
+      @include paddingSquare(52, 16, 82, 16);
+      font: $par-sm;
     }
     &__direct {
       display: none;
     }
-
   }
 
   @include tabletW {
-    
-
     &__area {
-      @include paddingSquare (70, 40, 100, 40);
-    font: $par-sm;
+      @include paddingSquare(70, 40, 100, 40);
+      font: $par-sm;
     }
     &__direct {
       display: flex;
@@ -75,25 +110,19 @@
       gap: 60px;
       justify-content: flex-end;
     }
-
   }
   @include desktopW {
-    
-      &__area {
-        @include paddingSquare (140, 68, 170, 68);
+    &__area {
+      @include paddingSquare(140, 68, 170, 68);
       font: $par-md;
-      }
-      &__direct {
-        display: flex;
-        color: #c4c4c4;
-        gap: 60px;
-        justify-content: flex-end;
-      }
-
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
   }
-
-
-
 }
 
 .footer__notice {
@@ -105,13 +134,10 @@
   color: #c4c4c4;
 }
 
-
-
 .footer__groupDirect {
   display: flex;
   gap: 60px;
 }
-
 
 .footer__menu {
   display: flex;
