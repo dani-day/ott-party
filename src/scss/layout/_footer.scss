@@ -114,3 +114,81 @@
   color: #6b6b6b;
   padding-top: 24px;
 }
+
+
+.footer {
+  &__shortcut {
+    @include desktopW {
+      @include flexbox($gap:60px);
+    }
+    
+    @include tabletW {
+      @include flexbox($gap:32px);
+    }
+    @include mobileW {
+      display: none;
+    }
+    .shortcut {
+      position: relative;
+      color: $gray200;
+      &__brand, &__group {
+        @include flexbox($direction:column);
+      }
+      @include desktopW{
+        min-width: 165px;
+        font: $par-lg;
+      }
+      @include tabletW{
+        min-width: 100px;
+        font: $par-sm;
+      }
+      &__btn {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: $gray200;
+        cursor: pointer;
+      }
+      &__plus {
+        margin-left: 16px;
+      }
+      &__group.is--active{
+        @include flexbox($direction:column, $gap:5px);
+      }
+      &__group{
+        display: none;
+        position: absolute;
+        background: $gray700;
+        border-radius: 5px;
+        left: 0;
+        width: 100%;
+        overflow-x: hidden;
+        @include tabletW {
+          top: -105px;
+          height: 100px;
+          padding: 5px;
+        }
+        @include desktopW {
+          top: -210px;
+          height: 200px;
+          padding: 10px;
+        }
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: $red2;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track   {
+          background:#e9394547;
+        }
+        a:hover {
+          color: $base-text;
+        }
+      }
+    }
+  }
+}
+
+

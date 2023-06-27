@@ -1,4 +1,19 @@
 // 모바일 크기일때 유저 정보 클릭
+let userIcon = document.querySelector(".user__button");
+let userInfo = document.querySelector(".user");
+
+userIcon.addEventListener("click", function() {
+  userInfo.classList.toggle("is--active");
+});
+
+document.addEventListener("click", (e)=>{
+  const isUserIcon = e.target.classList.contains("user__button");
+  const isUserInfo = e.target.closest(".user");
+  if (!isUserIcon && !isUserInfo) {
+    userInfo.classList.remove("is--active");
+  }
+});
+
 // 모달창 오버레이 뒤쪽 클릭 제어
 
 // 검색 모달창
@@ -100,3 +115,35 @@ let autoBanner = setInterval(()=>{
   shortcut[imgNum].classList.add("is--active");
   subtext.innerHTML = subtextArr[imgNum]
 },5000)
+
+
+
+// footer 바로가기
+let footerShortcut = document.querySelectorAll(".shortcut__btn");
+let shorthCutList = document.querySelectorAll(".shortcut__group");
+
+footerShortcut.forEach((e, i)=> {
+  e.addEventListener("click", ()=> {
+    if (shorthCutList[i].classList.contains("is--active")) {
+      shorthCutList[i].classList.remove("is--active");
+    } else {
+      shorthCutList.forEach((j, k)=> {
+        if (k === i) {
+          j.classList.add("is--active");
+        } else {
+          j.classList.remove("is--active");
+        }
+      });
+    }
+  });
+});
+document.addEventListener("click", (e)=>{
+  let isBtn = e.target.classList.contains("shortcut__btn");
+  let isGroup = e.target.classList.contains("shortcut__group");
+
+  if (!isBtn && !isGroup) {
+    shorthCutList.forEach(function(e) {
+      e.classList.remove("is--active");
+    });
+  }
+});
