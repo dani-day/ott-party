@@ -1,7 +1,4 @@
 @use "./../utils" as *;
-body {
-  background: black;
-}
 
 // html {
 //   font-size: calc(8px + .5vw);
@@ -11,59 +8,13 @@ body {
 // 추후 내부 박스 사이즈 만들고 오버플로우 히든으로 밖으로 나가는 애들 숨기고 버튼 누르면 옆면이 넘어오게 만들기
 // 섹션에 호버시 z-index 0 -> 1로 변하면서 0이어서 숨겨져있던 버튼과 전체보기가 뜬다.영화정보가 뜬다 ?
 
-.only__defContainer {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  opacity: 0;
-  transition: opacity 100ms 100ms;
-  border-radius: 4px;
-  
-  
-}
-.only__defContainer:hover {
-  opacity: 1;
-}
 
-
-.only__defTerm {
-
-  // background: yellow;
-  font-size: rem(25px);
-  font-weight: 900;
-  font-style: bold;
-  width: 100%;
-  
-}
-.only__defList {
-  
-  position: absolute;
-  
-  margin: 0 auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  padding-bottom: 150px; 
-  width: 70%;
-  height: 70%;
-  overflow: hidden;
-  
-
-}
-.only__defDescription {
-  
-  width: 100%;
-  height: 100%;
-  
-}
 
 section {
-  overflow: visible;
+  overflow: hidden;
   width: 100vw;
 }
+
 
 
 .paddingBox {
@@ -115,9 +66,9 @@ h2 {
   // padding-left: rem(8px);
 }
 
-p {
-  @include paddingY (3px);
-}
+// p {
+//   @include paddingY (3px);
+// }
 // 공통 넘침요소 히든처리
 // .live__slider,.only__slider {
   // overflow: hidden;
@@ -126,7 +77,11 @@ p {
 /******************************************/
 .live {
   
+  //! 이거는 건들면 안됩니다 없으면 코드 사망
+  &__wrapper {
+    display: inline;
 
+  }
   &__title {
     color: $white;
     
@@ -147,19 +102,25 @@ p {
   &__rank {
   padding-right: 5px;
   
-}
-&__container {
-  overflow: visible;
+  }
+  &__container {
+  overflow: hidden;
+  padding-bottom: rem(3px);
   
-  
-}
+  }
 
-&__infoContainer {
-  position: relative;
+  &__infoContainer {
+  // position: relative;
   @include flexbox;
+  margin-bottom: rem(30px);
   
 }
 
+&__info {
+  padding-top: 10px;
+  padding-left: 7px;
+
+}
 
 &__name {
   color: $gray300;
@@ -175,6 +136,7 @@ p {
   @include mobileW {
     
 &__title {
+  font: $label-sm;
   padding-left: rem(8px);
 
 }
@@ -182,19 +144,15 @@ p {
       margin-right: rem(8px);
     }
     &__rank::before {
-        @include number__live (34px , 700, 20);
+        @include number__live (34px , 700);
     }
 
     &__imgBox {
-      display: inline-block;
-      width: rem(145px);
+      // display: inline-block;
+      min-width: rem(145px);
     
     }
 
-    &__info {
-      margin-left: rem(30px);
-    
-    }
 
 &__broadcast {
   font: $label-sm;
@@ -212,7 +170,7 @@ p {
   @include tabletW {
     
       &__title {
-        font: $heading-xl;
+        font: $heading-md;
         padding-left: rem(40px);
       }
       &__list {
@@ -220,16 +178,13 @@ p {
         margin-right: rem(8px);
       }
       &__rank::before {
-        @include number__live (46px , 700, 20);
+        @include number__live (46px , 700);
       }
 
       &__imgBox {
-        width: rem(225px);
+        min-width: rem(225px);
       }
-      &__info {
-        margin-left: rem(42px);
-      
-      }
+     
       &__broadcast {
         font: $label-md;
         color: $gray200;
@@ -237,7 +192,7 @@ p {
       }
       
       &__name, &__rating {
-        font: $par-md;
+        font: $par-sm;
       }
       
       
@@ -245,7 +200,7 @@ p {
     //live 반응형 데스크탑
     @include desktopW {
        &__title {
-        font: $heading-xxl;
+        font: $heading-xl;
         padding-left: rem(70px);
       }
       &__list {
@@ -256,20 +211,17 @@ p {
       }
       &__imgBox {
       
-        width: rem(345px);
+        min-width: rem(345px);
       }
-      &__info {
-        margin-left: rem(66px);
-      }
-
+ 
       &__broadcast {
-        font: $label-xl;
+        font: $label-lg;
         color: $gray200;
         font-weight: 600;
       }
       
       &__name, &__rating {
-        font: $par-lg;
+        font: $par-md;
       }
       
 
@@ -287,7 +239,8 @@ p {
   }
   &__container {
     @include flexbox ($justify: space-between);
-    overflow: visible;
+    padding-bottom: rem(8px);
+    overflow: hidden;
   }
   &__list {
     // margin-top: rem(12px);
@@ -298,13 +251,64 @@ p {
     position: relative;
   }
 
+  &__defContainer {
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 100ms 100ms;
+    border-radius: 4px;
+    
+    
+  }
+ &__defContainer:hover {
+    opacity: 1;
+
+  }
+  
+  
+  &__defTerm {
+  
+    // background: yellow;
+    font-size: rem(25px);
+    font-weight: 900;
+    font-style: bold;
+    width: 100%;
+    
+  }
+  &__defList {
+    
+    position: absolute;
+    
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    padding-bottom: 150px; 
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    
+  
+  }
+  &__defDescription {
+    
+    width: 100%;
+    height: 100%;
+    
+  }
+
   
 
   //only 반응형 모바일
   @include mobileW {
     
     &__title {
-      font: $heading-md;
+      font: $label-sm;
       padding-left: rem(8px);
     
     }
@@ -319,28 +323,29 @@ p {
   @include tabletW {
     
       &__title {
-        font: $heading-xl;
+        font: $heading-md;
         padding-left: rem(40px);
       }
       &__list {
         margin-right: rem(8px);
       }
+      //todo 리스트(컨텐츠 사이) 사이 간격 믹스인으로 제작 제안하기
       &__imgBox {
-        width: rem(168px);
+        min-width: rem(168px);
       }
 
     }
     //only 데스크탑 
     @include desktopW {
        &__title {
-        font: $heading-xxl;
+        font: $heading-xl;
         padding-left: rem(70px);
       }
       &__list {
         margin-right: rem(16px);
       }
       &__imgBox {
-        width: rem(285px);
+        min-width: rem(285px);
       }
 }  
 }
