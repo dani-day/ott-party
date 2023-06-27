@@ -1457,25 +1457,28 @@ body {
 
 .qVod,
 .popShow {
+  width: 100vw;
   overflow: hidden;
-  margin-bottom: 2.25rem;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod,
   .popShow {
-    transform: translateX(8px);
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .qVod,
   .popShow {
-    transform: translateX(40px);
+    padding-left: 2.5rem;
+    padding-bottom: 1.75rem;
   }
 }
 @media (min-width: 1920px) {
   .qVod,
   .popShow {
-    transform: translateX(70px);
+    padding-left: 4.375rem;
+    padding-bottom: 2.25rem;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -1484,8 +1487,8 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 0.03125rem;
+    align-items: stretch;
+    gap: 0.4375rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
@@ -1494,8 +1497,8 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 0.03125rem;
+    align-items: stretch;
+    gap: 0.5rem;
   }
 }
 @media (min-width: 1920px) {
@@ -1504,8 +1507,8 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
-    gap: 0.0625rem;
+    align-items: stretch;
+    gap: 1rem;
   }
 }
 .qVod__items,
@@ -1521,24 +1524,27 @@ body {
 }
 .qVod__title,
 .popShow__title {
-  margin-bottom: 0.75rem;
+  color: #fff;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod__title,
   .popShow__title {
     font: normal 600 0.75rem/1.5 pretendard;
+    margin-bottom: 0.25rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .qVod__title,
   .popShow__title {
     font: normal 700 1rem/1.4 pretendard;
+    margin-bottom: 0.5rem;
   }
 }
 @media (min-width: 1920px) {
   .qVod__title,
   .popShow__title {
     font: normal 700 1.75rem/1.4 pretendard;
+    margin-bottom: 0.75rem;
   }
 }
 .qVod__name,
@@ -1576,17 +1582,17 @@ body {
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod__link {
-    width: 9.0625rem;
+    min-width: 9.0625rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .qVod__link {
-    width: 14rem;
+    min-width: 14rem;
   }
 }
 @media (min-width: 1920px) {
   .qVod__link {
-    width: 21.5625rem;
+    min-width: 21.5625rem;
   }
 }
 .qVod__quick {
@@ -1595,6 +1601,7 @@ body {
   left: 0.3125rem;
   background: #c73e4e;
   border-radius: 0.25rem;
+  color: #fff;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .qVod__quick {
@@ -1660,17 +1667,17 @@ body {
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .popShow__link {
-    width: 5.75rem;
+    min-width: 5.75rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
   .popShow__link {
-    width: 8.125rem;
+    min-width: 8.125rem;
   }
 }
 @media (min-width: 1920px) {
   .popShow__link {
-    width: 15rem;
+    min-width: 15rem;
   }
 }
 .name__adult {
@@ -1694,39 +1701,14 @@ body {
   line-height: 1.75rem;
 }
 
-.popShow .popShow__wrapper {
+.popShow__wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
   gap: 0rem;
 }
-.popShow__name {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inline-block;
-  color: #c4c4c4;
-}
-@media (min-width: 320px) and (max-width: 767px) {
-  .popShow__name {
-    margin-top: 0.25rem;
-    margin-left: 1.875rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1919px) {
-  .popShow__name {
-    margin-top: 0.4375rem;
-    margin-left: 2.5rem;
-  }
-}
-@media (min-width: 1920px) {
-  .popShow__name {
-    margin-top: 0.6875rem;
-    margin-left: 3.75rem;
-  }
-}
-.popShow__name::before {
+.popShow__wrapper::before {
   position: absolute;
   bottom: 0;
   content: counter(number);
@@ -1736,56 +1718,83 @@ body {
   transform: skewX(-7.5deg);
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .popShow__name::before {
+  .popShow__wrapper::before {
     font-size: 2.125rem;
     line-height: 2.125rem;
-    margin-left: -1.875rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
-  .popShow__name::before {
+  .popShow__wrapper::before {
     font-size: 2.875rem;
     line-height: 2.875rem;
-    margin-left: -2.5rem;
   }
 }
 @media (min-width: 1920px) {
-  .popShow__name::before {
+  .popShow__wrapper::before {
     font-size: 4.375rem;
     line-height: 4.375rem;
-    margin-left: -3.75rem;
   }
 }
 
-.popShow .popShow__wrapper .popShow__redDot {
-  display: inline-block;
-  background: #ff153c no-repeat;
-  border-radius: 50%;
-  content: "";
-  flex-shrink: 0;
+.popShow__name {
+  position: relative;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  padding: 0;
+  color: #c4c4c4;
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .popShow .popShow__wrapper .popShow__redDot {
+  .popShow__name {
     margin-top: 0.25rem;
-    margin-left: 0.0625rem;
-    width: 0.3125rem;
-    height: 0.3125rem;
+    margin-left: 1.5625rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1919px) {
-  .popShow .popShow__wrapper .popShow__redDot {
+  .popShow__name {
     margin-top: 0.4375rem;
-    margin-left: 0.25rem;
-    width: 0.375rem;
-    height: 0.375rem;
+    margin-left: 2.1875rem;
   }
 }
 @media (min-width: 1920px) {
-  .popShow .popShow__wrapper .popShow__redDot {
-    margin-top: 0.625rem;
-    margin-left: 0.3125rem;
-    width: 0.625rem;
-    height: 0.625rem;
+  .popShow__name {
+    margin-top: 0.6875rem;
+    margin-left: 3.75rem;
+  }
+}
+
+.popShow__redDot {
+  padding-right: 20px;
+  width: calc(100% + 10px);
+}
+.popShow__redDot::after {
+  content: "";
+  display: block;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .popShow__redDot::after {
+    width: 4px;
+    height: 4px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .popShow__redDot::after {
+    width: 6px;
+    height: 6px;
+  }
+}
+@media (min-width: 1920px) {
+  .popShow__redDot::after {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -2052,22 +2061,113 @@ h2 {
   }
 }
 
-.sportsLive__title {
-  padding: 36px 70px 36px 70px;
+.sports__live {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .sports__live {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .sports__live {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .sports__live {
+    padding-left: 4.375rem;
+    padding-right: 4.375rem;
+  }
 }
 
-.footer__event__menu {
+.footer__event {
+  overflow: hidden;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__event {
+    padding-left: 8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__event {
+    padding-left: 40px;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__event {
+    padding-left: 70px;
+  }
+}
+.footer__eventTitle {
   color: #fff;
-  font: normal 700 1.75rem/1.4 pretendard;
   padding-bottom: 12px;
-  padding-left: 70px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__eventTitle {
+    font: normal 600 0.75rem/1.5 pretendard;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__eventTitle {
+    font: normal 700 1rem/1.4 pretendard;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__eventTitle {
+    font: normal 700 1.75rem/1.4 pretendard;
+  }
 }
 
-.footer__event__list {
-  display: flex;
-  padding-left: 70px;
+.footer__eventList {
+  display: block;
   padding-bottom: 36px;
-  gap: 16px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__eventList {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.4375rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__eventList {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__eventList {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .eventList__item {
+    min-width: 9.0625rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .eventList__item {
+    min-width: 13.375rem;
+  }
+}
+@media (min-width: 1920px) {
+  .eventList__item {
+    min-width: 21.625rem;
+  }
 }
 
 .hr__divLine {
