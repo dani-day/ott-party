@@ -1,1 +1,662 @@
 // header.scss
+@use "./../utils" as *; 
+
+body {
+  background: $base-bg;
+}
+.header.is--active {
+  background: $base-bg;
+}
+.header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+  @include flexbox;
+  color: $gray200; 
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  @include desktopW {
+    padding: rem(29px) rem(70px);
+    background: $base-bg;
+    font: $par-lg;  
+  }
+  @include tabletW {
+    padding: rem(16px) rem(40px);
+    font:$par-sm;
+  }
+  @include mobileW {
+    padding: rem(10px) rem(12px);
+  }
+
+
+  // 로고
+  &__logo {
+    @include flexbox($items:center);
+    @include desktopW {
+      padding-right: rem(52px);
+    }
+    @include tabletW {
+      padding-right: rem(28px);
+    }
+  }
+  &__logo__link {
+    @include desktopW {
+      @include spriteBox__header(132px, 42px, 0 , -79px);
+    }
+    @include tabletW {
+      @include spriteBox__header(75px, 25px, 0 , -35px);
+    }
+    @include mobileW {
+      @include spriteBox__header(46px, 15px, 0 , 0);
+    }
+  }
+
+  // 네비게이션
+  &__nav {
+    @include flexbox;
+    flex-grow: 1;
+
+    // 프로그램 리스트
+    &__program {
+      flex-grow: 1; 
+      a:hover {
+        color: $base-text;
+      }
+      @include desktopW {
+        @include flexbox($items:center, $gap: 52px);
+      }
+      @include tabletW {
+        @include flexbox($items:center, $gap: 28px);
+      }
+      @include mobileW {
+        display: none;
+      }
+      .program__live {
+        @include desktopW {
+          @include flexbox($items:center,$gap:10px);
+          &:hover .live__img{
+            @include spriteImg__header(-374px, -229px);
+          }
+        }
+        @include tabletW {
+          @include flexbox($items:center,$gap:4px);
+          &:hover .live__img{
+            @include spriteImg__header(-374px, -189px);
+          }
+        }
+      }
+      .live__img {
+         @include desktopW {
+          @include spriteBox__header(34px, 34px, -320px, -229px);
+         }
+         @include tabletW {
+          @include spriteBox__header(20px, 20px, -320px, -189px);
+         }
+      }
+      .program__paramount {
+        display: block;
+        @include desktopW {
+          @include spriteBox__header(112px, 34px, -428px, -229px); 
+          &:hover {
+            @include spriteImg__header(-560px, -229px);
+         }
+        }
+        @include tabletW {
+          @include spriteBox__header(65px, 20px, -428px, -189px); 
+          &:hover {
+            @include spriteImg__header(-560px, -194px);
+         }
+        }
+      }
+    }
+    // 검색 및 유저 아이콘
+    &__search {
+       @include desktopW {
+       @include flexbox($items:center, $gap: 40px); 
+        .search__button {
+          @include button__header;
+          @include spriteBox__header(40px, 40px, 0, -223px);
+          &:hover {
+            @include spriteImg__header(-60px, -223px);
+          }
+        }
+        .search__button.is--active {
+          @include button__header;
+          @include spriteBox__header(40px,40px,-125px, -218px);
+          &:hover {
+            @include spriteImg__header(-195px, -218px);
+          }
+        }
+        .user__button {
+          @include button__header;
+          @include spriteBox__header(40px,40px,-260px, -223px);
+        }
+      }
+      @include tabletW {
+        @include flexbox($items:center, $gap: 24px); 
+        .search__button {
+          @include button__header;
+          @include spriteBox__header(24px, 24px, 0, -179px);
+          &:hover {
+            @include spriteImg__header(-60px, -179px);
+          }
+        }
+        .search__button.is--active {
+          @include button__header;
+          @include spriteBox__header(28px,28px,-120px, -177px);
+          &:hover {
+            @include spriteImg__header(-190px, -177px);
+          }
+        }
+        .user__button {
+          @include button__header;
+          @include spriteBox__header(24px,24px,-260px, -179px);
+        }
+      }
+      @include mobileW {
+        flex-grow: 1;
+        @include flexbox($justify:flex-end,$items:center, $gap: 16px); 
+        .search__button {
+          @include button__header;
+          @include spriteBox__header(18px, 18px, 0, -141px);
+          &:hover {
+            @include spriteImg__header(-60px, -141px);
+          }
+        }
+        .search__button.is--active {
+          @include button__header;
+          @include spriteBox__header(22px,22px,-120px, -136px);
+          &:hover {
+            @include spriteImg__header(-190px, -136px);
+          }
+        }
+        .user__button {
+          @include button__header;
+          @include spriteBox__header(18px,18px,-260px,-141px);
+        }
+      }
+     }
+  }
+} 
+
+// 유저 호버 상태창
+.header__user__icon { 
+  position: relative;
+}
+@include desktopW {
+  .header__user__icon:hover .user  {
+    display: block;
+  }
+}
+@include tabletW {
+  .header__user__icon:hover .user  {
+    display: block;
+  }
+}
+@include mobileW {
+  .user.is--active  {
+    display: block;
+  }
+}
+
+.user.is--active{
+  display: block;
+}
+.user {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  border-radius: rem(5px);
+  @include desktopW {
+    width: rem(300px);
+    right: 0;
+    top: rem(40px);
+    padding-top: rem(30px);
+  }
+  @include tabletW {
+    width: rem(200px);
+    right: 0;
+    top: rem(25px);
+    padding-top: rem(20px);
+  }
+  @include mobileW {
+    width: rem(150px);
+    right: 0;
+    top: rem(20px);
+    padding-top: rem(15px);
+  }
+  
+
+  &__info {
+    border: 1px solid $gray400;
+    background: $gray800;
+    border-radius: rem(5px);
+  }
+  &__title {
+    @include flexbox($items:center, $gap:20px);
+    padding: rem(20px);
+    border-bottom: 1px solid $gray400;
+    @include mobileW {
+      @include flexbox($items:center, $gap:10px);
+      padding: rem(10px);
+    }
+  }
+  &__img {
+    @include spriteBox__header(40px, 40px, -260px, -223px);
+  }
+  &__name {
+    font: $par-lg;
+    @include mobileW {
+      font: $par-md;
+    }
+  }
+  &__change {
+    font: $par-md;
+    @include mobileW {
+      font: $par-sm;
+    }
+  }
+  &__only {
+    padding: rem(20px);
+    @include mobileW {
+      padding: rem(10px);
+    }
+    &__list {
+      @include flexbox($direction:column, $gap:10px);
+    }
+  }
+  a:hover {
+    color: $base-text;
+  }
+}
+
+// 검색창
+.search.is--active {
+  @include flexbox($direction:column,$gap:100px);
+}
+.search {
+  display: none;
+  background: $base-bg;
+  color: $base-text;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  @include desktopW {
+    margin-top: rem(95px);
+    padding: rem(52px) rem(220px) rem(93px);
+  } 
+  @include tabletW {
+    margin-top: rem(55px);
+    padding: rem(28px) rem(123px) rem(63px);  
+  } 
+  @include mobileW {
+    margin-top: rem(35px);
+    padding: rem(14px) rem(26px) rem(33px);
+  } 
+  &__form {
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    background: 0;
+    border: 0;
+    border-bottom: 3px solid $base-text;
+    &:focus {
+      outline: 0;
+      color: $base-text;
+    }
+    @include desktopW {
+      font: $label-xxl;
+    }
+    @include tabletW {
+      font: $label-lg;
+    }
+    @include mobileW {
+      font: $label-sm;
+    }
+    &::-ms-clear,
+    &::-ms-reveal,
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration{
+        display:none;
+    }
+  }
+  &__submit {
+    border: 0;
+    @include posCenterY;
+    right: 0;
+    background: none;
+    cursor: pointer;
+    @include desktopW {
+      @include spriteBox__header(40px, 40px, -60px, -223px);
+    }
+    @include tabletW {
+      @include spriteBox__header(24px, 24px, -60px, -179px);
+    }
+    @include mobileW {
+      @include spriteBox__header(18px, 18px, -60px, -141px);
+    }
+  }
+  &__wrapper {
+    @include flexbox;
+  }
+  &__recent {
+    width: 50%;
+  }
+  &__title {
+    color: $gray200;
+    @include desktopW {
+      font:$label-xl; 
+    }
+    @include tabletW {
+      font:$label-md; 
+    }
+    @include mobileW {
+      font:$label-sm; 
+    }
+  }
+  &__result li{
+    color: $gray300;
+    @include desktopW {
+      font:$par-lg; 
+      padding-top: rem(20px);
+    }
+    @include tabletW {
+      font:$par-md; 
+      padding-top: rem(12px);
+    }
+    @include mobileW {
+      font:$par-sm; 
+      padding-top: rem(4px);
+    }
+  } 
+  &__list {
+    color: $gray300;
+    counter-reset: ranking;
+    position: relative;
+    @include desktopW {
+      padding-top: rem(36px);
+      @include flexbox($direction:column, $gap:16px );
+      font:$par-lg;
+    }
+    @include tabletW {
+      padding-top: rem(20px);
+      @include flexbox($direction:column, $gap:9px );
+      font:$par-md;
+    }
+    @include mobileW {
+      padding-top: rem(4px);
+      @include flexbox($direction:column, $gap:2px );
+      font:$par-sm;
+    }
+    li:before {
+      counter-increment: ranking;
+      content: counter(ranking);
+      color: $primary-color;
+      display: inline-block;
+      vertical-align: sub;
+      @include desktopW {
+        font: $heading-xl;
+        width: rem(40px);
+      }
+      @include tabletW {
+        font: $heading-lg;
+        width: rem(30px);
+      }
+      @include mobileW {
+        font: $heading-md;
+        width: rem(20px);
+      }
+    }
+    li {
+      white-space: nowrap;  
+      overflow: hidden;		
+      text-overflow: ellipsis;  
+    }
+  }
+
+  &__hot {
+    width: 50%;
+    border-left: 1px solid $gray700;
+    @include desktopW {
+      padding-left: rem(60px);
+    }
+    @include tabletW {
+      padding-left: rem(35px);
+    }
+    @include mobileW {
+      padding-left: rem(10px);
+    }
+  }
+  a:hover {
+    color: $base-text;
+  }
+  &__today {
+    color: $gray500;
+    @include desktopW {
+      margin-top: rem(16px);
+      font:$par-lg;
+    }
+    @include tabletW {
+      margin-top: rem(16px);
+      font:$par-md;
+    }
+    @include mobileW {
+      margin-top: rem(16px);
+      font:$par-sm;
+    }
+
+  }
+}
+
+// 캐러셀
+.banner {
+  position: relative;
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  @include desktopW {
+    &__container {
+      padding-top: 100px;
+    }
+  }
+  &__container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  }
+  &__prev {
+    @include posCenterY;
+    @include button__header;
+    z-index: 3;
+    left: 0;
+    @include desktopW{
+      @include spriteBox__header(70px, 70px, -138px, -436px); 
+    }
+    @include tabletW{
+      @include spriteBox__header(40px, 40px, -82px, -370px); 
+    }
+    @include mobileW{
+      @include spriteBox__header(14px, 14px, -70px, -327px); 
+    }
+  }
+  &__next {
+  @include posCenterY;
+    @include button__header;
+    z-index: 3;
+    right: 0;
+    @include desktopW{
+      @include spriteBox__header(70px, 70px, -228px, -436px);
+    }
+    @include tabletW{
+      @include spriteBox__header(40px, 40px, -142px, -370px);
+    }
+    @include mobileW{
+      @include spriteBox__header(14px, 14px, -104px, -327px);
+    }
+  } 
+  &__info {
+    z-index: 3;
+    @include pos;
+    top: 75%;
+    @include desktopW{
+      left: 70px;
+    }
+    @include tabletW{
+      left: 40px;
+    }
+    @include mobileW{
+      top: 70%;
+      left: rem(20px);
+    }
+  }
+  &__subtext {
+    color: $base-text;
+    @include desktopW{
+      font: $label-lg; 
+      margin-bottom: rem(20px);
+    }
+    @include tabletW{
+      font: $label-md;
+      margin-bottom: rem(4px);
+    }
+    @include mobileW{
+      font: $label-sm;
+      margin-bottom: rem(7px);
+    }
+  }
+  &__play {
+    @include flexbox($items:center,$gap:12px);
+    @include mobileW {
+      @include flexbox($items:center,$gap:6px) 
+    }
+  } 
+  &__shorcut {
+    @include button__header;
+    background: $gray400;;
+    border-radius: 50%;
+    width: rem(12px);
+    height: rem(12px);
+  }
+  &__shorcut.is--active{
+    background: $base-text;
+  }
+  &__play__btn { 
+    @include button__header;
+    @include spriteBox__header(18px, 18px, -38px, -283px);
+  }
+  &__play__btn.is--active {
+    display: none;
+  }
+  &__stop__btn {
+    @include button__header;
+    display: none;
+  }
+  &__stop__btn.is--active {
+    @include spriteBox__header(18px, 18px, 0, -283px);
+    display: block;
+  }
+  &__more {
+    color: $base-text; 
+    @include pos;
+    border: 1px solid var(--gray-300, #A6A6A6);
+    border-radius: 4px;
+    top: 75%;
+    backdrop-filter: blur(30px);
+    @include desktopW{
+      font: $par-lg;
+      right: rem(70px);
+      padding: rem(22px) rem(64px);
+    }
+    @include tabletW{
+      font: $par-md;
+      right: rem(40px);
+      padding: rem(12.5px) rem(38px);
+     }
+    @include mobileW{
+      top: 70%;
+      font: $par-sm;
+      padding: rem(4px) rem(6px);
+      right: rem(12px);
+     }
+     &:hover {
+      border-color: $base-text;
+     }
+  }
+}
+
+// section must
+.must {
+  overflow: hidden;
+  &__title {
+    color: $base-text;
+     @include desktopW{
+      font: $heading-xl;
+      margin-bottom: rem(12px);
+      padding-left: rem(70px);
+     }
+     @include tabletW{ 
+      font: $heading-lg;
+      margin-bottom: rem(8px);
+      padding-left: rem(40px);
+     }
+     @include mobileW{
+      font: $heading-md;
+      margin-bottom: rem(4px);
+      padding-left: rem(8px);
+     }
+  }
+  &__list {
+    @include desktopW {
+      @include flexbox($gap: 16px);
+      padding-left: rem(70px);
+    }
+    @include tabletW {
+      @include flexbox($gap: 8px);
+      padding-left: rem(40px);
+    }
+    @include mobileW {
+      @include flexbox($gap: 7px);
+      padding-left: rem(8px);
+    }
+  }
+  &__item {
+    @include flexbox;
+    margin-bottom: rem(16px);
+    transition: transform 300ms;
+
+    @include desktopW {
+      min-width: rem(240px);
+    }
+    @include tabletW {
+      min-width: rem(130px);
+    }
+    @include mobileW {
+      min-width: rem(92px);
+    }
+    &:hover{ 
+      transform: translateY(-10px);
+    }
+  }
+  &__imgTitle {
+    color: $base-text;
+    @include desktopW{
+      margin-top: rem(8px);
+      font:$label-lg;
+    }
+    @include tabletW{
+      margin-top: rem(4px);
+      font:$par-sm;
+    }
+    @include mobileW{
+      display: none;
+    }
+  }
+}
+// header.scss

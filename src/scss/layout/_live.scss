@@ -1,0 +1,355 @@
+@use "./../utils" as *;
+body {
+  background: black;
+}
+
+// html {
+//   font-size: calc(8px + .5vw);
+// }
+
+// 전체 박스 화면 가로 길이 100%
+// 추후 내부 박스 사이즈 만들고 오버플로우 히든으로 밖으로 나가는 애들 숨기고 버튼 누르면 옆면이 넘어오게 만들기
+// 섹션에 호버시 z-index 0 -> 1로 변하면서 0이어서 숨겨져있던 버튼과 전체보기가 뜬다.영화정보가 뜬다 ?
+
+.only__defContainer {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 100ms 100ms;
+  border-radius: 4px;
+  
+  
+}
+.only__defContainer:hover {
+  opacity: 1;
+}
+
+
+.only__defTerm {
+
+  // background: yellow;
+  font-size: rem(25px);
+  font-weight: 900;
+  font-style: bold;
+  width: 100%;
+  
+}
+.only__defList {
+  
+  position: absolute;
+  
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  padding-bottom: 150px; 
+  width: 70%;
+  height: 70%;
+  overflow: hidden;
+  
+
+}
+.only__defDescription {
+  
+  width: 100%;
+  height: 100%;
+  
+}
+
+section {
+  overflow: visible;
+  width: 100vw;
+}
+
+
+.paddingBox {
+  // @include flexbox;
+  // width: fit-content;
+  // 내부 컨텐츠 요소 만큼만 크기를 갖는다. 
+  
+  
+  
+
+  @include mobileW {
+    @include paddingX (8px);
+    
+    
+  }
+  @include tabletW {
+    @include paddingX (40px);
+    
+  }
+  @include desktopW {
+    @include paddingX (70px);
+    
+  }
+
+
+}
+
+
+
+li {
+  
+  transition: transform 150ms ease-in-out 50ms;
+  // flex-shrink: 0;
+  // flex-basis: content;
+  display: inline;
+}
+
+li:hover {
+  // margin-top: -12px;
+  transform: translateY(0);
+
+}
+
+h2 {
+  padding-top: rem(12px);
+  padding-left: 0;
+  
+  font: $label-sm;
+  // padding-left: rem(8px);
+}
+
+p {
+  @include paddingY (3px);
+}
+// 공통 넘침요소 히든처리
+// .live__slider,.only__slider {
+  // overflow: hidden;
+// }
+
+/******************************************/
+.live {
+  
+
+  &__title {
+    color: $white;
+    
+  }
+  
+  // &__slider 
+  &__thumbnail {
+    @include flexbox ($justify: space-between);
+      
+    
+  } 
+ 
+  &__list {
+    transform: translateY(12px);
+    counter-increment: number;
+    flex-grow: 0;
+  }
+  &__rank {
+  padding-right: 5px;
+  
+}
+&__container {
+  overflow: visible;
+  
+  
+}
+
+&__infoContainer {
+  position: relative;
+  @include flexbox;
+  
+}
+
+
+&__name {
+  color: $gray300;
+}
+
+
+&__rating {
+  color: $gray500;
+
+}
+
+ //live 반응형 모바일
+  @include mobileW {
+    
+&__title {
+  padding-left: rem(8px);
+
+}
+    &__list {
+      margin-right: rem(8px);
+    }
+    &__rank::before {
+        @include number__live (34px , 700, 20);
+    }
+
+    &__imgBox {
+      display: inline-block;
+      width: rem(145px);
+    
+    }
+
+    &__info {
+      margin-left: rem(30px);
+    
+    }
+
+&__broadcast {
+  font: $label-sm;
+  color: $gray200;
+  font-weight: 600;
+}
+
+&__name, &__rating {
+  font: $par-sm;
+}
+
+
+  }
+  //live 반응형 테블릿
+  @include tabletW {
+    
+      &__title {
+        font: $heading-xl;
+        padding-left: rem(40px);
+      }
+      &__list {
+        
+        margin-right: rem(8px);
+      }
+      &__rank::before {
+        @include number__live (46px , 700, 20);
+      }
+
+      &__imgBox {
+        width: rem(225px);
+      }
+      &__info {
+        margin-left: rem(42px);
+      
+      }
+      &__broadcast {
+        font: $label-md;
+        color: $gray200;
+        font-weight: 600;
+      }
+      
+      &__name, &__rating {
+        font: $par-md;
+      }
+      
+      
+    }
+    //live 반응형 데스크탑
+    @include desktopW {
+       &__title {
+        font: $heading-xxl;
+        padding-left: rem(70px);
+      }
+      &__list {
+        margin-right: rem(16px);
+      }
+      &__rank::before {
+        @include number__live;
+      }
+      &__imgBox {
+      
+        width: rem(345px);
+      }
+      &__info {
+        margin-left: rem(66px);
+      }
+
+      &__broadcast {
+        font: $label-xl;
+        color: $gray200;
+        font-weight: 600;
+      }
+      
+      &__name, &__rating {
+        font: $par-lg;
+      }
+      
+
+}  
+}
+
+
+
+
+.only {
+  // 테스트
+  
+  &__title {
+    color: $white;
+  }
+  &__container {
+    @include flexbox ($justify: space-between);
+    overflow: visible;
+  }
+  &__list {
+    // margin-top: rem(12px);
+    transform: translateY(12px);
+    display: block;
+    
+    // test
+    position: relative;
+  }
+
+  
+
+  //only 반응형 모바일
+  @include mobileW {
+    
+    &__title {
+      font: $heading-md;
+      padding-left: rem(8px);
+    
+    }
+    &__list {
+      margin-right: rem(8px);
+    }
+    &__imgBox {
+      width: rem(139px);
+    }
+  }
+  //only 태블릿
+  @include tabletW {
+    
+      &__title {
+        font: $heading-xl;
+        padding-left: rem(40px);
+      }
+      &__list {
+        margin-right: rem(8px);
+      }
+      &__imgBox {
+        width: rem(168px);
+      }
+
+    }
+    //only 데스크탑 
+    @include desktopW {
+       &__title {
+        font: $heading-xxl;
+        padding-left: rem(70px);
+      }
+      &__list {
+        margin-right: rem(16px);
+      }
+      &__imgBox {
+        width: rem(285px);
+      }
+}  
+}
+
+
+
+
+
+
+
+
+
