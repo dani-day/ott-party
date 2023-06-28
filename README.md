@@ -41,11 +41,13 @@ https://tvin8.netlify.app/
 - 조수연: 메인 페이지 (하단 스포츠 라이브 ~ 하단 사이트 정보)
   <br><br>
 
+---
+
 ## 🫂 협업을 위한 기본 Setting
 
 ### 1. git 협업을 위한 사전 training [팀원 공통]
 
-프로젝트 중 잘못된 git 사용으로 인해 발생할 수 있는 문제를 사전에 방지하고자, 사전에 test 용 git repository 를 생성함. 해당 repository 로 디스코드로 화면 공유 하면서 스크럼 마스터 부터 팀원들까지 한 사람씩 git pull, branch 생성, push, merge 등을 연습함. <br> 이후로도 git 사용 시 어려움을 겪는 경우, 혼자 해결하지 않고 화면 공유를 통해 함께 결정하기로 협의하였으며, **프로젝트 시작부터 끝까지 개인이 발생시킨 git 이슈는 없었음.**
+프로젝트 중 잘못된 git 사용으로 인해 발생할 수 있는 문제를 사전에 방지하고자, 사전에 test 용 git repository 를 생성함. 해당 repository 로 디스코드로 화면 공유 하면서 스크럼 마스터 부터 팀원들까지 한 사람씩 git pull, branch 생성, push, merge 등을 연습함. <br> 이후로도 git 사용 시 어려움을 겪는 경우, 혼자 해결하지 않고 화면 공유를 통해 함께 결정하기로 협의하였으며, **프로젝트 시작부터 끝까지 git 이슈는 없었음.**
 <br>
 
 ### 2. Project Guide 수립 [유동균님]
@@ -62,6 +64,8 @@ https://www.notion.so/Project-Guide-a056c316004a4c2781ed4aa6bf035104
 https://www.notion.so/8-Coding-Convention-46852f41e5fb48608a687e0b1038f26c
 <br>
 
+---
+
 ## 🗄️ 프로젝트 관리
 
 ### 🗂️ Git Project
@@ -73,6 +77,13 @@ https://www.notion.so/8-Coding-Convention-46852f41e5fb48608a687e0b1038f26c
 
 https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 <br>
+
+### 📸 Git Project 스크린샷
+
+![Image](https://github.com/dani-day/ott-party/assets/134567470/4566c6a3-7bec-43dc-ba84-ca46f24781a0)
+<br>
+
+---
 
 ## 🙋🏼‍♀️ Section 별 마크업 및 주요 스타일링
 
@@ -141,8 +152,8 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
   - 박스 호버시 해당 아이템만 단독 위로 상승함
 
 - figma 시안 외 구현 사항 - 티빙 사이트
-  <img src="./assets/image1_live.png">
-  <img src="./assets/image2_live.png">
+  <img src="./assets/image1_live.png" width="50%">
+  <img src="./assets/image2_live.png" width="50%">
 
 ### 1-4. 배너, 이벤트 및 footer [조수연]
 
@@ -161,7 +172,7 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 
 - figma 시안 외 구현사항 (유동균)
   <br>
-  <img src="./assets/footer_add.png">
+  <img src="./assets/footer_add.png" width="50%">
   <br>
 
   - 바로가기를 클릭했을 때 연동되는 리스트를 작성함
@@ -169,7 +180,7 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 
 - figma 시안 대비 미구현 사항
   <br>
-  <img src="./assets/footer_fail.png">
+  <img src="./assets/footer_fail.png" width="50%">
 
   - a 태그로 감싸진 링크로 연결된 부분 글씨 아래 밑줄 수행하지 못 함
 
@@ -212,6 +223,8 @@ desktop 버전으로만 구현되었습니다. (반응형 미구현)
 
 <br><br>
 
+---
+
 ## ⛑️ 주요 Issue
 
 프로젝트 진행 중 해결하기 어려웠던 주요 Issue 입니다.
@@ -250,13 +263,15 @@ webkit 사용 이 주된 해결방안이었으며, 동균님께서 발견 및 �
 
 1. 호버시 해당 아이템 위로 상승 **transition** 구현함 **transform , translate Y**축으로 이동 후 호버시 *0*으로 회귀하게 반영함 ex) 12px->0
    <br>
-   <img src="./assets/only hover_live.png">
+   <img src="./assets/only hover_live.png" width="60%">
    <br>
 
 2) 호버시 해당 아이템 위로 상승 후 아이템 전환되며 **opacity: 0**으로 가려둔 설명창**opacity:1**으로 전환됨
    <br>
-   <img src="./assets/only hover animation_live.png">
+   <img src="./assets/only hover animation_live.png" width="60%">
    <br>
+
+---
 
 ## 📊 Project 사이트 성능 검사 결과
 
