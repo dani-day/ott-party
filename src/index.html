@@ -2,11 +2,869 @@
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://regal-lamington-a46694.netlify.app/" />
+    <meta property="og:title" content="TVING" />
+    <meta property="og:image" content="https://i.ibb.co/0MptvY5/Cover.png" />
+    <meta property="og:description" content="티빙 오리지널 콘텐츠, 방송, 영화, 해외시리즈까지! 재미를 플레이해보세요." />
+    <meta property="og:site_name" content="TVING Homepage" />
+    <meta property="og:locale" content="Kor" />
+    <meta name="keywords" content="티빙, ott, 방송, 영화, 드라마, 해외시리즈" />
+    <meta name="author" content="팔이피플" />
+    <meta name="description" content="TVING 홈페이지입니다." />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-touch-icon.png" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>인덱스 페이지</title>
-    <link rel="preload" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
+    <title>TVING Homepage</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style/index.css" />
+    <script src="./js/index.js" defer></script>
   </head>
+  <body>
+    <header class="header">
+      <h1 class="header__logo">
+        <a class="header__logo__link" href="/">
+          <span class="a11yHidden">티빙 로고</span>
+        </a>
+      </h1>
+      <nav class="header__nav">
+        <ul class="header__nav__program">
+          <li>
+            <a class="program__live" href="/"
+              ><div class="live__img"></div>
+              실시간</a
+            >
+          </li>
+          <li><a class="program__tv" href="/">TV프로그램</a></li>
+          <li><a class="program__movie" href="/">영화</a></li>
+          <li>
+            <a class="program__paramount" href="/"><span class="a11yHidden">파라마운트플러스</span></a>
+          </li>
+        </ul>
+        <ul class="header__nav__search">
+          <li class="header__search__icon">
+            <button class="search__button"><span class="a11yHidden">검색</span></button>
+          </li>
+          <li class="header__user__icon">
+            <div class="user__info__wrapper">
+              <button class="user__button"><span class="a11yHidden">사용자정보</span></button>
+              <div class="user">
+                <div class="user__info">
+                  <div class="user__title">
+                    <div class="user__img"></div>
+                    <div>
+                      <div class="user__name">홍길동</div>
+                      <div class="user__change"><a href="./views/profile.html">프로필 전환 &gt;</a></div>
+                    </div>
+                  </div>
+                  <div class="user__only">
+                    <ul class="user__only__list">
+                      <li><a href="/">MY</a></li>
+                      <li><a href="/">이용권</a></li>
+                      <li><a href="/">쿠폰등록</a></li>
+                      <li><a href="/">고객센터</a></li>
+                      <li><a href="./views/onboading.html">로그아웃</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="overlay"></div>
+    <div class="search" role="dialog" aria-labelledby="searchModal" aria-modal="true">
+      <div class="search__form">
+        <h3 class="a11yHidden" id="searchModal">검색어 입력</h3>
+        <form action="/" method="GET">
+          <label for="searchResult" class="a11yHidden">검색어를 입력해주세요</label>
+          <input
+            class="search__input"
+            type="search"
+            name="search"
+            id="searchResult"
+            placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요"
+            autocomplete="off"
+          />
+          <button class="search__submit" type="submit"></button>
+        </form>
+      </div>
+      <div class="search__wrapper">
+        <div class="search__recent">
+          <p class="search__title">최근 검색어</p>
+          <ul class="search__result">
+            <li>검색 내역이 없습니다.</li>
+          </ul>
+        </div>
+        <div class="search__hot">
+          <p class="search__title">실시간 인기 검색어</p>
+          <ol class="search__list">
+            <li><a href="/">재벌집 막내아들</a></li>
+            <li><a href="/">미스터트롯2: 새로운 전설의 시작</a></li>
+            <li><a href="/">유 퀴즈 온 더 블록</a></li>
+            <li><a href="/">대행새</a></li>
+            <li><a href="/">SHOW ME THE MONEY 11</a></li>
+            <li><a href="/">미씽: 그들이 있었다2</a></li>
+            <li><a href="/">술꾼도시여자들2</a></li>
+            <li><a href="/">캐나다 체크인</a></li>
+            <li><a href="/">미씽: 그들이 있었다 - 그들은 다만나다</a></li>
+            <li><a href="/">술꾼도시여자들2</a></li>
+          </ol>
+          <div class="search__today"><span class="search__date"></span> <span class="search__time"></span> <span>기준</span></div>
+        </div>
+      </div>
+    </div>
+    <main class="mainPage">
+      <section class="banner">
+        <h2 class="banner__title a11yHidden" aria-hidden="true">배너</h2>
+        <div class="banner__container">
+          <img class="banner__image opa1" src="./images/banner01__header.png" aria-hidden="false" alt="배너 이미지" />
+          <button class="banner__prev" aria-label="이전배너"></button>
+          <button class="banner__next" aria-label="다음배너"></button>
+          <div class="banner__info">
+            <p class="banner__subtext">리얼 초밀착 법정 드라마</p>
+            <div class="banner__play">
+              <button class="banner__play__btn" aria-label="재생"></button>
+              <button class="banner__stop__btn" aria-label="정지"></button>
+              <button class="banner__shorcut is--active" aria-label="1번째 배너"></button>
+              <button class="banner__shorcut" aria-label="2번째 배너"></button>
+              <button class="banner__shorcut" aria-label="3번째 배너"></button>
+              <button class="banner__shorcut" aria-label="4번째 배너"></button>
+            </div>
+          </div>
+          <a class="banner__more" href="/">자세히보기</a>
+        </div>
+      </section>
+      <section class="must">
+        <h2 class="must__title">티빙에서 꼭 봐야하는 컨텐츠</h2>
+        <div class="must__list__wrapper">
+          <ul class="must__list">
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/treasure_must.webp" type="image/webp" />
+                    <img src="./images/treasure_must.png" alt="보물찾기" />
+                  </picture>
+                  <p class="must__imgTitle">보물찾기</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/lovecatcher_must.webp" type="image/webp" />
+                    <img src="./images/lovecatcher_must.png" alt="러브캐쳐인발리" />
+                  </picture>
+                  <p class="must__imgTitle">러브캐처 인 발리</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/drink2_must.webp" type="image/webp" />
+                    <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
+                  </picture>
+                  <p class="must__imgTitle">술꾼도시여자들2</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/king_must.webp" type="image/webp" />
+                    <img src="./images/king_must.png" alt="털사 킹" />
+                  </picture>
+                  <p class="must__imgTitle">털사 킹</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/nothing_must.webp" type="image/webp" />
+                    <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
+                  </picture>
+                  <p class="must__imgTitle">아무것도 하고 싶지 않아</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/blackdog_must.webp" type="image/webp" />
+                    <img src="./images/blackdog_must.png" alt="블랙독" />
+                  </picture>
+                  <p class="must__imgTitle">블랙독</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/our_must.webp" type="image/webp" />
+                    <img src="./images/our_must.png" alt="우리들의 블루스" />
+                  </picture>
+                  <p class="must__imgTitle">우리들의 블루스</p>
+                </div>
+              </a>
+            </li>
+            <li class="must__item">
+              <a class="must__link" href="/">
+                <div class="must__wrapper">
+                  <picture>
+                    <source srcset="./images/kilimanjaro_must.webp" type="image/webp" />
+                    <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
+                  </picture>
+                  <p class="must__imgTitle"><span>킬리만자로</span></p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="qVod">
+        <h2 class="qVod__title">Quick VOD</h2>
+        <ul class="qVod__list">
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/jtbcNews_vod.webp" type="image/webp" />
+                  <img src="./images/jtbcNews_vod.png" alt="jtbc 뉴스" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">JTBC 뉴스룸</p>
+              <p class="qVod__epiNo">0화</p>
+            </a>
+          </li>
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/liveMe_vod.webp" type="image/webp" />
+                  <img src="./images/liveMe_vod.png" alt="나는살기로했다" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">휴먼다큐 &lt;나는 살기로 했다&gt;</p>
+              <p class="qVod__epiNo">10화</p>
+            </a>
+          </li>
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/dutyFree_vod.webp" type="image/webp" />
+                  <img src="./images/dutyFree_vod.png" alt="건강면세점" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">건강면세점</p>
+              <p class="qVod__epiNo">130화</p>
+            </a>
+          </li>
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/diffClass_vod.webp" type="image/webp" />
+                  <img src="./images/diffClass_vod.png" alt="차이나는 클라스" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">차이나는 클라스</p>
+              <p class="qVod__epiNo">254화</p>
+            </a>
+          </li>
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/alMaeng_vod.webp" type="image/webp" />
+                  <img src="./images/alMaeng_vod.png" alt="알맹이" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">알맹이</p>
+              <p class="qVod__epiNo">208화</p>
+            </a>
+          </li>
+          <li class="qVod__items">
+            <a href="/" class="qVod__link">
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/momSpring_vod.webp" type="image/webp" />
+                  <img src="./images/momSpring_vod.png" alt="엄마의 봄날" class="qVod__img" />
+                </picture>
+              </div>
+              <p class="qVod__quick">Quick VOD</p>
+              <p class="qVod__name">엄마의 봄날</p>
+              <p class="qVod__epiNo">380화</p>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-  <body></body>
+      <section class="popShow">
+        <h2 class="popShow__title">실시간 인기 프로그램</h2>
+        <ol class="popShow__list">
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/richSon_vod.webp" type="image/webp" />
+                  <img src="./images/richSon_vod.png" alt="재벌집 막내아들" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">재벌집 막내아들</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/cityGirls_vod.webp" type="image/webp" />
+                  <img src="./images/cityGirls_vod.png" alt="술꾼도시여자들2" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name">술꾼도시여자들2</p>
+              </div>
+              <div class="name__adult">19</div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/lightShadow_vod.webp" type="image/webp" />
+                  <img src="./images/lightShadow_vod.png" alt="환혼: 빛과 그림자" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">환혼: 빛과 그림자</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/canCheck_vod.webp" type="image/webp" />
+                  <img src="./images/canCheck_vod.png" alt="캐나다 체크인" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">캐나다 체크인</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/surpriseSat_vod.webp" type="image/webp" />
+                  <img src="./images/surpriseSat_vod.png" alt="놀라운 토요일" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">놀라운 토요일</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/showMoney_vod.webp" type="image/webp" />
+                  <img src="./images/showMoney_vod.png" alt="쇼미더머니" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">SHOW ME THE MONEY</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/luvCatcher_vod.webp" type="image/webp" />
+                  <img src="./images/luvCatcher_vod.png" alt="러브캐처 인 발리" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name">러브캐처 인 발리</p>
+              </div>
+            </a>
+          </li>
+          <li class="popShow__items">
+            <a href="/" class="popShow__link">
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/inJob_vod.webp" type="image/webp" />
+                  <img src="./images/inJob_vod.png" alt="알쓸신잡" class="popShow__img" />
+                </picture>
+              </div>
+              <div class="popShow__wrapper">
+                <p class="popShow__name"><span class="popShow__redDot">알쓸인잡</span></p>
+              </div>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="live__wrapper">
+        <h2 class="live__title">인기 LIVE 채널</h2>
+        <div class="paddingBox">
+          <div class="live__slider">
+            <ul class="live__thumbnail">
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/jtbc_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/jtbc_news_capture_live.png" alt="실시간jtbc뉴스" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span> JTBC</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>JTBC 뉴스룸</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>27.9%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/famousRest_capture_live.webp" type="image/webp" />
+                      <img src="./images/famousRest_capture_live.png" alt="실시간 줄서는 식당" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span> tvN</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>줄서는 식당 43회</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>26.3%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/ytn_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/ytn_news_capture_live.png" alt="실시간 ytn 뉴스" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span> YTN</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>뉴스가 있는 저녁</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>9%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/richSon_capture_live.webp" type="image/webp" />
+                      <img src="./images/richSon_capture_live.png" alt="실시간 재벌집 막내아들" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span>JTBC2</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>재벌집 막내아들 5화</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>6.2%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/yunhap_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/yunhap_news_capture_live.png" alt="실시간 연합뉴스" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span> 연합뉴스TV</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>뉴스프라임</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>4.6%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live live__list">
+                <a href="/" class="live__link">
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/conan_capture_live.webp" type="image/webp" />
+                      <img src="./images/conan_capture_live.png" alt="실시간 코난" class="live__screen" />
+                    </picture>
+                  </div>
+                  <div class="live__infoContainer">
+                    <span class="live__rank"></span>
+                    <div class="live__info">
+                      <p class="live__broadcast"><span class="a11yHidden">방송사</span> 투니버스</p>
+                      <p class="live__name"><span class="a11yHidden">프로그램 명</span>코난11회</p>
+                      <p class="live__rating"><span class="a11yHidden">실시간 시청률</span>3%</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="only only__wrapper">
+        <h2 class="only__title">오직 타잉에만 있어요</h2>
+        <div class="paddingBox">
+          <div class="only__slider">
+            <ul class="only__container">
+              <li class="live only__list">
+                <a href="/" class="only__link">
+                  <div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/shortbuster_only.webp" type="image/webp" />
+                      <img src="./images/shortbuster_only.png" alt="전체관람가 숏버스터" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">전체관람가:숏버스터</dt>
+                        <dd class="only__defGenre">예능</dd>
+                        <dd class="only__defDescription">
+                          곽경택, 김곡&김선, 윤성호, 홍석재, 김초희, 류덕환, 조현철, 주동민 감독까지! 다양한 시선으로 자신만의 평행우주를 담아낸 강렬한 8편의
+                          숏버스터는 기본, 생생한 고군분투 제작기는 플러스! OTT에서 새롭게 만나는 영화X예능 콜라보 프로그램
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live only__list">
+                <a href="/" class="only__link">
+                  <div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/lovecatcherMoo_only.webp" type="image/webp" />
+                      <img src="./images/lovecatcherMoo_only.png" alt="러브캐쳐인발리" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">러브캐처 in BALI</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>예능</dd>
+                        <dd class="only__defDescription">
+                          LOVE or MONEY ? 이번엔 발리다. 세계 최고의 휴양지 섬 발리에서 역대급 캐처들과의 만남. 끝없는 의심 속 진짜 사랑을 찾기 귀한 연애 심리
+                          개임이 시작된다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="live only__list">
+                <a href="/" class="only__link">
+                  <div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/transfer_only.webp" type="image/webp" />
+                      <img src="./images/transfer_only.png" alt="환승연애2" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">환승연애2</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>예능</dd>
+                        <dd class="only__defDescription">
+                          다양한 이유로 이별한 커플들이 한 집에 모여 지나간 연애를 되짚고 새로운 인연을 마주하며 자신만의 사랑을 찾아가는 연애 리얼리티 프로그램
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="live only__list">
+                <a href="/" class="only__link"
+                  ><div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/money_only.webp" type="image/webp" />
+                      <img src="./images/money_only.png" alt="몸값" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">몸값</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>드라마</dd>
+                        <dd class="only__defDescription">
+                          <p class="css-1bth7uc e1tfqgq925" style="-webkit-line-clamp: 100">
+                            &lt;제 6회 칸 국제 시리즈 페스티벌&gt; 각본상 수상! 각자의 이유로 ‘몸값’ 흥정이 벌어지던 모텔에서 대지진이 덮치면서 펼쳐지는 이야기.
+                          </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div></a
+                >
+              </li>
+              <li class="live only__list">
+                <a href="/" class="only__link"
+                  ><div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/drunkencity_only.webp" type="image/webp" />
+                      <img src="./images/drunkencity_only.png" alt="술꾼도시여자들" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">술꾼도시여자들</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>예능</dd>
+                        <dd class="only__defDescription">하루 끝의 술 한잔이 인생의 신념인 세 여자의 일상을 그린 본격 기승전술 드라마</dd>
+                      </dl>
+                    </div>
+                  </div></a
+                >
+              </li>
+              <li class="live only__list">
+                <a href="/" class="only__link"
+                  ><div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/monster_only.webp" type="image/webp" />
+                      <img src="./images/monster_only.png" alt="괴이" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">괴이</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>드라마</dd>
+                        <dd class="only__defDescription">
+                          저주 받은 불상이 나타난 마을에서 마음속 지옥을 보게 된 사람들과, 그 마을의 괴이한 사건을 쫓는 초자연 스릴러
+                        </dd>
+                      </dl>
+                    </div>
+                  </div></a
+                >
+              </li>
+              <li class="live only__list">
+                <a href="/" class="only__link"
+                  ><div class="only__imgBox">
+                    <picture>
+                      <source srcset="./images/foodchronicle_only.webp" type="image/webp" />
+                      <img src="./images/foodchronicle_only.png" alt="푸드크로니클" class="only__poster" />
+                    </picture>
+                    <div class="only__defContainer">
+                      <dl class="only__defList">
+                        <dt class="only__defTerm">푸드크로니클</dt>
+                        <dd class="only__defGenre"><span class="a11yHidden">장르</span>교양</dd>
+                        <dd class="only__defDescription">
+                          만두, 쌈, 타코, 피자, 팬케이크, 샌드위치, 스시, 케이크! 세상을 움직인 8가지 음식이야기! 감싸거나(wrap) 동글납작하거나(flat)
+                          쌓아올린(layer)다는 3가지 주제로 맛의 기원을 찾아 떠나는 여정을 시작한다!
+                        </dd>
+                      </dl>
+                    </div>
+                  </div></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="sports__live">
+        <h2 class="a11yHidden">티빙 스포츠 생중계</h2>
+        <div>
+          <a href="/">
+            <picture>
+              <source srcset="./images/sportsLive_footer.webp" type="image/webp" />
+              <img src="./images/sportsLive_footer.png" alt="티빙 스포츠 생중계 바로가기" />
+            </picture>
+          </a>
+        </div>
+      </section>
+      <section class="footer__event">
+        <h2 class="footer__eventTitle">이벤트</h2>
+        <ul class="footer__eventList">
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/sinbi_footer.png" type="image/webp" />
+                <img src="./images/sinbi_footer.png" alt="신비 아파트 바로가기" />
+              </picture>
+            </a>
+          </li>
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/richSon_footer.png" type="image/webp" />
+                <img src="./images/richSon_footer.png" alt="재벌집 막내아들 바로가기" />
+              </picture>
+            </a>
+          </li>
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/love3_footer.png" type="image/webp" />
+                <img src="./images/love3_footer.png" alt="환승연애, 각자의 본능대로,러브개처 바로가기" />
+              </picture>
+            </a>
+          </li>
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/shrup_footer.png" type="image/webp" />
+                <img src="./images/shrup_footer.png" alt="슈룹 바로가기" />
+              </picture>
+            </a>
+          </li>
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/koreanDessertMaker_footer.png" type="image/webp" />
+                <img src="./images/koreanDessertMaker_footer.png" alt="대한민국 대표 디저트 메이커 바로가기" />
+              </picture>
+            </a>
+          </li>
+          <li class="eventList__item">
+            <a href="/">
+              <picture>
+                <source srcset="./images/letmiin_footer.png" type="image/webp" />
+                <img src="./images/letmiin_footer.png" alt="렛미인 바로가기" />
+              </picture>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer__area">
+      <h2 class="a11yHidden">공지사항</h2>
+      <div class="footer__wrapper">
+        <div class="footer__noticeLink">
+          <a href="/" class="footer__notice">공지사항</a>
+          <a href="/" class="footer__information">[안내] 합병보고 주주총회에 갈음하는 공고</a>
+        </div>
+        <ul class="footer__shortcut">
+          <li class="shortcut">
+            <button class="shortcut__btn">브랜드 바로가기<span class="shortcut__plus">+</span></button>
+            <ul class="shortcut__group">
+              <li><a href="/">MNET</a></li>
+              <li><a href="/">MWAVE</a></li>
+              <li><a href="/">tvN</a></li>
+              <li><a href="/">tvN STORY</a></li>
+              <li><a href="/">tvN DRAMA</a></li>
+              <li><a href="/">tvN SHOW</a></li>
+              <li><a href="/">OCN</a></li>
+              <li><a href="/">OCNmovies</a></li>
+              <li><a href="/">OCNthrills</a></li>
+              <li><a href="/">중화TV</a></li>
+              <li><a href="/">UXN</a></li>
+              <li><a href="/">CATCH ON</a></li>
+              <li><a href="/">O'live</a></li>
+              <li><a href="/">XTM</a></li>
+              <li><a href="/">tooniverse</a></li>
+              <li><a href="/">tvnD</a></li>
+            </ul>
+          </li>
+          <li class="shortcut__bar"></li>
+          <li class="shortcut">
+            <button class="shortcut__btn">그룹 계열사 바로가기<span class="shortcut__plus">+</span></button>
+            <ul class="shortcut__group">
+              <li><a href="/">CJ주식회사</a></li>
+              <li><a href="/">CJ ENM 엔터테인먼트부문</a></li>
+              <li><a href="/">CJ CGV</a></li>
+              <li><a href="/">CJ제일제당(식품)</a></li>
+              <li><a href="/">CJ프레시웨이</a></li>
+              <li><a href="/">CJ푸드빌</a></li>
+              <li><a href="/">CJ엠디원</a></li>
+              <li><a href="/">CJ제일제당(바이오)</a></li>
+              <li><a href="/">CJ ENM 커머스부문</a></li>
+              <li><a href="/">CJ대한통운</a></li>
+              <li><a href="/">CJ텔레닉스</a></li>
+              <li><a href="/">CJ올리브영</a></li>
+              <li><a href="/">CJ대한통운(건설)</a></li>
+              <li><a href="/">CJ올리브네트웍스</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="footer__hrContainer">
+        <li><a href="/" class="footer__hrList">고객센터</a></li>
+        <li><a href="/" class="footer__hrList">이용약관</a></li>
+        <li><a href="/" class="footer__hrList">개인정보처리방침</a></li>
+        <li><a href="/" class="footer__hrList">청소년 보호정책</a></li>
+        <li><a href="/" class="footer__hrList">법적 고지</a></li>
+        <li><a href="/" class="footer__hrList">이벤트</a></li>
+        <li><a href="/" class="footer__hrList">인재채용</a></li>
+      </ul>
+      <div class="footer__ownerinfoContainer">
+        <p class="hr__lineHeight">
+          대표이사: YANG JIEUL<span class="hr__divLine" aria-hidden="true">ㅣ</span><a href="/">사업자정보확인</a
+          ><span class="hr__divLine" aria-hidden="true">ㅣ</span> 사업자등록번호: 188-88-01893<span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          통신판매신고번호:2020-서울마포-3641호
+        </p>
+        <p class="hr__lineHeight">
+          사업장: 서울특별시 마포구 상암산로 34, DMC 디지털큐브 15층(상암동)<span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          호스팅사업자: 씨제이올리브네트윅스(주)
+        </p>
+        <p class="hr__lineHeight">
+          <a href="/" class="">고객문의 바로가기</a><span class="hr__divLine" aria-hidden="true">ㅣ</span> <a href="/">대표메일: tving@cj.net</a
+          ><span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          <a href="/">고객센터: 1670-1525(평일/주말 09~18시, 공휴일 휴무)</a>
+        </p>
+        <p class="hr__lineHeight">
+          ENM 시청자 상담실 (편성 문의 및 시청자 의견): 080-080-0780 <span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          Mnet 고객센터 (방송편성문의): 1855-1631
+        </p>
+      </div>
+      <ul class="footer__sprite">
+        <li class="sprite sprite__youtube">
+          <a href="/"><span class="a11yHidden">유튜브 링크</span></a>
+        </li>
+        <li class="sprite sprite__instagram">
+          <a href="/"><span class="a11yHidden">인스타그램 링크</span></a>
+        </li>
+        <li class="sprite sprite__twitter">
+          <a href="/"><span class="a11yHidden">트위터 링크</span></a>
+        </li>
+        <li class="sprite sprite__facebook">
+          <a href="/"><span class="a11yHidden">페이스북 링크</span></a>
+        </li>
+      </ul>
+      <div class="footer__copyright">
+        <small class="footer__copyrigtInfo">Copyright © 주식회사 티빙 All right reserved.</small>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,1 +1,141 @@
-// mixin.scss
+@use "./../utils/unit" as *;
+@use "./../utils/color" as *;
+
+//mixin.scss
+@use "./../utils/unit" as *;
+
+@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap, $gap: 0) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $items;
+  gap: rem($gap);
+}
+
+// position
+@mixin pos {
+  position: absolute;
+}
+
+@mixin posLeftTop($l: 0, $t: 0) {
+  @include pos;
+  top: rem($t);
+  left: rem($l);
+}
+
+@mixin posRightTop($r: 0, $t: 0) {
+  @include pos;
+  top: rem($t);
+  right: rem($r);
+}
+
+@mixin posCenterX {
+  @include pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin posBottomY {
+  @include pos;
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+@mixin posCenterY {
+  @include pos;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin posCenter {
+  @include pos;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// padding
+@mixin padding($spacing) {
+  @include paddingX($spacing);
+  @include paddingY($spacing);
+}
+
+@mixin paddingX($spacing) {
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+
+@mixin paddingY($spacing) {
+  padding-top: rem($spacing);
+  padding-bottom: rem($spacing);
+}
+
+@mixin padding($spacing) {
+  padding: rem($spacing);
+}
+
+@mixin marginX($spacing) {
+  margin-left: rem($spacing);
+  margin-right: rem($spacing);
+}
+
+@mixin marginY($spacing) {
+  margin-top: rem($spacing);
+  margin-bottom: rem($spacing);
+}
+
+@mixin margin($spacing) {
+  @include marginX($spacing);
+  @include marginY($spacing);
+}
+
+@mixin autoMargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 반응형 콘텐츠
+@mixin textOver {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//신명화 믹스인
+@mixin number__live($fontSize: 70px, $fontWeight: 700) {
+  padding: 0;
+  content: counter(number);
+  color: $base-text;
+  font-family: Noto Sans KR;
+  transform: skew(-7.5deg);
+  font-size: rem($fontSize);
+  font-weight: $fontWeight;
+  display: block;
+}
+//패딩 사방팔방 다 줘야 되는데 모바일마다 다 달라야 하는 패딩을 위해 만들었다
+@mixin paddingSquare ($n: 0,$e: 0, $s: 0, $w: 0) {
+  padding-top: rem($n);
+  padding-right: rem($e);
+  padding-bottom: rem($s);
+  padding-left: rem($w);
+
+}
+@mixin spriteImg__header($x, $y) {
+  background-image: url(./../../images/sprite__icon.png);
+  background-repeat: no-repeat;
+  background-position: rem($x) rem($y);
+}
+@mixin spriteBox__header($w, $h, $x, $y) {
+  width: rem($w);
+  height: rem($h);
+  @include spriteImg__header($x, $y);
+}
+
+@mixin button__header {
+  display: block;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+// made by 갓동균

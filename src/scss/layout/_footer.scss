@@ -1,1 +1,387 @@
-// footer.scss
+@use "./../utils" as *;
+
+// 티빙 스포츠 생중계
+.sports__live {
+  @include paddingY(36px);
+
+  @include mobileW {
+    @include paddingX(8px);
+  }
+  @include tabletW {
+    @include paddingX(40px);
+  }
+  @include desktopW {
+    @include paddingX(70px);
+  }
+}
+
+// 이벤트라인
+.footer__event {
+  overflow: hidden;
+  @include mobileW {
+    padding-left: 8px;
+  }
+  @include tabletW {
+    padding-left: 40px;
+  }
+  @include desktopW {
+    padding-left: 70px;
+  }
+
+  @at-root .footer__eventTitle {
+    color: $white;
+    padding-bottom: 12px;
+    @include mobileW {
+      font: $label-sm;
+    }
+    @include tabletW {
+      font: $heading-md;
+    }
+    @include desktopW {
+      font: $heading-xl;
+    }
+  }
+
+  @at-root .footer__eventList {
+    display: block;
+    padding-bottom: 36px;
+    @include mobileW {
+      @include flexbox($gap: 7px);
+    }
+    @include tabletW {
+      @include flexbox($gap: 8px);
+    }
+    @include desktopW {
+      @include flexbox($gap: 16px);
+    }
+  }
+
+  @at-root .eventList__item {
+    @include mobileW {
+      min-width: rem(145px);
+    }
+    @include tabletW {
+      min-width: rem(214px);
+    }
+    @include desktopW {
+      min-width: rem(346px);
+    }
+  }
+}
+
+// 푸터 컨텐츠 ------------------------------
+.hr__divLine {
+  color: $gray800;
+  // 구분선 컬러
+}
+
+.shortcut__buttonLine {
+  color: $gray200;
+  @include tabletW {
+    font: $par-sm;
+  }
+  @include desktopW{
+    font: $par-lg;
+  }
+}
+
+.footer {
+  &__hrList {
+    display: block;
+  }
+
+  &__information {
+    color: $gray200;
+
+  }
+
+  &__noticeLink {
+    @include mobileW {
+      font: $par-sm;
+    }
+    @include tabletW {
+      font: $par-sm;
+    }
+    @include desktopW{
+      font: $par-lg;
+    }
+  }
+
+  &__notice {
+    color: $gray500;
+  }
+
+  &__wrapper {
+    @include flexbox($justify: space-between);
+    border-bottom: 1px solid #212121;
+    padding-bottom: rem(27px);
+  }
+
+  &__hrContainer {
+    color: $gray200;
+  }
+
+  &__sprite {
+    @include flexbox;
+  }
+
+  &__ownerinfoContainer {
+    color: $gray500;
+  }
+
+  &__copyright {
+    color: #6b6b6b;
+  }
+
+  &__directLink {
+    @include flexbox($justify: flex-end);
+  }
+
+  @include mobileW {
+    &__area {
+      @include paddingSquare(52, 16, 82, 16);
+      font: $par-sm;
+    }
+
+    &__direct {
+      display: none;
+    }
+
+    &__ownerinfoContainer {
+      display: none;
+    }
+
+    &__hrContainer {
+      @include flexbox($direction: column);
+    }
+
+    &__hrList {
+      margin-top: rem(12px);
+    }
+
+    &__sprite {
+      @include marginY(12px);
+    }
+
+    &__wrapper {
+      padding-bottom: rem(12px);
+    }
+  }
+
+  @include tabletW {
+    &__area {
+      @include paddingSquare(70, 40, 100, 40);
+      font: $par-sm;
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
+    &__wrapper {
+      padding-bottom: rem(12px);
+    }
+    &__hrContainer {
+      @include flexbox;
+    }
+    &__hrList {
+      margin-right: rem(20px);
+      margin-top: rem(16px);
+    }
+    &__ownerinfoContainer {
+      @include marginY(12px);
+    }
+    &__copyright {
+      margin-top: rem(12px);
+    }
+  }
+
+  @include desktopW {
+    &__area {
+      @include paddingSquare(140, 68, 170, 68);
+      font: $par-md;
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
+    &__hrContainer {
+      @include flexbox;
+    }
+    &__hrList {
+      margin-right: rem(36px);
+      margin-top: rem(27px);
+    }
+    &__ownerinfoContainer {
+      @include marginY(24px);
+    }
+    &__copyright {
+      margin-top: rem(24px);
+    }
+  }
+}
+
+.sprite {
+  border-radius: 50%;
+
+  @include mobileW {
+    & {
+      width: rem(24px);
+      height: rem(24px);
+      margin-right: rem(8px);
+    }
+
+
+    &__youtube a{
+      display: block;
+      @include spriteBox__header(24px, 24px, 0, -791px);
+    }
+    &__instagram a{
+      display: block;
+      @include spriteBox__header(24px, 24px, -112px, -791px);
+    }
+    &__twitter a{
+      display: block;
+      @include spriteBox__header(24px, 24px, -224px, -791px);
+    }
+    &__facebook a{
+      display: block;
+      @include spriteBox__header(24px, 24px, -336px, -791px);
+    }
+  }
+
+
+  @include tabletW {
+    & {
+      width: rem(30px);
+      height: rem(30px);
+      margin-right: rem(8px);
+    }
+
+    &__youtube a {
+      display: block;
+      @include spriteBox__header(30px, 30px, 0, -835px);
+    }
+    &__instagram a {
+      display: block;
+      @include spriteBox__header(30px, 30px, -112px, -835px);
+    }
+    &__twitter a {
+      display: block;
+      @include spriteBox__header(30x, 30px, -224px, -835px);
+    }
+    &__facebook a {
+      display: block;
+      @include spriteBox__header(30px, 30px, -336px, -835px);
+    }
+  }
+  @include desktopW {
+    & {
+      width: rem(52px);
+      height: rem(52px);
+      margin-right: rem(20px);
+    }
+
+    &__youtube a {
+      display: block;
+      @include spriteBox__header(52px, 52px, 0, -885px);
+    }
+    &__instagram a {
+      display: block;
+      @include spriteBox__header(52px, 52px, -112px, -885px);
+    }
+    &__twittera  {
+      display: block;
+      @include spriteBox__header(52px, 52px, -224px, -885px);
+    }
+    &__facebook a {
+      display: block;
+      @include spriteBox__header(52px, 52px, -336px, -885px);
+    }
+  }
+}
+
+
+.footer {
+  &__shortcut {
+    @include desktopW {
+      @include flexbox($gap: 60px);
+    }
+
+    @include tabletW {
+      @include flexbox($gap: 32px);
+    }
+    @include mobileW {
+      display: none;
+    }
+    .shortcut {
+      position: relative;
+      color: $gray200;
+      &__brand,
+      &__group {
+        @include flexbox($direction: column);
+      }
+      @include desktopW {
+        min-width: 165px;
+        font: $par-lg;
+      }
+      @include tabletW {
+        min-width: 100px;
+        font: $par-sm;
+      }
+      &__btn {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: $gray200;
+        cursor: pointer;
+      }
+      &__plus {
+        margin-left: 16px;
+      }
+      &__group.is--active {
+        @include flexbox($direction: column, $gap: 5px);
+      }
+      &__group {
+        display: none;
+        position: absolute;
+        background: $gray700;
+        border-radius: 5px;
+        left: 0;
+        width: 100%;
+        overflow-x: hidden;
+        @include tabletW {
+          top: -105px;
+          height: 100px;
+          padding: 5px;
+        }
+        @include desktopW {
+          top: -210px;
+          height: 200px;
+          padding: 10px;
+        }
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: $red2;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #e9394547;
+        }
+        a:hover {
+          color: $base-text;
+        }
+      }
+      &__bar {
+        width: 1px;
+        height: 100%;
+        background: $gray500 ;
+      }
+    }
+  }
+}

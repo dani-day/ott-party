@@ -1,1 +1,314 @@
-// layout.scss
+@use "./../utils" as *;
+
+
+
+/*******************live***********************/
+.live {
+  
+  &__wrapper {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    }
+  &__title {
+    color: $white;
+    }
+
+  &__thumbnail {
+    @include flexbox ($justify: space-between);
+      overflow: hidden;
+      
+    } 
+  &__list {
+    counter-increment: number;
+    }
+  &__rank {
+    padding-right: 5px;
+    }
+  &__infoContainer {
+    @include flexbox;
+    margin-bottom: rem(30px);
+    }
+  &__info {
+    padding-top: 10px;
+    padding-left: 7px;
+    }
+
+  &__name {
+    color: $gray300;
+    }
+
+
+  &__rating {
+    color: $gray500;
+    }
+
+ //live 반응형 모바일
+  @include mobileW {
+    
+    &__title {
+      font: $label-sm;
+      padding-left: rem(8px);
+    }
+
+    &__list {
+      margin-right: rem(8px);
+    }
+    
+    &__rank::before {
+      @include number__live (34px , 700);
+    }
+
+    &__imgBox {
+      min-width: rem(145px);
+    }
+    
+    &__thumbnail {
+      padding-left: rem(8px);
+      padding-right: rem(8px);
+    }
+
+   &__broadcast {
+      font: $label-sm;
+      color: $gray200;
+      font-weight: 600;
+    }
+
+    &__name, &__rating {
+      font: $par-sm;
+    }
+    .paddingBox {
+      padding-right: rem(8px);
+    }
+
+    
+
+    & {
+      transition: transform 150ms ease-in-out 50ms;
+      transform: translateY(4px);
+    }
+    &:hover {
+      transform: translateY(0);
+    }
+
+
+
+  }
+  //live 반응형 테블릿
+  @include tabletW {
+    
+      &__title {
+        font: $heading-md;
+        padding-top: rem(12px);
+        padding-left: 0;
+      }
+      &__list {
+        margin-right: rem(8px);
+      }
+      &__rank::before {
+      @include number__live (46px , 700);
+      }
+
+      &__imgBox {
+        min-width: rem(225px);
+      }
+     
+      &__broadcast {
+        font: $label-md;
+        color: $gray200;
+        font-weight: 600;
+      }
+      
+      &__name, &__rating {
+        font: $par-sm;
+      }
+     
+
+      &__wrapper {
+        padding-left: rem(40px);
+        
+      }
+      &_thumbnail {
+        padding-right: rem(40px);
+      }
+      
+      & {
+        transition: transform 150ms ease-in-out 50ms;
+        transform: translateY(8px);
+      }
+      &:hover {
+        transform: translateY(0);
+      }
+
+      
+      
+    }
+    //live 반응형 데스크탑
+    @include desktopW {
+      &__title {
+        font: $heading-xl;
+        padding-left: rem(70px);
+      }
+      &__list {
+        margin-right: rem(16px);
+      }
+      &__rank::before {
+        @include number__live;
+      }
+      &__imgBox {
+      
+        min-width: rem(345px);
+      }
+ 
+      &__broadcast {
+        font: $label-lg;
+        color: $gray200;
+        font-weight: 600;
+      }
+      
+      &__name, &__rating {
+        font: $par-md;
+      }
+
+      &__thumbnail {
+        padding-right: rem(70px);
+
+      } 
+      
+      &{
+        transition: transform 150ms ease-in-out 50ms;
+        transform: translateY(12px);
+      }
+      &:hover {
+        transform: translateY(0);
+      }
+      &__wrapper {
+        padding-left: rem(70px);
+        
+      }
+      
+        
+      }        
+
+}  
+
+// **********************  only 시작 ********
+
+
+.only {
+  // 테스트
+  
+  &__title {
+    color: $white;
+  }
+  &__container {
+    @include flexbox ($justify: space-between);
+    padding-bottom: rem(8px);
+    overflow: hidden;
+  }
+  &__list {
+    display: block;
+    position: relative;
+  }
+
+  &__defContainer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 100ms 100ms;
+    border-radius: 4px;
+  }
+
+  &__defContainer:hover {
+    opacity: 1;
+  }
+  
+  
+  &__defTerm {
+    font-size: rem(25px);
+    font-weight: 900;
+    font-style: bold;
+    width: 100%;
+  }
+  &__defList {
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    padding-bottom: 150px; 
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+  }
+  &__defDescription {
+    width: 100%;
+    height: 100%;
+  }
+
+  
+
+  //only 반응형 모바일
+  @include mobileW {
+    
+    &__title {
+      font: $label-sm;
+    }
+    &__list {
+      margin-right: rem(8px);
+    }
+    &__imgBox {
+      width: rem(139px);
+    }
+    &__wrapper {
+      padding-left: rem(8px);
+    }
+  }
+  //only 태블릿
+  @include tabletW {
+
+      &__title {
+        font: $heading-md;
+      }
+      &__list {
+        margin-right: rem(8px);
+      }
+      
+      &__imgBox {
+        min-width: rem(168px);
+      }
+      &__wrapper {
+        padding-left: rem(40px);
+        
+      }
+
+    }
+    //only 데스크탑 
+    @include desktopW {
+       &__title {
+        font: $heading-xl;
+      }
+      &__list {
+        margin-right: rem(16px);
+      }
+      &__imgBox {
+        min-width: rem(285px);
+      }
+      &__wrapper {
+        padding-left: rem(70px);
+      }
+}  
+}
+
+
+
+
+
+
+
+
+
