@@ -178,7 +178,9 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
   - 박스 호버시 해당 아이템만 단독 위로 상승함
 
 - figma 시안 외 구현 사항 - 티빙 사이트
+  <br>
   <img src="./assets/image1_live.png" width="50%">
+  <br>
   <img src="./assets/image2_live.png" width="50%">
 
 ### 1-4. 배너, 이벤트 및 footer [조수연]
@@ -194,7 +196,7 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 
   - 마우스로 클릭시 페이지로 이동할 수 있음
   - 이미지를 가로로 배열함 sprit에 block을 줌
-    <br/>
+    <br>
 
 - figma 시안 외 구현사항 (유동균)
   <br>
@@ -202,6 +204,7 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
   <br>
 
   - 바로가기를 클릭했을 때 연동되는 리스트를 작성함
+    <br>
     <br>
 
 - figma 시안 대비 미구현 사항
