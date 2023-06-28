@@ -1,173 +1,90 @@
 @use "./../utils" as *;
 
-// html {
-//   font-size: calc(8px + .5vw);
-// }
-
-// 전체 박스 화면 가로 길이 100%
-// 추후 내부 박스 사이즈 만들고 오버플로우 히든으로 밖으로 나가는 애들 숨기고 버튼 누르면 옆면이 넘어오게 만들기
-// 섹션에 호버시 z-index 0 -> 1로 변하면서 0이어서 숨겨져있던 버튼과 전체보기가 뜬다.영화정보가 뜬다 ?
 
 
-
-section {
-  // overflow: hidden;
-  // width: 100vw;
-}
-
-// todo / li에 넣은 트랜지션 믹스인으로 통일 하자고 제안하기
-
-// li {
-//   transition: transform 150ms ease-in-out 50ms;
-//   // flex-shrink: 0;
-//   // flex-basis: content;
-//   transform: translateY(12px);
-//   // flex-grow: 0;
-//   }
-
-
-// li:hover 
-//   {
-//   transform: translateY(0);
-//   }
-
-.paddingBox {
-  // @include flexbox;
-  // width: fit-content;
-  // 내부 컨텐츠 요소 만큼만 크기를 갖는다. 
-  
-  
-  
-
-  @include mobileW {
-    // @include paddingX (8px);
-    padding-left: rem(8px);
-    
-  }
-  @include tabletW {
-    // @include paddingX (40px);
-    padding-left: rem(40px);
-  }
-  @include desktopW {
-    // @include paddingX (70px);
-    padding-left: rem(70px);
-  }
-
-
-}
-
-
-
-//li에 공통으로 주었던 이기적인 트랜스폼 제거 했습니다.
-
-h2 {
-  padding-top: rem(12px);
-  padding-left: 0;
-  
-  font: $label-sm;
-  // padding-left: rem(8px);
-}
-
-// p {
-//   @include paddingY (3px);
-// }
-// 공통 넘침요소 히든처리
-// .live__slider,.only__slider {
-  // overflow: hidden;
-// }
-
-/******************************************/
+/*******************live***********************/
 .live {
   
-  //! 이거는 건들면 안됩니다 없으면 코드 사망
   &__wrapper {
-    display: inline;
-
-  }
+    display: inline-block;
+    }
   &__title {
-    color: $white;
-    
-  }
-  
-  // &__slider 
+    color: $white;   
+    }
+
   &__thumbnail {
     @include flexbox ($justify: space-between);
-      
-    
-  } 
+      overflow: hidden;
+      width: 100vw;
+    } 
   &__list {
     counter-increment: number;
-    display: inline;
-    
-    
-  }
-  
- 
-
+    }
   &__rank {
-  padding-right: 5px;
-  
-  }
-  &__container {
-  overflow: hidden;
-  padding-bottom: rem(3px);
-  
-  }
-
+    padding-right: 5px;
+    }
   &__infoContainer {
-  // position: relative;
-  @include flexbox;
-  margin-bottom: rem(30px);
-  
-}
+    @include flexbox;
+    margin-bottom: rem(30px);
+    }
+  &__info {
+    padding-top: 10px;
+    padding-left: 7px;
+    }
 
-&__info {
-  padding-top: 10px;
-  padding-left: 7px;
-
-}
-
-&__name {
-  color: $gray300;
-}
+  &__name {
+    color: $gray300;
+    }
 
 
-&__rating {
-  color: $gray500;
-
-}
+  &__rating {
+    color: $gray500;
+    }
 
  //live 반응형 모바일
   @include mobileW {
     
-&__title {
-  font: $label-sm;
-  padding-left: rem(8px);
+    &__title {
+      font: $label-sm;
+      padding-left: rem(8px);
+    }
 
-}
     &__list {
       margin-right: rem(8px);
     }
+    
     &__rank::before {
-        @include number__live (34px , 700);
+      @include number__live (34px , 700);
     }
 
     &__imgBox {
-      // display: inline-block;
       min-width: rem(145px);
+    }
     
+    &__thumbnail {
+      padding-left: rem(8px);
     }
 
+   &__broadcast {
+      font: $label-sm;
+      color: $gray200;
+      font-weight: 600;
+    }
 
-&__broadcast {
-  font: $label-sm;
-  color: $gray200;
-  font-weight: 600;
-}
+    &__name, &__rating {
+      font: $par-sm;
+    }
 
-&__name, &__rating {
-  font: $par-sm;
-}
+    
+
+    & {
+      transition: transform 150ms ease-in-out 50ms;
+      transform: translateY(4px);
+    }
+    &:hover {
+      transform: translateY(0);
+    }
+
 
 
   }
@@ -176,14 +93,14 @@ h2 {
     
       &__title {
         font: $heading-md;
-        padding-left: rem(40px);
+        padding-top: rem(12px);
+        padding-left: 0;
       }
       &__list {
-        
         margin-right: rem(8px);
       }
       &__rank::before {
-        @include number__live (46px , 700);
+      @include number__live (46px , 700);
       }
 
       &__imgBox {
@@ -199,12 +116,26 @@ h2 {
       &__name, &__rating {
         font: $par-sm;
       }
+     
+
+      &__wrapper {
+        padding-left: rem(40px);
+      }
+      
+      & {
+        transition: transform 150ms ease-in-out 50ms;
+        transform: translateY(8px);
+      }
+      &:hover {
+        transform: translateY(0);
+      }
+
       
       
     }
     //live 반응형 데스크탑
     @include desktopW {
-       &__title {
+      &__title {
         font: $heading-xl;
         padding-left: rem(70px);
       }
@@ -229,11 +160,23 @@ h2 {
         font: $par-md;
       }
       
+      &{
+        transition: transform 150ms ease-in-out 50ms;
+        transform: translateY(12px);
+      }
+      &:hover {
+        transform: translateY(0);
+      }
+      &__wrapper {
+        padding-left: rem(70px);
+      }
+      
+        
+      }        
 
 }  
-}
 
-
+// **********************  only 시작 ********
 
 
 .only {
@@ -248,16 +191,11 @@ h2 {
     overflow: hidden;
   }
   &__list {
-    // margin-top: rem(12px);
-    transform: translateY(12px);
     display: block;
-    
-    // test
     position: relative;
   }
 
   &__defContainer {
-
     top: 0;
     left: 0;
     width: 100%;
@@ -267,28 +205,21 @@ h2 {
     opacity: 0;
     transition: opacity 100ms 100ms;
     border-radius: 4px;
-    
-    
   }
- &__defContainer:hover {
-    opacity: 1;
 
+  &__defContainer:hover {
+    opacity: 1;
   }
   
   
   &__defTerm {
-  
-    // background: yellow;
     font-size: rem(25px);
     font-weight: 900;
     font-style: bold;
     width: 100%;
-    
   }
   &__defList {
-    
     position: absolute;
-    
     margin: 0 auto;
     top: 50%;
     left: 50%;
@@ -297,14 +228,10 @@ h2 {
     width: 70%;
     height: 70%;
     overflow: hidden;
-    
-  
   }
   &__defDescription {
-    
     width: 100%;
     height: 100%;
-    
   }
 
   
@@ -314,8 +241,6 @@ h2 {
     
     &__title {
       font: $label-sm;
-      padding-left: rem(8px);
-    
     }
     &__list {
       margin-right: rem(8px);
@@ -323,20 +248,25 @@ h2 {
     &__imgBox {
       width: rem(139px);
     }
+    &__wrapper {
+      padding-left: rem(8px);
+    }
   }
   //only 태블릿
   @include tabletW {
-    
+
       &__title {
         font: $heading-md;
-        padding-left: rem(40px);
       }
       &__list {
         margin-right: rem(8px);
       }
-      //todo 리스트(컨텐츠 사이) 사이 간격 믹스인으로 제작 제안하기
+      
       &__imgBox {
         min-width: rem(168px);
+      }
+      &__wrapper {
+        padding-left: rem(40px);
       }
 
     }
@@ -344,13 +274,15 @@ h2 {
     @include desktopW {
        &__title {
         font: $heading-xl;
-        padding-left: rem(70px);
       }
       &__list {
         margin-right: rem(16px);
       }
       &__imgBox {
         min-width: rem(285px);
+      }
+      &__wrapper {
+        padding-left: rem(70px);
       }
 }  
 }

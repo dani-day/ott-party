@@ -4,34 +4,36 @@
 //viewport 전체 기본 배경 및 폰트 색상 (black)
 body {
   background: $base-bg;
-  // color: $base-text;
 }
 
 //Quick VOD, 실시간 인기 프로그램 Section 공통 사항
 .qVod,
 .popShow {
+  width: 100vw;
   overflow: hidden;
-  margin-bottom: rem(36px);
 
   @include mobileW {
-    transform: translateX(8px);
+    padding-left: rem(8px);
+    padding-bottom: rem(16px);
   }
   @include tabletW {
-    transform: translateX(40px);
+    padding-left: rem(40px);
+    padding-bottom: rem(28px);
   }
   @include desktopW {
-    transform: translateX(70px);
+    padding-left: rem(70px);
+    padding-bottom: rem(36px);
   }
 
   &__list {
     @include mobileW {
-      @include flexbox(row, flex-start, center, nowrap, rem(8px));
+      @include flexbox($gap: 7px);
     }
     @include tabletW {
-      @include flexbox(row, flex-start, center, nowrap, rem(8px));
+      @include flexbox($gap: 8px);
     }
     @include desktopW {
-      @include flexbox(row, flex-start, center, nowrap, rem(16px));
+      @include flexbox($gap: 16px);
     }
   }
 
@@ -49,16 +51,19 @@ body {
 
   //section 제목, 시리즈 이름, 이미지 공통 기본 스타일링
   &__title {
-    margin-bottom: rem(12px);
+    color: $base-text;
 
     @include mobileW {
       font: $label-sm;
+      margin-bottom: rem(4px);
     }
     @include tabletW {
       font: $heading-md;
+      margin-bottom: rem(8px);
     }
     @include desktopW {
       font: $heading-xl;
+      margin-bottom: rem(12px);
     }
   }
 
@@ -92,15 +97,15 @@ body {
     display: block;
 
     @include mobileW {
-      width: rem(145px);
+      min-width: rem(145px);
     }
 
     @include tabletW {
-      width: rem(224px);
+      min-width: rem(224px);
     }
 
     @include desktopW {
-      width: rem(345px);
+      min-width: rem(345px);
     }
   }
 
@@ -109,6 +114,7 @@ body {
     @include posLeftTop(5px, 5px);
     background: #c73e4e;
     border-radius: rem(4px);
+    color: $base-text;
 
     @include mobileW {
       @include paddingX(6px);
@@ -166,15 +172,15 @@ body {
     display: block;
 
     @include mobileW {
-      width: rem(92px);
+      min-width: rem(92px);
     }
 
     @include tabletW {
-      width: rem(130px);
+      min-width: rem(130px);
     }
 
     @include desktopW {
-      width: rem(240px);
+      min-width: rem(240px);
     }
   }
 
@@ -195,93 +201,91 @@ body {
   }
 
   //인기 프로그램 랭크, 제목을 위한 wrapper
-  .popShow__wrapper {
+  @at-root .popShow__wrapper {
     @include flexbox;
 
-    @at-root .popShow__name {
-      //ellipsis 를 위한 css
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      display: inline-block;
-      color: $gray200;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      content: counter(number);
 
-      //순위 숫자가 차지할 공간에 margin 부여
+      //숫자 폰트 (전체 폰트와는 상이함. font_scss 에 없는 세팅)
+      font-family: Noto Sans KR;
+      font-weight: 700;
+      color: $base-text;
+      transform: skewX(-7.5deg);
 
       @include mobileW {
-        margin-top: rem(4px);
-        margin-left: rem(30px);
+        font-size: rem(34px);
+        line-height: rem(34px);
       }
       @include tabletW {
-        margin-top: rem(7px);
-        margin-left: rem(40px);
+        font-size: rem(46px);
+        line-height: rem(46px);
       }
       @include desktopW {
-        margin-top: rem(11px);
-        margin-left: rem(60px);
-      }
-
-      //인기 프로그램 순위 숫자를 나타내기 위한 가상 요소
-      &::before {
-        position: absolute;
-        bottom: 0;
-        content: counter(number);
-
-        //숫자 폰트 (전체 폰트와는 상이함. font_scss 에 없는 세팅)
-        font-family: Noto Sans KR;
-        font-weight: 700;
-        color: $base-text;
-        transform: skewX(-7.5deg);
-
-        //제목에 함께 주었던 margin-left 를 되돌림.
-        @include mobileW {
-          font-size: rem(34px);
-          line-height: rem(34px);
-          margin-left: rem(-30px);
-        }
-        @include tabletW {
-          font-size: rem(46px);
-          line-height: rem(46px);
-          margin-left: rem(-40px);
-        }
-        @include desktopW {
-          font-size: rem(70px);
-          line-height: rem(70px);
-          margin-left: rem(-60px);
-        }
+        font-size: rem(70px);
+        line-height: rem(70px);
       }
     }
+  }
+}
 
-    //인기 프로그램 제목 뒤 일부에 있는 빨간 점 표시
-    .popShow__redDot {
-      display: inline-block;
+.popShow__name {
+  position: relative;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  padding: 0;
 
-      background: $red1 no-repeat;
-      border-radius: 50%;
-      content: "";
+  color: $gray200;
 
-      //red dot 앞의 p 태그 (제목) 가 길어져도 숨겨지지 않도록 함.
-      flex-shrink: 0;
+  //순위 숫자가 차지할 공간에 margin 부여
+  @include mobileW {
+    margin-top: rem(4px);
+    margin-left: rem(25px);
+  }
+  @include tabletW {
+    margin-top: rem(7px);
+    margin-left: rem(35px);
+  }
+  @include desktopW {
+    margin-top: rem(11px);
+    margin-left: rem(60px);
+  }
 
-      //red dot media 별 위치 조정
-      @include mobileW {
-        margin-top: rem(4px);
-        margin-left: rem(1px);
-        width: rem(5px);
-        height: rem(5px);
-      }
-      @include tabletW {
-        margin-top: rem(7px);
-        margin-left: rem(4px);
-        width: rem(6px);
-        height: rem(6px);
-      }
-      @include desktopW {
-        margin-top: rem(10px);
-        margin-left: rem(5px);
-        width: rem(10px);
-        height: rem(10px);
-      }
+  //인기 프로그램 순위 숫자를 나타내기 위한 가상 요소
+}
+
+.popShow__redDot {
+  padding-right: 20px;
+  width: calc(100% + 10px);
+
+  &::after {
+    content: "";
+    display: block;
+
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0px;
+
+    //red dot 사이즈 반응형 설정
+    @include mobileW {
+      width: 4px;
+      height: 4px;
+    }
+    @include tabletW {
+      width: 6px;
+      height: 6px;
+    }
+    @include desktopW {
+      width: 8px;
+      height: 8px;
     }
   }
 }
