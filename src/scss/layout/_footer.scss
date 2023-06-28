@@ -234,6 +234,7 @@
       margin-right: rem(8px);
     }
 
+
     &__youtube a{
       display: block;
       @include spriteBox__header(24px, 24px, 0, -791px);
@@ -251,6 +252,8 @@
       @include spriteBox__header(24px, 24px, -336px, -791px);
     }
   }
+
+
   @include tabletW {
     & {
       width: rem(30px);
@@ -258,19 +261,19 @@
       margin-right: rem(8px);
     }
 
-    &__youtube a{
+    &__youtube a {
       display: block;
       @include spriteBox__header(30px, 30px, 0, -835px);
     }
-    &__instagram a{
+    &__instagram a {
       display: block;
       @include spriteBox__header(30px, 30px, -112px, -835px);
     }
-    &__twitter a{
+    &__twitter a {
       display: block;
       @include spriteBox__header(30x, 30px, -224px, -835px);
     }
-    &__facebook a{
+    &__facebook a {
       display: block;
       @include spriteBox__header(30px, 30px, -336px, -835px);
     }
@@ -282,24 +285,25 @@
       margin-right: rem(20px);
     }
 
-    &__youtube a{
+    &__youtube a {
       display: block;
       @include spriteBox__header(52px, 52px, 0, -885px);
     }
-    &__instagram a{
+    &__instagram a {
       display: block;
       @include spriteBox__header(52px, 52px, -112px, -885px);
     }
-    &__twitter a{
+    &__twittera  {
       display: block;
       @include spriteBox__header(52px, 52px, -224px, -885px);
     }
-    &__facebook a{
+    &__facebook a {
       display: block;
       @include spriteBox__header(52px, 52px, -336px, -885px);
     }
   }
 }
+
 
 .footer {
   &__shortcut {
@@ -372,6 +376,11 @@
         a:hover {
           color: $base-text;
         }
+      }
+      &__bar {
+        width: 1px;
+        height: 100%;
+        background: $gray500 ;
       }
     }
   }
