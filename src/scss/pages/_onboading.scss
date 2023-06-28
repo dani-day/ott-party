@@ -1,0 +1,423 @@
+@use "./../utils" as *;
+
+#onboading section{
+  width: auto;
+}
+.onboading {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 100%);
+  @include desktopW {
+    padding: rem(29px) rem(70px);
+  }
+  @include tabletW {
+    padding: rem(16px) rem(40px);
+  }
+  @include mobileW {
+    padding: rem(10px) rem(12px );
+  }
+  &__link {
+    display: block;
+
+    @include desktopW {
+      @include spriteBox__header(132px, 42px, 0 , -79px);
+    }
+    @include tabletW {
+      @include spriteBox__header(75px, 25px, 0 , -35px);
+    }
+    @include mobileW {
+      @include spriteBox__header(46px, 15px, 0 , 0);
+    }
+  }
+}
+
+.original {
+  width: 100%;
+  background: url(./../../images/main_onboading.png) no-repeat bottom / cover;
+  @include flexbox($justify:center,$items:center);
+  @include desktopW{
+    min-height: 75vh;
+  }
+  @include tabletW{
+    min-height: 80vh;
+  }
+  @include mobileW{
+    height: 85vh;
+  }
+
+  &__info {
+    @include flexbox($direction:column);
+    text-align: center;
+    @include desktopW{
+      width: rem(545px);
+    }
+    @include tabletW{
+      width: rem(283px);
+    }
+    @include mobileW{
+      width: rem(188px);
+    }
+  }
+  &__contentTitle{
+    color: $base-text;
+    @include desktopW{
+      font: $heading-xxl;
+      margin-bottom: rem(20px);
+    }
+    @include tabletW{
+      font: $heading-lg;
+      margin-bottom: rem(8px);
+    }
+    @include mobileW{
+      font: $heading-md;
+    }
+  }
+  &__contentSub{
+    color: $gray400;
+    @include desktopW{
+      font: $label-xl;
+      margin-bottom: rem(60px);
+    }
+    @include tabletW{
+      font: $par-sm;
+      margin-bottom: rem(28px);
+    }
+    @include mobileW{
+      font: $par-sm;
+      white-space: nowrap;
+      transform: translateX(-17px);
+      margin-bottom: rem(16px);
+    }
+  }
+  &__btn{
+    color: $base-text;
+    background: $primary-color;
+    border-radius: 4px;
+    @include desktopW{
+      font:  $label-xl;
+      padding: rem(18.5px) 0;
+    }
+    @include tabletW{
+      font:  $label-md;
+      padding: rem(12px) 0;
+    }
+    @include mobileW{
+      font:  $label-sm;
+      padding: rem(8px) 0;
+    }
+  }
+} 
+
+
+.fun {
+  @include desktopW{
+    min-height: rem(919px);
+    padding-top: rem(160px);
+  }
+  @include tabletW{
+    min-height: rem(558px);
+    padding-top: rem(40px);
+  }
+  @include mobileW{
+    min-height: rem(542px);
+    padding-top: rem(48px);
+  }
+
+
+  &__info {
+    width: 100%;
+    @include flexbox($direction:column,$items:center);
+  }
+  &__contentTitle {
+    color: $base-text;
+    @include desktopW{
+      font: $heading-xxl;
+      margin-bottom: rem(20px);
+    }
+    @include tabletW{
+      font: $heading-xl;
+    }
+    @include mobileW{
+      font: $heading-lg;
+    }
+  }
+
+  &__contentSub {
+    color: $gray200;
+    @include desktopW{
+      font: $label-xl;
+      margin-bottom: rem(8px);
+    }
+    @include tabletW{
+      font: $label-md;
+      margin-bottom: rem(4px);
+    }
+    @include mobileW{
+      font: $par-sm;
+    }
+  } 
+
+  &__contentSub2 {
+    color: $gray200;
+    @include desktopW{
+      font: $par-lg;
+      margin-bottom: rem(51px);
+    }
+    @include tabletW{
+      font: $label-sm;
+      margin-bottom: rem(31px);
+    }
+    @include mobileW{
+      font: $par-sm;
+    }
+  }
+
+  &__slide {
+    position: relative;
+  }
+  &__list {
+    @include mobileW {
+      display: none;  
+    }
+  }
+  &__listM {
+    display: none;
+    @include mobileW {
+      display: block;  
+    }
+  }
+
+  &__items {
+    position: absolute;
+    @include tabletW {
+      max-width: rem(700px);
+    }
+    img {
+      border-radius: rem(10px);
+    }
+  }
+  &__01 {
+    left: 8%;
+    top: 50%;
+    transform: scale(0.7);
+    z-index: 9;
+    opacity: 0.5;
+    @include mobileW {
+      transform: scale(0.7) translateY(26px);
+    }
+  }
+  &__02{
+    left: 50%;
+    transform: translateX(-50%);
+    @include mobileW {
+      transform: translateX(-20%) translateY(26px);
+    }
+    min-width: rem(700px);
+    z-index: 10;
+    opacity: 1;
+    box-shadow: rgb(0, 0, 0) 0px 4px 50px 0px;
+  }
+  &__03{
+    right: 8%;
+    top: 50%;
+    transform: scale(0.7);
+    z-index: 8;
+    opacity: 0.5;
+    @include mobileW {
+      transform: scale(0.7) translateY(26px);
+    }
+  }
+}
+
+.look {
+  @include desktopW{
+    padding-top: rem(182px);
+  }
+  @include tabletW{
+    padding-top: rem(80px);
+  }
+  @include mobileW{
+    padding-top: rem(74px);
+  }
+  &__info {
+    @include flexbox($direction:column, $justify:center,$items:center)
+  }
+
+  &__contentTitle{
+    color: $base-text;
+    @include desktopW{
+      font: $heading-xxl;
+      margin-bottom: rem(20px);
+    }
+    @include tabletW{
+      font: $heading-xl;
+    }
+    @include mobileW{
+      font: $heading-lg;
+    }
+  }
+  &__contentSub{
+    color: $gray200;
+    @include desktopW{
+      font: $label-xl;
+      margin-bottom: rem(8px);
+    }
+    @include tabletW{
+      color: $label-md;
+    }
+    @include mobileW{
+      font: $par-sm;
+      margin-bottom: rem(26px);
+    }
+  }
+  &__contentSub2  {
+    color: $gray200;
+    @include desktopW{
+      font: $par-lg;
+      margin-bottom: rem(70px);
+    }
+    @include tabletW{
+      color: $label-sm;
+      margin-bottom: rem(32px);
+    }
+    @include mobileW{
+      display: none;
+    }
+  }
+} 
+.look {
+  &__container{
+    overflow: hidden;
+  }
+  &__wrap, &__coppy { 
+    width: 100vw;
+    @include flexbox;
+  }
+  &__wrap &__rolling__list &__coppy &__rolling__list {
+    @include flexbox($items:start);
+    
+  }
+  &__wrap &__rolling__list ul, &__coppy &__rolling__list ul { 
+    @include flexbox;
+  }
+  &__wrap &__rolling__list ul li, &__coppy &__rolling__list ul li { 
+    width: rem(470px);
+    @include mobileW {
+      width: rem(180px);
+    }
+  }
+  &__rolling__list.originalScr {
+    animation: rollingleft1 33s linear infinite;
+  }
+  &__rolling__list.clone {
+    animation: rollingleft2 33s linear infinite;
+  }
+
+  &__rolling__list.coppyScr {
+    animation: rollingleft1 33s -9s linear infinite;
+  }
+  &__rolling__list.cut {
+    animation: rollingleft2 33s -9s linear infinite;
+  }
+  &__img {
+    margin: 10px;
+  }
+
+  @keyframes rollingleft1 {
+    0% { 
+      transform: translateX(0); 
+    }
+    50% { 
+      transform: translateX(-100%); 
+    }
+    50.01% {
+       transform: translateX(100%); 
+      }
+    100% { 
+      transform: translateX(0); 
+    }
+  }
+  @keyframes rollingleft2 {
+    0% { 
+      transition: translateX(0); 
+    }
+    100% { 
+      transform: translateX(-200%); 
+    }
+  }
+}
+
+.new {
+  @include desktopW{
+    height: rem(912px);
+  }
+  @include tabletW{
+    height: rem(368px);
+  }
+  @include mobileW{
+    height: rem(228px);
+  }
+  @include flexbox($items:center, $justify:center);
+
+  &__info {
+    @include flexbox($direction:column,$items:center,$justify:center);
+    @include desktopW{
+      width: rem(506px);
+    }
+    @include tabletW{
+      height: rem(283px);
+    }
+    @include mobileW{
+      height: rem(188px);
+    }
+  }
+
+  &__img img{
+    @include desktopW{
+      width: rem(279px);
+    }
+    @include tabletW{
+      width: rem(135px);
+    }
+    @include mobileW{
+      width: rem(83px);
+    }
+  }
+
+  &__contentTitle {
+    color: $base-text;
+    @include desktopW{
+      margin: rem(36px) 0 ;
+      font: $heading-xxxl;
+    }
+    @include tabletW{
+      margin: rem(14px) 0 ;
+      font: $heading-xl;
+    }
+    @include mobileW{
+      margin: rem(18px) 0 ;
+      font: $heading-md;
+    }
+  }
+
+  &__btn{
+    color: $base-text;
+    background: $primary-color;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    @include desktopW{
+      font:  $label-xl;
+      padding: rem(18.5px) 0;
+    }
+    @include tabletW{
+      font:  $label-md;
+      padding: rem(12px) 0;
+    }
+    @include mobileW{
+      font:  $label-sm;
+      padding: rem(8px) 0;
+    }
+  }
+}
