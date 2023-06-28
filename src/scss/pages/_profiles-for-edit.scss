@@ -1,7 +1,7 @@
 @use "./../utils" as *;
 
 // header
-.profile__header {
+.profileEdit__header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
   @include flexbox;
   color: $gray200;
@@ -34,7 +34,7 @@
 }
 
 //main
-.profile {
+.profileEdit {
   &__wrapper {
     @include flexbox($direction: column);
 
@@ -80,19 +80,19 @@
 
   &__edit {
     @include autoMargin;
-    color: $gray300;
-    border: 1px solid var(--gray-300, #a6a6a6);
+    color: $black;
+    background: var(--gray-100, #e1e1e1);
     border-radius: 4px;
     top: 75%;
     backdrop-filter: blur(30px);
 
     font: $label-xl;
     right: rem(70px);
-    padding: rem(22px) rem(64px);
+    padding: rem(21.5px) rem(111px);
   }
 }
 
-.profile__list {
+.profileEdit__list {
   @include mobileW {
     @include flexbox(row, flex-start, center, wrap, 24px);
   }
@@ -106,15 +106,15 @@
   }
 }
 
-.profile__item {
+.profileEdit__item {
   @include autoMargin;
 }
 
-.link__container {
+.linkEdit__container {
   position: relative;
 }
 
-.link {
+.linkEdit {
   &__image {
     opacity: 50%;
   }
@@ -126,11 +126,7 @@
   }
 }
 
-.profile__list :nth-child(4) img {
-  opacity: 100%;
-}
-
-.profile__name {
+.profileEdit__name {
   font: $par-xl;
   color: $gray300;
   text-align: center;
