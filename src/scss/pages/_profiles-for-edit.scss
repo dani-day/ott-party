@@ -1,0 +1,349 @@
+@use "./../utils" as *;
+
+// header
+.profileEdit__header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  @include flexbox;
+  color: $gray200;
+  // position: fixed;
+  width: 100%;
+  // z-index: 10;
+  @include desktopW {
+    padding: rem(29px) rem(70px);
+    background: $base-bg;
+    font: $par-lg;
+  }
+  @include tabletW {
+    padding: rem(16px) rem(40px);
+    font: $par-sm;
+  }
+  @include mobileW {
+    padding: rem(10px) rem(12px);
+  }
+
+  // 로고
+  &__logo {
+    @include flexbox($items: center);
+    @include desktopW {
+      padding-right: rem(52px);
+    }
+    @include tabletW {
+      padding-right: rem(28px);
+    }
+  }
+}
+
+//main
+.profileEdit {
+  &__wrapper {
+    @include flexbox($direction: column);
+
+    @include mobileW {
+      @include marginX(34px);
+      margin-top: 72px;
+    }
+
+    @include tabletW {
+      @include marginX(214px);
+      margin-top: 73px;
+    }
+
+    @include desktopW {
+      @include marginX(414px);
+      margin-top: 130px;
+    }
+  }
+
+  &__title {
+    @include autoMargin;
+    font-size: rem(51px);
+    font-family: Pretendard;
+    font-weight: 700;
+    line-height: 140%;
+    color: $base-text;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include autoMargin;
+    font-size: rem(29px);
+    font-family: Pretendard;
+    font-weight: 600;
+    line-height: 145%;
+    color: $gray200;
+  }
+
+  &__container {
+    padding-top: 44px;
+    padding-bottom: 66px;
+  }
+
+  &__edit {
+    @include autoMargin;
+    color: $black;
+    background: var(--gray-100, #e1e1e1);
+    border-radius: 4px;
+    top: 75%;
+    backdrop-filter: blur(30px);
+
+    font: $label-xl;
+    right: rem(70px);
+    padding: rem(21.5px) rem(111px);
+  }
+}
+
+.profileEdit__list {
+  @include mobileW {
+    @include flexbox(row, flex-start, center, wrap, 24px);
+  }
+
+  @include tabletW {
+    @include flexbox(row, flex-start, center, wrap, 32px);
+  }
+
+  @include desktopW {
+    @include flexbox(row, flex-start, center, wrap, 52px);
+  }
+}
+
+.profileEdit__item {
+  @include autoMargin;
+}
+
+.linkEdit__container {
+  position: relative;
+}
+
+.linkEdit {
+  &__image {
+    opacity: 50%;
+  }
+  &__lock {
+    @include posCenter;
+    background: url(./../../images/lock_profile.png) no-repeat;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.profileEdit__name {
+  font: $par-xl;
+  color: $gray300;
+  text-align: center;
+  margin-top: 16px;
+}
+
+//footer
+.hr__divLine {
+  color: $gray800;
+  // 구분선 컬러
+}
+
+.footer {
+  @include mobileW {
+    padding-left: rem(12px);
+    padding-top: 52px;
+  }
+  @include tabletW {
+    padding-left: rem(40px);
+    padding-top: 70px;
+  }
+  @include desktopW {
+    padding-left: rem(68px);
+    padding-top: 140px;
+    padding-bottom: 170px;
+  }
+}
+
+.footer {
+  &__hrContainer {
+    border-top: 1px solid #212121;
+  }
+  &__hrList {
+    display: block;
+  }
+
+  &__information {
+    color: $gray200;
+  }
+
+  &__notice {
+    color: $gray500;
+  }
+
+  &__wrapper {
+    @include flexbox($justify: space-between);
+    border-bottom: 1px solid #212121;
+  }
+
+  &__hrContainer {
+    color: $gray200;
+  }
+
+  &__sprite {
+    @include flexbox;
+  }
+
+  &__ownerinfoContainer {
+    color: $gray500;
+  }
+
+  &__copyright {
+    color: #6b6b6b;
+  }
+
+  &__directLink {
+    @include flexbox($justify: flex-end);
+  }
+
+  @include mobileW {
+    &__area {
+      @include paddingSquare(52, 16, 82, 16);
+      font: $par-sm;
+    }
+
+    &__direct {
+      display: none;
+    }
+
+    &__ownerinfoContainer {
+      display: none;
+    }
+
+    &__hrContainer {
+      @include flexbox($direction: column);
+    }
+
+    &__hrList {
+      margin-top: rem(12px);
+    }
+
+    &__sprite {
+      @include marginY(12px);
+    }
+
+    &__wrapper {
+      padding-bottom: rem(12px);
+    }
+  }
+
+  @include tabletW {
+    &__area {
+      @include paddingSquare(70, 40, 100, 40);
+      font: $par-md;
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
+    &__wrapper {
+      padding-bottom: rem(16px);
+    }
+    &__hrContainer {
+      @include flexbox;
+    }
+    &__hrList {
+      margin-right: rem(20px);
+      margin-top: rem(16px);
+    }
+    &__ownerinfoContainer {
+      @include marginY(12px);
+    }
+    &__copyright {
+      margin-top: rem(12px);
+    }
+  }
+
+  @include desktopW {
+    &__area {
+      @include paddingSquare(140, 68, 170, 68);
+      font: $par-xl;
+    }
+    &__direct {
+      display: flex;
+      color: #c4c4c4;
+      gap: 60px;
+      justify-content: flex-end;
+    }
+    &__hrContainer {
+      @include flexbox;
+    }
+    &__hrList {
+      margin-right: rem(36px);
+      margin-top: rem(27px);
+    }
+    &__ownerinfoContainer {
+      @include marginY(24px);
+    }
+    &__copyright {
+      margin-top: rem(24px);
+    }
+  }
+}
+
+.sprite {
+  border-radius: 50%;
+
+  @include mobileW {
+    & {
+      width: rem(24px);
+      height: rem(24px);
+      margin-right: rem(8px);
+    }
+
+    &__youtube {
+      @include spriteBox__header(24px, 24px, 0, -791px);
+    }
+    &__instagram {
+      @include spriteBox__header(24px, 24px, -112px, -791px);
+    }
+    &__twitter {
+      @include spriteBox__header(24px, 24px, -224px, -791px);
+    }
+    &__facebook {
+      @include spriteBox__header(24px, 24px, -336px, -791px);
+    }
+  }
+  @include tabletW {
+    & {
+      width: rem(30px);
+      height: rem(30px);
+      margin-right: rem(8px);
+    }
+
+    &__youtube {
+      @include spriteBox__header(30px, 30px, 0, -835px);
+    }
+    &__instagram {
+      @include spriteBox__header(30px, 30px, -112px, -835px);
+    }
+    &__twitter {
+      @include spriteBox__header(30x, 30px, -224px, -835px);
+    }
+    &__facebook {
+      @include spriteBox__header(30px, 30px, -336px, -835px);
+    }
+  }
+  @include desktopW {
+    & {
+      width: rem(52px);
+      height: rem(52px);
+      margin-right: rem(20px);
+    }
+
+    &__youtube {
+      @include spriteBox__header(52px, 52px, 0, -885px);
+    }
+    &__instagram {
+      @include spriteBox__header(52px, 52px, -112px, -885px);
+    }
+    &__twitter {
+      @include spriteBox__header(52px, 52px, -224px, -885px);
+    }
+    &__facebook {
+      @include spriteBox__header(52px, 52px, -336px, -885px);
+    }
+  }
+}

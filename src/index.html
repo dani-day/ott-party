@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="https://regal-lamington-a46694.netlify.app/" />
     <meta property="og:title" content="TVING" />
-    <meta property="og:image" content="/" />
+    <meta property="og:image" content="https://i.ibb.co/0MptvY5/Cover.png" />
     <meta property="og:description" content="티빙 오리지널 콘텐츠, 방송, 영화, 해외시리즈까지! 재미를 플레이해보세요." />
-    <meta property="og:site_name" content="TVING" />
+    <meta property="og:site_name" content="TVING Homepage" />
     <meta property="og:locale" content="Kor" />
     <meta name="keywords" content="티빙, ott, 방송, 영화, 드라마, 해외시리즈" />
     <meta name="author" content="팔이피플" />
@@ -18,7 +18,7 @@
     <meta name="theme-color" content="#000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TVING</title>
+    <title>TVING Homepage</title>
     <link
       rel="stylesheet"
       as="style"
@@ -58,7 +58,7 @@
         <ul class="header__nav__search">
           <li class="header__search__icon">
             <button class="search__button"><span class="a11yHidden">검색</span></button>
-          </li>
+          </li> 
           <li class="header__user__icon">
             <div class="user__info__wrapper">
               <button class="user__button"><span class="a11yHidden">사용자정보</span></button>
@@ -68,7 +68,7 @@
                     <div class="user__img"></div>
                     <div>
                       <div class="user__name">홍길동</div>
-                      <div class="user__change"><a href="/">프로필 전환 &gt;</a></div>
+                      <div class="user__change"><a href="./views/profile.html">프로필 전환 &gt;</a></div>
                     </div>
                   </div>
                   <div class="user__only">
@@ -77,7 +77,7 @@
                       <li><a href="/">이용권</a></li>
                       <li><a href="/">쿠폰등록</a></li>
                       <li><a href="/">고객센터</a></li>
-                      <li><a href="/">로그아웃</a></li>
+                      <li><a href="./views/onboading.html">로그아웃</a></li>
                     </ul>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
       <div class="search__form">
         <h3 class="a11yHidden" id="searchModal">검색어 입력</h3>
         <form action="/" method="GET">
-          <label for="searchResult"></label>
+          <label for="searchResult" class="a11yHidden">검색어를 입력해주세요</label>
           <input
             class="search__input"
             type="search"
@@ -139,12 +139,12 @@
           <div class="banner__info">
             <p class="banner__subtext">리얼 초밀착 법정 드라마</p>
             <div class="banner__play">
-              <button class="banner__play__btn" aria-label="재생버튼"></button>
-              <button class="banner__stop__btn" aria-label="멈춤버튼"></button>
-              <button class="banner__shorcut is--active" aria-label="1번째 배너이미지"></button>
-              <button class="banner__shorcut" aria-label="2번째 배너이미지"></button>
-              <button class="banner__shorcut" aria-label="3번째 배너이미지"></button>
-              <button class="banner__shorcut" aria-label="4번째 배너이미지"></button>
+              <button class="banner__play__btn" aria-label="재생"></button>
+              <button class="banner__stop__btn" aria-label="정지"></button>
+              <button class="banner__shorcut is--active" aria-label="1번째 배너"></button>
+              <button class="banner__shorcut" aria-label="2번째 배너"></button>
+              <button class="banner__shorcut" aria-label="3번째 배너"></button>
+              <button class="banner__shorcut" aria-label="4번째 배너"></button>
             </div>
           </div>
           <a class="banner__more" href="/">자세히보기</a>
@@ -157,7 +157,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/treasure_must.png" alt="보물찾기" />
+                  <picture>
+                    <source srcset="./images/treasure_must.webp" type="image/webp" />
+                    <img src="./images/treasure_must.png" alt="보물찾기" />
+                  </picture>
                   <p class="must__imgTitle">보물찾기</p>
                 </div>
               </a>
@@ -165,7 +168,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/lovecatcher_must.png" alt="러브캐처 인 발리" />
+                  <picture>
+                    <source srcset="./images/lovecatcher_must.webp" type="image/webp" />
+                    <img src="./images/lovecatcher_must.png" alt="러브캐쳐인발리" />
+                  </picture>
                   <p class="must__imgTitle">러브캐처 인 발리</p>
                 </div>
               </a>
@@ -173,7 +179,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
+                  <picture>
+                    <source srcset="./images/drink2_must.webp" type="image/webp" />
+                    <img src="./images/drink2_must.png" alt="술꾼도시여자들2" />
+                  </picture>
                   <p class="must__imgTitle">술꾼도시여자들2</p>
                 </div>
               </a>
@@ -181,7 +190,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/king_must.png" alt="털사 킹" />
+                  <picture>
+                    <source srcset="./images/king_must.webp" type="image/webp" />
+                    <img src="./images/king_must.png" alt="털사 킹" />
+                  </picture>
                   <p class="must__imgTitle">털사 킹</p>
                 </div>
               </a>
@@ -189,7 +201,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
+                  <picture>
+                    <source srcset="./images/nothing_must.webp" type="image/webp" />
+                    <img src="./images/nothing_must.png" alt="아무것도 하고 싶지 않아" />
+                  </picture>
                   <p class="must__imgTitle">아무것도 하고 싶지 않아</p>
                 </div>
               </a>
@@ -197,7 +212,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/blackdog_must.png" alt="블랙독" />
+                  <picture>
+                    <source srcset="./images/blackdog_must.webp" type="image/webp" />
+                    <img src="./images/blackdog_must.png" alt="블랙독" />
+                  </picture>
                   <p class="must__imgTitle">블랙독</p>
                 </div>
               </a>
@@ -205,7 +223,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/our_must.png" alt="우리들의 블루스" />
+                  <picture>
+                    <source srcset="./images/our_must.webp" type="image/webp" />
+                    <img src="./images/our_must.png" alt="우리들의 블루스" />
+                  </picture>
                   <p class="must__imgTitle">우리들의 블루스</p>
                 </div>
               </a>
@@ -213,7 +234,10 @@
             <li class="must__item">
               <a class="must__link" href="/">
                 <div class="must__wrapper">
-                  <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
+                  <picture>
+                    <source srcset="./images/kilimanjaro_must.webp" type="image/webp" />
+                    <img src="./images/kilimanjaro_must.png" alt="킬리만자로" />
+                  </picture>
                   <p class="must__imgTitle"><span>킬리만자로</span></p>
                 </div>
               </a>
@@ -226,7 +250,12 @@
         <ul class="qVod__list">
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/jtbcNews_vod.png" alt="jtbc 뉴스" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/jtbcNews_vod.webp" type="image/webp" />
+                  <img src="./images/jtbcNews_vod.png" alt="jtbc 뉴스" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">JTBC 뉴스룸</p>
               <p class="qVod__epiNo">0화</p>
@@ -234,7 +263,12 @@
           </li>
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/liveMe_vod.png" alt="나는살기로했다" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/liveMe_vod.webp" type="image/webp" />
+                  <img src="./images/liveMe_vod.png" alt="나는살기로했다" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">휴먼다큐 &lt;나는 살기로 했다&gt;</p>
               <p class="qVod__epiNo">10화</p>
@@ -242,7 +276,12 @@
           </li>
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/dutyFree_vod.png" alt="건강면세점" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/dutyFree_vod.webp" type="image/webp" />
+                  <img src="./images/dutyFree_vod.png" alt="건강면세점" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">건강면세점</p>
               <p class="qVod__epiNo">130화</p>
@@ -250,7 +289,12 @@
           </li>
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/diffClass_vod.png" alt="차이나는 클라스" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/diffClass_vod.webp" type="image/webp" />
+                  <img src="./images/diffClass_vod.png" alt="차이나는 클라스" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">차이나는 클라스</p>
               <p class="qVod__epiNo">254화</p>
@@ -258,7 +302,12 @@
           </li>
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/alMaeng_vod.png" alt="알맹이" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/alMaeng_vod.webp" type="image/webp" />
+                  <img src="./images/alMaeng_vod.png" alt="알맹이" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">알맹이</p>
               <p class="qVod__epiNo">208화</p>
@@ -266,7 +315,12 @@
           </li>
           <li class="qVod__items">
             <a href="/" class="qVod__link">
-              <div class="qVod__image"><img src="./images/momSpring_vod.png" alt="엄마의 봄날" class="qVod__img" /></div>
+              <div class="qVod__image">
+                <picture>
+                  <source srcset="./images/momSpring_vod.webp" type="image/webp" />
+                  <img src="./images/momSpring_vod.png" alt="엄마의 봄날" class="qVod__img" />
+                </picture>
+              </div>
               <p class="qVod__quick">Quick VOD</p>
               <p class="qVod__name">엄마의 봄날</p>
               <p class="qVod__epiNo">380화</p>
@@ -275,13 +329,17 @@
         </ul>
       </section>
 
-
       <section class="popShow">
         <h2 class="popShow__title">실시간 인기 프로그램</h2>
         <ol class="popShow__list">
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/richSon_vod.png" alt="재벌집 막내아들" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/richSon_vod.webp" type="image/webp" />
+                  <img src="./images/richSon_vod.png" alt="재벌집 막내아들" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">재벌집 막내아들</span></p>
               </div>
@@ -289,15 +347,26 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/cityGirls_vod.png" alt="술꾼도시여자들2" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/cityGirls_vod.webp" type="image/webp" />
+                  <img src="./images/cityGirls_vod.png" alt="술꾼도시여자들2" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name">술꾼도시여자들2</p>
               </div>
+              <div class="name__adult">19</div>
             </a>
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/lightShadow_vod.png" alt="환혼: 빛과 그림자" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/lightShadow_vod.webp" type="image/webp" />
+                  <img src="./images/lightShadow_vod.png" alt="환혼: 빛과 그림자" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">환혼: 빛과 그림자</span></p>
               </div>
@@ -305,7 +374,12 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/canCheck_vod.png" alt="캐나다 체크인" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/canCheck_vod.webp" type="image/webp" />
+                  <img src="./images/canCheck_vod.png" alt="캐나다 체크인" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">캐나다 체크인</span></p>
               </div>
@@ -313,7 +387,12 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/surpriseSat_vod.png" alt="놀라운 토요일" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/surpriseSat_vod.webp" type="image/webp" />
+                  <img src="./images/surpriseSat_vod.png" alt="놀라운 토요일" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">놀라운 토요일</span></p>
               </div>
@@ -321,7 +400,12 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/showMoney_vod.png" alt="쇼미더머니" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/showMoney_vod.webp" type="image/webp" />
+                  <img src="./images/showMoney_vod.png" alt="쇼미더머니" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">SHOW ME THE MONEY</span></p>
               </div>
@@ -329,7 +413,12 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/luvCatcher_vod.png" alt="러브캐처 인 발리" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/luvCatcher_vod.webp" type="image/webp" />
+                  <img src="./images/luvCatcher_vod.png" alt="러브캐처 인 발리" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name">러브캐처 인 발리</p>
               </div>
@@ -337,7 +426,12 @@
           </li>
           <li class="popShow__items">
             <a href="/" class="popShow__link">
-              <div class="popShow__image"><img src="./images/inJob_vod.png" alt="알쓸신잡" class="popShow__img" /></div>
+              <div class="popShow__image">
+                <picture>
+                  <source srcset="./images/inJob_vod.webp" type="image/webp" />
+                  <img src="./images/inJob_vod.png" alt="알쓸신잡" class="popShow__img" />
+                </picture>
+              </div>
               <div class="popShow__wrapper">
                 <p class="popShow__name"><span class="popShow__redDot">알쓸인잡</span></p>
               </div>
@@ -353,7 +447,12 @@
             <ul class="live__thumbnail">
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/jtbc_news_capture_live.png" alt="실시간jtbc뉴스" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/jtbc_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/jtbc_news_capture_live.png" alt="실시간jtbc뉴스" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -366,7 +465,12 @@
               </li>
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/famousRest_capture_live.png" alt="실시간 줄서는 식당" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/famousRest_capture_live.webp" type="image/webp" />
+                      <img src="./images/famousRest_capture_live.png" alt="실시간 줄서는 식당" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -379,7 +483,12 @@
               </li>
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/ytn_news_capture_live.png" alt="실시간 ytn 뉴스" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/ytn_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/ytn_news_capture_live.png" alt="실시간 ytn 뉴스" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -392,7 +501,12 @@
               </li>
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/richSon_capture_live.png" alt="실시간 재벌집 막내아들" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/richSon_capture_live.webp" type="image/webp" />
+                      <img src="./images/richSon_capture_live.png" alt="실시간 재벌집 막내아들" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -405,7 +519,12 @@
               </li>
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/yunhap_news_capture_live.png" alt="실시간 연합뉴스" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/yunhap_news_capture_live.webp" type="image/webp" />
+                      <img src="./images/yunhap_news_capture_live.png" alt="실시간 연합뉴스" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -418,7 +537,12 @@
               </li>
               <li class="live live__list">
                 <a href="/" class="live__link">
-                  <div class="live__imgBox"><img src="./images/conan_capture_live.png" alt="실시간 코난" class="live__screen" /></div>
+                  <div class="live__imgBox">
+                    <picture>
+                      <source srcset="./images/conan_capture_live.webp" type="image/webp" />
+                      <img src="./images/conan_capture_live.png" alt="실시간 코난" class="live__screen" />
+                    </picture>
+                  </div>
                   <div class="live__infoContainer">
                     <span class="live__rank"></span>
                     <div class="live__info">
@@ -442,7 +566,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link">
                   <div class="only__imgBox">
-                    <img src="./images/shortbuster_only.png" alt="전체관람가 숏버스터" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/shortbuster_only.webp" type="image/webp" />
+                      <img src="./images/shortbuster_only.png" alt="전체관람가 숏버스터" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">전체관람가:숏버스터</dt>
@@ -459,7 +586,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link">
                   <div class="only__imgBox">
-                    <img src="./images/lovecatcherMoo_only.png" alt="러브캐쳐인발리" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/lovecatcherMoo_only.webp" type="image/webp" />
+                      <img src="./images/lovecatcherMoo_only.png" alt="러브캐쳐인발리" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">러브캐처 in BALI</dt>
@@ -476,7 +606,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link">
                   <div class="only__imgBox">
-                    <img src="./images/transfer_only.png" alt="환승연애2" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/transfer_only.webp" type="image/webp" />
+                      <img src="./images/transfer_only.png" alt="환승연애2" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">환승연애2</dt>
@@ -493,7 +626,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link"
                   ><div class="only__imgBox">
-                    <img src="./images/money_only.png" alt="몸값" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/money_only.webp" type="image/webp" />
+                      <img src="./images/money_only.png" alt="몸값" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">몸값</dt>
@@ -511,7 +647,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link"
                   ><div class="only__imgBox">
-                    <img src="./images/drunkencity_only.png" alt="술꾼도시여자들" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/drunkencity_only.webp" type="image/webp" />
+                      <img src="./images/drunkencity_only.png" alt="술꾼도시여자들" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">술꾼도시여자들</dt>
@@ -525,7 +664,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link"
                   ><div class="only__imgBox">
-                    <img src="./images/monster_only.png" alt="괴이" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/monster_only.webp" type="image/webp" />
+                      <img src="./images/monster_only.png" alt="괴이" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">괴이</dt>
@@ -541,7 +683,10 @@
               <li class="live only__list">
                 <a href="/" class="only__link"
                   ><div class="only__imgBox">
-                    <img src="./images/foodchronicle_only.png" alt="푸드크로니클" class="only__poster" />
+                    <picture>
+                      <source srcset="./images/foodchronicle_only.webp" type="image/webp" />
+                      <img src="./images/foodchronicle_only.png" alt="푸드크로니클" class="only__poster" />
+                    </picture>
                     <div class="only__defContainer">
                       <dl class="only__defList">
                         <dt class="only__defTerm">푸드크로니클</dt>
@@ -562,36 +707,75 @@
       <section class="sports__live">
         <h2 class="a11yHidden">티빙 스포츠 생중계</h2>
         <div>
-          <a href="/"><img src="./images/sportsLive_footer.png" alt="티빙 스포츠 생중계 바로가기" /></a>
+          <a href="/">
+            <picture>
+              <source srcset="./images/sportsLive_footer.webp" type="image/webp" />
+              <img src="./images/sportsLive_footer.png" alt="티빙 스포츠 생중계 바로가기" />
+            </picture>
+          </a>
         </div>
       </section>
       <section class="footer__event">
         <h2 class="footer__eventTitle">이벤트</h2>
         <ul class="footer__eventList">
           <li class="eventList__item">
-            <a href="/"><img src="./images/sinbi_footer.png" alt="신비 아파트 바로가기" /></a>
+            <a href="/">
+              
+              <picture>
+                <source srcset="./images/sinbi_footer.png" type="image/webp" />
+                <img src="./images/sinbi_footer.png" alt="신비 아파트 바로가기" />
+            </picture>
+            </a>
           </li>
           <li class="eventList__item">
-            <a href="/"><img src="./images/richSon_footer.png" alt="재벌집 막내아들 바로가기" /></a>
+            <a href="/">
+              
+              <picture>
+                <source srcset="./images/richSon_footer.png" type="image/webp" />
+                <img src="./images/richSon_footer.png" alt="재벌집 막내아들 바로가기" />
+            </picture>
+            </a>
           </li>
           <li class="eventList__item">
-            <a href="/"><img src="./images/love3_footer.png" alt="환승연애, 각자의 본능대로,러브개처 바로가기" /></a>
+            <a href="/">
+              
+              <picture>
+                <source srcset="./images/love3_footer.png" type="image/webp" />
+                <img src="./images/love3_footer.png" alt="환승연애, 각자의 본능대로,러브개처 바로가기" />
+            </picture>
+            </a>
           </li>
           <li class="eventList__item">
-            <a href="/"><img src="./images/shrup_footer.png" alt="슈룹 바로가기" /></a>
+            <a href="/">
+              
+              <picture>
+                <source srcset="./images/shrup_footer.png" type="image/webp" />
+                <img src="./images/shrup_footer.png" alt="슈룹 바로가기" />
+            </picture>
+            </a>
           </li>
           <li class="eventList__item">
-            <a href="/"><img src="./images/koreanDessertMaker_footer.png" alt="대한민국 대표 디저트 메이커 바로가기" /></a>
+            <a href="/">
+              
+              <picture>
+                <source srcset="./images/koreanDessertMaker_footer.png" type="image/webp" />
+                <img src="./images/koreanDessertMaker_footer.png" alt="대한민국 대표 디저트 메이커 바로가기" />
+            </picture>
+            </a>
           </li>
           <li class="eventList__item">
-            <a href="/"><img src="./images/letmiin_footer.png" alt="렛미인 바로가기" /></a>
+            <a href="/">
+              <picture>
+                <source srcset="./images/letmiin_footer.png" type="image/webp" />
+                <img src="./images/letmiin_footer.png" alt="렛미인 바로가기" />
+            </picture>
+            </a>
           </li>
         </ul>
       </section>
     </main>
     <footer class="footer__area">
       <h2 class="a11yHidden">공지사항</h2>
-
       <div class="footer__wrapper">
         <div class="footer__noticeLink">
           <a href="/" class="footer__notice">공지사항</a>
@@ -619,6 +803,7 @@
               <li><a href="/">tvnD</a></li>
             </ul>
           </li>
+          <li class="shortcut__bar"></li>
           <li class="shortcut">
             <button class="shortcut__btn">그룹 계열사 바로가기<span class="shortcut__plus">+</span></button>
             <ul class="shortcut__group">
@@ -671,13 +856,10 @@
         </p>
       </div>
       <ul class="footer__sprite">
-        <li class="sprite sprite__youtube"><span class="a11yHidden">유튜브 링크</span><a href="/"></a></li>
-        <li class="sprite sprite__instagram"><span class="a11yHidden">인스타그램 링크</span><a href="/"></a></li>
-        <li class="sprite sprite__twitter"><span class="a11yHidden">트위터 링크</span><a href="/"></a></li>
-        <li class="sprite sprite__facebook">
-          <div class="a11yHidden">페이스북 링크</div>
-          <a href="/"></a>
-        </li>
+        <li class="sprite sprite__youtube"><a href="/"><span class="a11yHidden">유튜브 링크</span></a></li>
+        <li class="sprite sprite__instagram"><a href="/"><span class="a11yHidden">인스타그램 링크</span></a></li>
+        <li class="sprite sprite__twitter"><a href="/"><span class="a11yHidden">트위터 링크</span></a></li>
+        <li class="sprite sprite__facebook"><a href="/"><span class="a11yHidden">페이스북 링크</span></a></li>
       </ul>
       <div class="footer__copyright">
         <small class="footer__copyrigtInfo">Copyright © 주식회사 티빙 All right reserved.</small>
