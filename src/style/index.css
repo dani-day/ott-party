@@ -1803,6 +1803,8 @@ body {
 /*******************live***********************/
 .live__wrapper {
   display: inline-block;
+  width: 100%;
+  overflow: hidden;
 }
 .live__title {
   color: #fff;
@@ -1814,7 +1816,6 @@ body {
   align-items: stretch;
   gap: 0rem;
   overflow: hidden;
-  width: 100vw;
 }
 .live__list {
   counter-increment: number;
@@ -1863,6 +1864,7 @@ body {
   }
   .live__thumbnail {
     padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   .live__broadcast {
     font: normal 600 0.75rem/1.5 pretendard;
@@ -1871,6 +1873,9 @@ body {
   }
   .live__name, .live__rating {
     font: normal 400 0.75rem/1.6 pretendard;
+  }
+  .live .paddingBox {
+    padding-right: 0.5rem;
   }
   .live {
     transition: transform 150ms ease-in-out 50ms;
@@ -1913,6 +1918,9 @@ body {
   .live__wrapper {
     padding-left: 2.5rem;
   }
+  .live_thumbnail {
+    padding-right: 2.5rem;
+  }
   .live {
     transition: transform 150ms ease-in-out 50ms;
     transform: translateY(8px);
@@ -1949,6 +1957,9 @@ body {
   }
   .live__name, .live__rating {
     font: normal 400 1rem/1.6 pretendard;
+  }
+  .live__thumbnail {
+    padding-right: 4.375rem;
   }
   .live {
     transition: transform 150ms ease-in-out 50ms;
@@ -2580,6 +2591,7 @@ body {
 }
 .logo__submitButton {
   appearance: none;
+  width: 100%;
 }
 @media (min-width: 320px) and (max-width: 767px) {
   .logo {
