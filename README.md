@@ -43,6 +43,34 @@ https://tvin8.netlify.app/
 
 ## 📊 Project 사이트 성능 검사 결과
 
+### 이미지 파일을 `picture` 요소의 `soure`를 사용해 차세대 형식의 이미지를 제공
+
+> 아직 호환이 되지 않는 브라우저에서는 `.png` 파일의 이미지가 출력된다.
+
+### 성능최적화를 위한 이미지 변환 전
+
+![](./assets/beforeDesktop.png)
+![](./assets/beforeMobile.png)
+
+### 이미지 최적화 .png > .webp
+
+![](./assets/afterDesktop.png)
+![](./assets/afterMobile.png)
+
+```
+  <picture>
+    <source srcset="./images/적용될webp이미지.webp" type="image/webp" />
+    <img src="./images/webp이미지가호환되지않는다면적용될이미지.png" alt="대체텍스트" />
+  </picture>
+```
+
+### HTML Validator
+
+![](./assets/validationHtml.png)
+
+### 모바일 친화성 테스트
+
+![](./assets/mobileTest.png)
 <br><br>
 
 ## 🫂 협업을 위한 기본 Setting
