@@ -87,5 +87,26 @@ npm start
 npm run build
 ```
 
+1-3) live
+- live 파트
+<img src="./assets/full_live.png">
 
+- 마크업 구조
+    - 섹션으로 각 구역 분배함
+    - 
+    
+- 주요 스타일링 요약
+    - 리스트 컨텐츠 가로 배열 위해 flex 사용함
+    - 누운 숫자 구현 위해 ::after 사용함
+    - hover시 상태 변화 구현하기 위해 transition으로 translate Y축 변화줌 (12px->0)
+    - 포스터 호버시 관련 내용 나올 수 있게 dl>dd>dt에 포지션주고 hover시 opacity 0->1로
+    - 변화줌.
+  
 
+- figma 시안 외 구현 사항
+
+  
+  1.  주요 issue
+
+### live part
+   1)
