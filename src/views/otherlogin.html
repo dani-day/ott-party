@@ -19,12 +19,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TVING-otherlogin</title>
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
-    />
+    <link rel="preload" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,14 +28,12 @@
     />
     <link rel="stylesheet" href="/style/index.css" />
     <script src="./js/index.js" defer></script>
-</head>
-<body>
-  
-
-  <div class="logo">
-    <a href="/" class="logo__box"><span class="a11yHidden">메인페이지로 이동</span></a>
-  </div>
-     <div class="login__wrapper">
+  </head>
+  <body>
+    <div class="logo">
+      <a href="/" class="logo__box"><span class="a11yHidden">메인페이지로 이동</span></a>
+    </div>
+    <div class="login__wrapper">
       <div class="login__container">
         <h1 class="login__title">TVING ID 로그인</h1>
         <form class="login__form">
@@ -52,14 +45,12 @@
             </div>
             <div class="login__pwBox">
               <label for="userPassword" class="a11yHidden">비밀번호</label>
-              
-              <input id="userPassword" name="userPassword" class="login__idInput login__pwInput"
-              type="password" placeholder="비밀번호" required/>
+
+              <input id="userPassword" name="userPassword" class="login__idInput login__pwInput" type="password" placeholder="비밀번호" required />
             </div>
             <div class="login__autoContainer">
-              <input id="autoLogin" name="userAuto"type="checkbox" />
+              <input id="autoLogin" name="userAuto" type="checkbox" />
               <label for="autoLogin" class="">자동로그인</label>
-            
             </div>
             <button type="submit" class="login__submitButton">로그인하기</button>
             <div class="login__finder">
@@ -67,80 +58,65 @@
               <a href="/">비밀번호 찾기</a>
             </div>
             <div class="login__join">
-              <p class="loin__check">아직 계정이 없으신가요?
-                <a href="/" class="login__joinLink">회원가입하기</a></p>
+              <p class="loin__check">아직 계정이 없으신가요? <a href="/" class="login__joinLink">회원가입하기</a></p>
             </div>
           </fieldset>
-          
         </form>
       </div>
-     </div>
+    </div>
 
+    <!-- ------------------------4-2 footer start ----------------------------------------------------- -->
+    <footer class="footer__area">
+      <h2 class="a11yHidden">공지사항</h2>
 
-
-
-  <!-- ------------------------4-2 footer start ----------------------------------------------------- -->
-  <footer class="footer__area">
-    <h2 class="a11yHidden">공지사항</h2>
-
-    <div class="footer__wrapper">
-      <div class="footer__noticeLink">
-        <a href="/" class="footer__notice">공지사항</a>
-        <a href="/" class="footer__information">[안내] 합병보고 주주총회에 갈음하는 공고</a>
+      <div class="footer__wrapper">
+        <div class="footer__noticeLink">
+          <a href="/" class="footer__notice">공지사항</a>
+          <a href="/" class="footer__information">[안내] 합병보고 주주총회에 갈음하는 공고</a>
+        </div>
       </div>
-
-     
-    </div>
-    <ul class="footer__hrContainer">
-      <li><a href="/" class="footer__hrList">고객센터</a></li>
-      <li><a href="/" class="footer__hrList">이용약관</a></li>
-      <li><a href="/" class="footer__hrList">개인정보처리방침</a></li>
-      <li><a href="/" class="footer__hrList">청소년 보호정책</a></li>
-      <li><a href="/" class="footer__hrList">법적 고지</a></li>
-      <li><a href="/" class="footer__hrList">이벤트</a></li>
-      <li><a href="/" class="footer__hrList">인재채용</a></li>
-    </ul>
-    <div class="footer__ownerinfoContainer">
-      <p class="hr__lineHeight">
-        대표이사: YANG JIEUL<span class="hr__divLine" aria-hidden="true">ㅣ</span><a href="/">사업자정보확인</a
-        ><span class="hr__divLine" aria-hidden="true">ㅣ</span> 사업자등록번호: 188-88-01893<span class="hr__divLine" aria-hidden="true">ㅣ</span>
-        통신판매신고번호:2020-서울마포-3641호
-      </p>
-      <p class="hr__lineHeight">
-        사업장: 서울특별시 마포구 상암산로 34, DMC 디지털큐브 15층(상암동)<span class="hr__divLine" aria-hidden="true">ㅣ</span>
-        호스팅사업자: 씨제이올리브네트윅스(주)
-      </p>
-      <p class="hr__lineHeight">
-        <a href="/" class="">고객문의 바로가기</a><span class="hr__divLine" aria-hidden="true">ㅣ</span> <a href="/">대표메일: tving@cj.net</a
-        ><span class="hr__divLine" aria-hidden="true">ㅣ</span>
-        <a href="/">고객센터: 1670-1525(평일/주말 09~18시, 공휴일 휴무)</a>
-      </p>
-      <p class="hr__lineHeight">
-        ENM 시청자 상담실 (편성 문의 및 시청자 의견): 080-080-0780 <span class="hr__divLine" aria-hidden="true">ㅣ</span>
-        Mnet 고객센터 (방송편성문의): 1855-1631
-      </p>
-    </div>
-    <ul class="footer__sprite">
-      <li class="sprite sprite__youtube"><span class="a11yHidden">유튜브 링크</span><a href="/"></a></li>
-      <li class="sprite sprite__instagram"><span class="a11yHidden">인스타그램 링크</span><a href="/"></a></li>
-      <li class="sprite sprite__twitter"><span class="a11yHidden">트위터 링크</span><a href="/"></a></li>
-      <li class="sprite sprite__facebook">
-        <div class="a11yHidden">페이스북 링크</div>
-        <a href="/"></a>
-      </li>
-    </ul>
-    <div class="footer__copyright">
-      <small class="footer__copyrigtInfo">Copyright © 주식회사 티빙 All right reserved.</small>
-    </div>
-  </footer>
-  <!-- ------------------------4-2 footer end----------------------------------------------------- -->
-
-
-
-
-
-
-</body>
+      <ul class="footer__hrContainer">
+        <li><a href="/" class="footer__hrList">고객센터</a></li>
+        <li><a href="/" class="footer__hrList">이용약관</a></li>
+        <li><a href="/" class="footer__hrList">개인정보처리방침</a></li>
+        <li><a href="/" class="footer__hrList">청소년 보호정책</a></li>
+        <li><a href="/" class="footer__hrList">법적 고지</a></li>
+        <li><a href="/" class="footer__hrList">이벤트</a></li>
+        <li><a href="/" class="footer__hrList">인재채용</a></li>
+      </ul>
+      <div class="footer__ownerinfoContainer">
+        <p class="hr__lineHeight">
+          대표이사: YANG JIEUL<span class="hr__divLine" aria-hidden="true">ㅣ</span><a href="/">사업자정보확인</a
+          ><span class="hr__divLine" aria-hidden="true">ㅣ</span> 사업자등록번호: 188-88-01893<span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          통신판매신고번호:2020-서울마포-3641호
+        </p>
+        <p class="hr__lineHeight">
+          사업장: 서울특별시 마포구 상암산로 34, DMC 디지털큐브 15층(상암동)<span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          호스팅사업자: 씨제이올리브네트윅스(주)
+        </p>
+        <p class="hr__lineHeight">
+          <a href="/" class="">고객문의 바로가기</a><span class="hr__divLine" aria-hidden="true">ㅣ</span> <a href="/">대표메일: tving@cj.net</a
+          ><span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          <a href="/">고객센터: 1670-1525(평일/주말 09~18시, 공휴일 휴무)</a>
+        </p>
+        <p class="hr__lineHeight">
+          ENM 시청자 상담실 (편성 문의 및 시청자 의견): 080-080-0780 <span class="hr__divLine" aria-hidden="true">ㅣ</span>
+          Mnet 고객센터 (방송편성문의): 1855-1631
+        </p>
+      </div>
+      <ul class="footer__sprite">
+        <li class="sprite sprite__youtube"><span class="a11yHidden">유튜브 링크</span><a href="/"></a></li>
+        <li class="sprite sprite__instagram"><span class="a11yHidden">인스타그램 링크</span><a href="/"></a></li>
+        <li class="sprite sprite__twitter"><span class="a11yHidden">트위터 링크</span><a href="/"></a></li>
+        <li class="sprite sprite__facebook">
+          <div class="a11yHidden">페이스북 링크</div>
+          <a href="/"></a>
+        </li>
+      </ul>
+      <div class="footer__copyright">
+        <small class="footer__copyrigtInfo">Copyright © 주식회사 티빙 All right reserved.</small>
+      </div>
+    </footer>
+    <!-- ------------------------4-2 footer end----------------------------------------------------- -->
+  </body>
 </html>
-
-    
