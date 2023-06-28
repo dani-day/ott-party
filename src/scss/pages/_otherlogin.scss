@@ -1,0 +1,115 @@
+@use "./../utils/" as * ;
+
+.footer__area {
+  
+  bottom: 0;
+}
+
+.logo {
+  background: red;
+  width: 100%;
+  
+  &__box {
+    display: block;
+    
+  }
+  &__submitButton {
+    appearance: none;
+  }
+  
+  @include mobileW {
+    &__box {
+
+      @include spriteBox__header(46px, 15px, 0, 0); 
+    }
+    @include paddingSquare (12px, 16px, 12px, 16px);
+  }
+  @include tabletW {
+    @include paddingSquare (16px, 40px, 16px, 40px);
+    &__box {
+      
+      @include spriteBox__header(75px, 24px, 0, -35px); 
+    }
+  }
+  @include desktopW {
+    @include paddingSquare (29px, 70px, 29px, 70px);
+    &__box {
+      
+      @include spriteBox__header(132px, 42px, 0, -79px); 
+    }
+  }
+
+}
+.login {
+
+  &__wrapper {
+    background: blue;
+    @include flexbox ($justify: center);
+    
+  }
+  &__pwInput {
+    margin-top: rem(4px);
+    
+  }
+   
+  &__idInput {
+    width: 100%;
+  
+  padding: 1rem;
+  background: red;
+  outline-offset: 2px;
+
+  }
+  &__container {
+    background: yellow;
+    @include flexbox ($direction: column);
+  }
+  &__title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $white;
+    font-weight: 700;
+    background: black;
+    
+  }
+  
+  @include mobileW {
+    &__container {
+
+      width: rem(252px);
+    }
+    &__title {
+      font: $heading-md;
+      padding-bottom: rem(28px);
+    }
+    
+
+  }
+  @include tabletW {
+    &__container {
+
+      width: rem(416px);
+    }
+    &__title {
+      font: $heading-xl;
+      padding-bottom: rem(24px);
+    }
+
+    &__idBox {
+      width: 100%;
+    }
+  }
+  @include desktopW {
+    &__container {
+
+      width: rem(732px);
+    }
+    &__title {
+      font: $heading-xxl;
+      padding-bottom: rem(60px);
+    }
+  }
+
+
+}
