@@ -148,15 +148,16 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 
    <br>
 <img src="./assets/footer.png">
-   <br>
+
 - 마크업 구조
   - 섹션과 푸터로 구분함
   - 대체 텍스트를 시각적으로 감추고자 a11yHidden을 이용함
   - sprite를 이용하여 푸터 이미지 배치함
 - 주요 스타일링 요약
-  _ 마우스로 클릭시 페이지로 이동할 수 있음
-  _ 이미지를 가로로 배열함 \* sprit에 block을 줌
-  <br/>
+
+  - 마우스로 클릭시 페이지로 이동할 수 있음
+  - 이미지를 가로로 배열함 sprit에 block을 줌
+    <br/>
 
 - figma 시안 외 구현사항 (유동균)
   <br>
@@ -170,7 +171,7 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
   <br>
   <img src="./assets/footer_fail.png">
 
-        * a 태그로 감싸진 링크로 연결된 부분 글씨 아래 밑줄 수행하지 못 함
+  - a 태그로 감싸진 링크로 연결된 부분 글씨 아래 밑줄 수행하지 못 함
 
   <br>
 
