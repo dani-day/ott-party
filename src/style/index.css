@@ -2174,16 +2174,16 @@ h2 {
   color: #2b2b2b;
 }
 
-.shortcut__divLine {
+.shortcut__buttonLine {
   color: #c4c4c4;
 }
 @media (min-width: 768px) and (max-width: 1919px) {
-  .shortcut__divLine {
+  .shortcut__buttonLine {
     font: normal 400 0.75rem/1.6 pretendard;
   }
 }
 @media (min-width: 1920px) {
-  .shortcut__divLine {
+  .shortcut__buttonLine {
     font: normal 400 1.3125rem/1.6 pretendard;
   }
 }
