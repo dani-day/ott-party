@@ -487,6 +487,7 @@ body {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
   }
   &__prev {
+    padding: 10px;
     @include posCenterY;
     @include button__header;
     z-index: 3;
@@ -502,6 +503,7 @@ body {
     }
   }
   &__next {
+    padding: 10px;
   @include posCenterY;
     @include button__header;
     z-index: 3;
@@ -549,9 +551,10 @@ body {
   &__play {
     @include flexbox($items:center,$gap:12px);
     @include mobileW {
-      @include flexbox($items:center,$gap:6px) 
+      @include flexbox($items:center,$gap:12px);
     }
   } 
+  
   &__shorcut {
     @include button__header;
     background: $gray400;;
@@ -660,7 +663,7 @@ body {
     }
   }
   &__imgTitle {
-    color: $base-text;
+    color: $gray200;
     @include desktopW{
       margin-top: rem(8px);
       font:$label-lg;
