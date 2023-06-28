@@ -7,6 +7,8 @@
   
   &__wrapper {
     display: inline-block;
+    width: 100%;
+    overflow: hidden;
     }
   &__title {
     color: $white;   
@@ -15,7 +17,7 @@
   &__thumbnail {
     @include flexbox ($justify: space-between);
       overflow: hidden;
-      width: 100vw;
+      
     } 
   &__list {
     counter-increment: number;
@@ -63,6 +65,7 @@
     
     &__thumbnail {
       padding-left: rem(8px);
+      padding-right: rem(8px);
     }
 
    &__broadcast {
@@ -73,6 +76,9 @@
 
     &__name, &__rating {
       font: $par-sm;
+    }
+    .paddingBox {
+      padding-right: rem(8px);
     }
 
     
@@ -120,6 +126,10 @@
 
       &__wrapper {
         padding-left: rem(40px);
+        
+      }
+      &_thumbnail {
+        padding-right: rem(40px);
       }
       
       & {
@@ -159,6 +169,11 @@
       &__name, &__rating {
         font: $par-md;
       }
+
+      &__thumbnail {
+        padding-right: rem(70px);
+
+      } 
       
       &{
         transition: transform 150ms ease-in-out 50ms;
@@ -169,6 +184,7 @@
       }
       &__wrapper {
         padding-left: rem(70px);
+        
       }
       
         
@@ -267,6 +283,7 @@
       }
       &__wrapper {
         padding-left: rem(40px);
+        
       }
 
     }
