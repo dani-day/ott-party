@@ -146,8 +146,9 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
 
 ### 1-4. 배너, 이벤트 및 footer [조수연]
 
+   <br>
 <img src="./assets/footer.png">
-
+   <br>
 - 마크업 구조
   - 섹션과 푸터로 구분함
   - 대체 텍스트를 시각적으로 감추고자 a11yHidden을 이용함
@@ -243,12 +244,14 @@ webkit 사용 이 주된 해결방안이었으며, 동균님께서 발견 및 �
 ### 오직 타잉에만 있어요
 
 1. 호버시 해당 아이템 위로 상승 **transition** 구현함 **transform , translate Y**축으로 이동 후 호버시 *0*으로 회귀하게 반영함 ex) 12px->0
+   <br>
+   <img src="./assets/only hover_live.png">
+   <br>
 
- <img src="./assets/only hover_live.png">
-   
-  2) 호버시 해당 아이템 위로 상승 후 아이템 전환되며 **opacity: 0**으로 가려둔 설명창**opacity:1**으로 전환됨
-   
+2) 호버시 해당 아이템 위로 상승 후 아이템 전환되며 **opacity: 0**으로 가려둔 설명창**opacity:1**으로 전환됨
+   <br>
    <img src="./assets/only hover animation_live.png">
+   <br>
 
 ## 📊 Project 사이트 성능 검사 결과
 
