@@ -98,24 +98,24 @@ select {
 }
 
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -140,23 +140,23 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -334,7 +334,8 @@ a {
 }
 
 body {
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font: inherit;
   background-color: #fff;
 }
@@ -915,7 +916,12 @@ body {
     font: normal 600 0.75rem/1.5 pretendard;
   }
 }
-.search__input::-ms-clear, .search__input::-ms-reveal, .search__input::-webkit-search-decoration, .search__input::-webkit-search-cancel-button, .search__input::-webkit-search-results-button, .search__input::-webkit-search-results-decoration {
+.search__input::-ms-clear,
+.search__input::-ms-reveal,
+.search__input::-webkit-search-decoration,
+.search__input::-webkit-search-cancel-button,
+.search__input::-webkit-search-results-button,
+.search__input::-webkit-search-results-decoration {
   display: none;
 }
 .search__submit {
@@ -1315,7 +1321,7 @@ body {
 .banner__more {
   color: #fff;
   position: absolute;
-  border: 1px solid var(--gray-300, #A6A6A6);
+  border: 1px solid var(--gray-300, #a6a6a6);
   border-radius: 4px;
   top: 75%;
   backdrop-filter: blur(30px);
@@ -1907,7 +1913,8 @@ h2 {
     color: #c4c4c4;
     font-weight: 600;
   }
-  .live__name, .live__rating {
+  .live__name,
+  .live__rating {
     font: normal 400 0.75rem/1.6 pretendard;
   }
 }
@@ -1937,7 +1944,8 @@ h2 {
     color: #c4c4c4;
     font-weight: 600;
   }
-  .live__name, .live__rating {
+  .live__name,
+  .live__rating {
     font: normal 400 0.75rem/1.6 pretendard;
   }
 }
@@ -1967,7 +1975,8 @@ h2 {
     color: #c4c4c4;
     font-weight: 600;
   }
-  .live__name, .live__rating {
+  .live__name,
+  .live__rating {
     font: normal 400 1rem/1.6 pretendard;
   }
 }
@@ -2452,7 +2461,8 @@ h2 {
   position: relative;
   color: #c4c4c4;
 }
-.footer__shortcut .shortcut__brand, .footer__shortcut .shortcut__group {
+.footer__shortcut .shortcut__brand,
+.footer__shortcut .shortcut__group {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -2930,7 +2940,8 @@ h2 {
 .look__container {
   overflow: hidden;
 }
-.look__wrap, .look__coppy {
+.look__wrap,
+.look__coppy {
   width: 100vw;
   display: flex;
   flex-flow: row nowrap;
@@ -2945,18 +2956,21 @@ h2 {
   align-items: start;
   gap: 0rem;
 }
-.look__wrap .look__rolling__list ul, .look__coppy .look__rolling__list ul {
+.look__wrap .look__rolling__list ul,
+.look__coppy .look__rolling__list ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
   gap: 0rem;
 }
-.look__wrap .look__rolling__list ul li, .look__coppy .look__rolling__list ul li {
+.look__wrap .look__rolling__list ul li,
+.look__coppy .look__rolling__list ul li {
   width: 29.375rem;
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .look__wrap .look__rolling__list ul li, .look__coppy .look__rolling__list ul li {
+  .look__wrap .look__rolling__list ul li,
+  .look__coppy .look__rolling__list ul li {
     width: 11.25rem;
   }
 }
