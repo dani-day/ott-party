@@ -2174,11 +2174,40 @@ h2 {
   color: #2b2b2b;
 }
 
+.shortcut__divLine {
+  color: #c4c4c4;
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .shortcut__divLine {
+    font: normal 400 0.75rem/1.6 pretendard;
+  }
+}
+@media (min-width: 1920px) {
+  .shortcut__divLine {
+    font: normal 400 1.3125rem/1.6 pretendard;
+  }
+}
+
 .footer__hrList {
   display: block;
 }
 .footer__information {
   color: #c4c4c4;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer__noticeLink {
+    font: normal 400 0.75rem/1.6 pretendard;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .footer__noticeLink {
+    font: normal 400 0.75rem/1.6 pretendard;
+  }
+}
+@media (min-width: 1920px) {
+  .footer__noticeLink {
+    font: normal 400 1.3125rem/1.6 pretendard;
+  }
 }
 .footer__notice {
   color: #6b6b6b;
@@ -2190,6 +2219,7 @@ h2 {
   align-items: stretch;
   gap: 0rem;
   border-bottom: 1px solid #212121;
+  padding-bottom: 1.6875rem;
 }
 .footer__hrContainer {
   color: #c4c4c4;
@@ -2261,7 +2291,7 @@ h2 {
     justify-content: flex-end;
   }
   .footer__wrapper {
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
   }
   .footer__hrContainer {
     display: flex;
@@ -2325,28 +2355,32 @@ h2 {
     height: 1.5rem;
     margin-right: 0.5rem;
   }
-  .sprite__youtube {
+  .sprite__youtube a {
+    display: block;
     width: 1.5rem;
     height: 1.5rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: 0rem -49.4375rem;
   }
-  .sprite__instagram {
+  .sprite__instagram a {
+    display: block;
     width: 1.5rem;
     height: 1.5rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -7rem -49.4375rem;
   }
-  .sprite__twitter {
+  .sprite__twitter a {
+    display: block;
     width: 1.5rem;
     height: 1.5rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -14rem -49.4375rem;
   }
-  .sprite__facebook {
+  .sprite__facebook a {
+    display: block;
     width: 1.5rem;
     height: 1.5rem;
     background-image: url(./../../images/sprite__icon.png);
@@ -2360,28 +2394,32 @@ h2 {
     height: 1.875rem;
     margin-right: 0.5rem;
   }
-  .sprite__youtube {
+  .sprite__youtube a {
+    display: block;
     width: 1.875rem;
     height: 1.875rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: 0rem -52.1875rem;
   }
-  .sprite__instagram {
+  .sprite__instagram a {
+    display: block;
     width: 1.875rem;
     height: 1.875rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -7rem -52.1875rem;
   }
-  .sprite__twitter {
+  .sprite__twitter a {
+    display: block;
     width: 1.875rem;
     height: 1.875rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -14rem -52.1875rem;
   }
-  .sprite__facebook {
+  .sprite__facebook a {
+    display: block;
     width: 1.875rem;
     height: 1.875rem;
     background-image: url(./../../images/sprite__icon.png);
@@ -2395,28 +2433,32 @@ h2 {
     height: 3.25rem;
     margin-right: 1.25rem;
   }
-  .sprite__youtube {
+  .sprite__youtube a {
+    display: block;
     width: 3.25rem;
     height: 3.25rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: 0rem -55.3125rem;
   }
-  .sprite__instagram {
+  .sprite__instagram a {
+    display: block;
     width: 3.25rem;
     height: 3.25rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -7rem -55.3125rem;
   }
-  .sprite__twitter {
+  .sprite__twitter a {
+    display: block;
     width: 3.25rem;
     height: 3.25rem;
     background-image: url(./../../images/sprite__icon.png);
     background-repeat: no-repeat;
     background-position: -14rem -55.3125rem;
   }
-  .sprite__facebook {
+  .sprite__facebook a {
+    display: block;
     width: 3.25rem;
     height: 3.25rem;
     background-image: url(./../../images/sprite__icon.png);
