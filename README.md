@@ -159,16 +159,20 @@ https://github.com/users/dani-day/projects/2/views/5?filterQuery=label%3A
   <br/>
 
 - figma 시안 외 구현사항 (유동균)
-  <img src="./assets/footer_add.png"> \* 바로가기를 클릭했을 때 연동되는 리스트를 작성함
+  <br>
+  <img src="./assets/footer_add.png">
+  <br>
 
-<br/>
+  - 바로가기를 클릭했을 때 연동되는 리스트를 작성함
+    <br>
 
 - figma 시안 대비 미구현 사항
+  <br>
   <img src="./assets/footer_fail.png">
 
-      * a 태그로 감싸진 링크로 연결된 부분 글씨 아래 밑줄 수행하지 못 함
+        * a 태그로 감싸진 링크로 연결된 부분 글씨 아래 밑줄 수행하지 못 함
 
-<br>
+  <br>
 
 ### 2. 랜딩 페이지
 
